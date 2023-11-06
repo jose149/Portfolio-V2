@@ -1,0 +1,91 @@
+.navigation-bar{
+    position: fixed;
+    left: 0px;
+    padding-right: 2rem;
+    width: 100%;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    z-index: 2;
+    transition: all .5s;
+    background: transparent;
+
+    .nav-bar-list{
+        height: 100%;
+        transition: all .3s;
+
+        .nav-bar-item, .nav-bar-item-contact{
+            padding: 1rem 0;
+            display: inline-flex;
+            color: $color-white;
+            font-weight: 400;
+            @media only screen and (max-width: $bp-large){
+                padding: .1rem 0;
+            }
+        }
+        
+        
+    
+        .nav-bar-link, 
+        .nav-bar-link:link,
+        .nav-bar-link:visited,
+        .nav-bar-link-contact,
+        .nav-bar-link-contact:link,
+        .nav-bar-link-contact:visited{
+            cursor: pointer;
+            padding: $button-padding;
+            text-align: center;
+            position: relative;
+            font-size: 1.8rem;
+        }
+        .highlighted{
+            color: $color-primary-light;
+            font-weight: 600;
+        }
+
+        .nav-bar-link:hover {
+            color: $color-primary-light;
+            font-weight: 600;
+        }
+        
+        @media (hover: hover) {
+            .nav-bar-link:hover.nav-bar-item{
+                filter: brightness(1.2);
+            }
+        }
+        
+        .nav-bar-link-contact{
+            background: linear-gradient(135deg, $color-primary-light 0%, $color-primary-dark 100%);
+            border-radius: $border-radius;
+            &:hover{
+                filter: brightness(1.1);
+            }
+        }
+        .nav-bar-icon{
+            background-color: $color-background-navigation-bar-mobile-icons;
+            padding: 1.5rem;
+            border-radius: 50%;
+            transition: all 0.5s;
+            box-shadow: 0 0 .5rem black;
+            filter: drop-shadow(0 0 .1rem rgba(black,0.2));
+        }
+        .icon-highlighted{
+            background-color: $color-primary;
+        }
+        
+    }  
+}
+.desktop{
+    top: 0;
+    justify-content: end;
+}
+.mobile{
+    justify-content: space-evenly;
+    bottom: 0;
+    background-color: $color-background-navigation-bar-mobile;
+    color: transparent;
+}
+
+.top{
+    box-sizing: border-box;
+    background-color: $color-black-dark;
+}

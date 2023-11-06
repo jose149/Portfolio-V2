@@ -1,0 +1,41 @@
+.navigation-menu{
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: aqua;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navigation-menu-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+
+  .navigation-menu__item{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    cursor: pointer;
+    
+  }
+
+
+  &__link, 
+  &__link:link,
+  &__link:visited{
+      position: relative;
+      color: currentColor;
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-transform: uppercase;
+  }
+}
+}

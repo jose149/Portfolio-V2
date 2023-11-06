@@ -1,0 +1,55 @@
+.mini-project {
+  box-shadow: 0 0 1rem black;
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &-image {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    
+    filter: saturate(0.3);
+    transition: all .5s;
+    @media only screen and (max-width: $bp-medium) {
+      filter: none
+    }
+  }
+  
+  &-header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header-title{
+  color: $color-white;
+}
+.header-link{
+  color: $color-primary;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  .mini-project:hover .mini-project-image {
+    filter: none;
+  }
+
+  .mini-project:hover{
+    filter: brightness(1.1);
+    transform: scale(1.1);
+  }
+}
+
+

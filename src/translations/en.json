@@ -1,0 +1,13 @@
+{
+  "sections":{
+    "home": "Home",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "about_me": "About me"
+  },
+  "header":{},
+  "technologies":{},
+  "projects":{},
+  "aboutme":{},
+  "contact":{}
+}

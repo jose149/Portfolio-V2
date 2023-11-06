@@ -1,0 +1,25 @@
+.section-projects{
+  background: $color-black-dark-2;
+  padding: 10rem 0;
+  row-gap: 10rem;
+  .project{
+    background: radial-gradient(42.74% 40.26% at 40.54% 52.49%, $color-black-lightest-2 0.01%, transparent 100%);
+    grid-column: 2/-2;
+  }
+  .mini-projects{
+    border-radius: $border-radius;
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+  }
+  .mini-project{
+    padding: 3rem;
+    background: transparent;
+  }
+  
+}

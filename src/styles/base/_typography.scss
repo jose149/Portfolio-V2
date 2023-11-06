@@ -1,0 +1,60 @@
+.heading-1{
+    &-main{
+      font-family: $font-primary;
+      color: $color-white;
+      font-size: $heading-1-main-font-size;
+      font-weight: $heading-1-font-weight;
+      @media only screen and (max-width: $bp-medium) {
+        font-size: calc($heading-1-main-font-size*0.8);
+      }
+    }
+    &-sub{
+      font-family: $font-primary;
+      color: $color-primary-light;
+      font-size: $heading-1-sub-font-size;
+      font-weight: $heading-1-font-weight;
+      letter-spacing: calc(2px - 1px);
+      @media only screen and (max-width: $bp-medium) {
+        font-size: calc($heading-1-sub-font-size*0.8);
+      }
+    }
+}
+
+// .heading-2{
+//     text-transform: uppercase;
+//     font-family: $font-primary;
+//     font-size: 5rem;
+//     font-weight: 700;
+//     line-height: 1;
+//     text-align: center;
+//     @media only screen and (max-width: $bp-smallest) {
+//         font-size: 3rem;
+//       }
+//     &--dark{
+//         color: $color-black;
+//     }
+//     &--light{
+//         color: $color-white;
+//     }
+    
+// }
+.heading-3{
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1;
+    color: $color-white;
+}
+.heading-4{
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: $color-white;
+}
+
+.fig-caption{
+  font-size: 1.6rem;
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1rem;
+  }
+}
