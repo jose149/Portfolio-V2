@@ -1,5 +1,6 @@
 <template>
   <section class="section section-technologies">
+    <div class="technology-modules-background"></div>
     <div class="technology-modules">
       <AppTabs
         v-if="isSmallDevice"
@@ -21,6 +22,7 @@
         </button>
       </div>
     </div>
+    
     <div class="technologies">
       <div class="technologies-content">
         <figure class="technology" v-for="technology in selectedModule.technologies">

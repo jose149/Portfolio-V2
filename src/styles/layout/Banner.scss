@@ -10,9 +10,10 @@
   .banner-image{
     position: absolute;
     align-self: flex-end;
+    justify-self: center;
     margin-bottom: 10vh;
     grid-column: 2 / 5;
-    height: 80%;
+    max-height: 70%;
     width: auto;
     z-index: 0;
     @media only screen and (max-width: $bp-large) {
@@ -22,6 +23,18 @@
     }
     @media only screen and (max-width: $bp-medium) {
       grid-column: 2 / 4;
+    }
+    &-background{
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+      position: absolute;
+      align-self: flex-end;
+      justify-self: center;
+      grid-column: 2 / 5;
+      height: 10vh;
+      width: calc(8vw * 5);
+      margin: auto;
+      background: linear-gradient(180deg,$color-black-dark-2 0%, $color-black-light 100%);
     }
   }
   .banner-content{
