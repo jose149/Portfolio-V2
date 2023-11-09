@@ -75,6 +75,18 @@
     transition: opacity 1s;
 }
 
+.lifting-enter-from,
+.lifting-leave-to {
+    height: 0px;
+}
+.lifting-enter-to,
+.lifting-leave-from {
+    height: 400px;
+}
+.lifting-enter-active, .lifting-leave-active {
+    transition: all 3s ease;
+}
+
 .transition-enter-from,
 .transition-leave-to {
 }

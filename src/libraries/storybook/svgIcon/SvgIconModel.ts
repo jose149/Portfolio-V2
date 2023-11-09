@@ -1,5 +1,5 @@
 export const SVG_ICON_TYPE = [
-  'Bitbucket','Cypress','Docker', 'ElasticSearch' ,'Git', 'GitHub3', 'Home', 'Jenkins', 'Kibana','Javascript2', 'Kubernetes', 'Menu','Netlify', 'Octopus', 'Pinia', 'Phone', 'TypeScript', 'GraphQL', 'Jest', 'Grafana', 'Sass', 'Screen', 'Server', 'StoryBook', 'Figma','GoogleAnalytics','GoogleTagManager', 'Hotjar', 'DotNet','CSharp','Vitest','Vue', 'Mail', 'Linkedin', 'GitHub2'
+  'Bitbucket','Chevron','Cypress','Docker', 'ElasticSearch' ,'Git', 'GitHub3', 'Home', 'Jenkins', 'Kibana','Javascript2', 'Kubernetes', 'Menu','Netlify', 'Octopus', 'Pinia', 'Phone', 'TypeScript', 'GraphQL', 'Jest', 'Grafana', 'Sass', 'Screen', 'Server', 'StoryBook', 'Figma','GoogleAnalytics','GoogleTagManager', 'Hotjar', 'DotNet','CSharp','Vitest','Vue', 'Mail', 'Linkedin', 'GitHub2'
 ];
 
 
@@ -7,6 +7,7 @@ export type SvgIconType = (typeof SVG_ICON_TYPE)[number];
 
 export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
   Bitbucket: 'bitbucket',
+  Chevron:'chevron',
   Cypress:'cypress',
   Design:'design',
   Docker: 'docker',
@@ -99,6 +100,12 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     height: 60,
     color: 'currentColor',
     colorProperty: 'fill',
+  },
+  Chevron:{
+    width: 30,
+    height: 30,
+    color: 'currentColor',
+    colorProperty: 'stroke',
   },
   Cypress:{
     width: 120,

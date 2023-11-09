@@ -19,9 +19,20 @@ const props = defineProps<TechnologyModuleProps>()
 
 <template>
   <div class="technology-module">
-    <h3 class="technology-module-heading" @click="showModule = !showModule"> {{  $props.heading }}</h3>
-    <div class="technology-module-description" v-if="showModule">
-      <figure class="technology" v-for="technology in $props.technologies" :key="technology.iconName">
+    <header class="technology-module-header"
+      @click="showModule = !showModule">
+      <SvgIcon name="Chevron" color="white" :size="isSmallDevice? {
+          height:16,width: 16
+        }:{
+          height:16,width: 16
+        }"/>
+      <h3 class="technology-module-heading"> 
+        {{  $props.heading }}
+      </h3> 
+    </header>
+    <transition name="lifting">
+      <div class="technology-module-description" v-if="showModule">
+      <figure class="technology" v-for="technology in props.technologies" :key="technology.iconName">
         <SvgIcon :name="technology.iconName" :size="isSmallDevice? {
           height:50,width: 50
         }:{
@@ -30,7 +41,8 @@ const props = defineProps<TechnologyModuleProps>()
         <figcaption class="fig-caption technology-caption">{{ technology.name }}</figcaption>
       </figure>
     </div>
-
+    </transition>
+    
   </div>
 
 </template>
@@ -38,26 +50,39 @@ const props = defineProps<TechnologyModuleProps>()
 <style scoped lang='scss'>
   @import "@/styles/main.scss";
   .technology-module{
-    border-radius: 15px;
+    position: relative;
     width: 100%;
-    box-shadow: 0 0 2px $color-black-lightest-4;
     display: flex;
     flex-direction: column;
+    background-color: $color-black-dark-2;
+    border-radius: 15px;
 
-    &-heading{
-      color:white;
-      padding: 1rem 1.5rem;
+    &-header{
+      padding: 2rem 2rem;
       border-bottom: .5rem solid $color-primary;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      &:hover{
+        filter: brightness(1.2);
+      }
+      .technology-module-heading{
+        color:$color-white;
+        font-size: 2rem;
+      }
     }
 
     &-description {
-      padding: 3rem 2rem;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-sizing: border-box;
       display: flex;
       flex-wrap: wrap;
       row-gap: 2rem;
       flex-shrink: 0;
-
+      
       .technology{
         width: 20%;
         display: flex;
@@ -66,7 +91,7 @@ const props = defineProps<TechnologyModuleProps>()
         justify-content: center;
         text-align: center;
         gap: 1rem;
-        filter: saturate(0.4);
+        filter: saturate(0.7);
         &-caption{
           color: $color-white;
         }

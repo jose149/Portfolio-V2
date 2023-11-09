@@ -1,58 +1,19 @@
 .section-technologies{
-  background: $color-black-dark;
+  background: linear-gradient(90deg, $color-black-light 0%, $color-black-light 50vw, $color-black-dark 50vw, $color-black-dark 100%);
+  padding: 5rem;
+  .technologies-heading{
+    padding-bottom: 5rem;
+    grid-column: 1/-1;
+    justify-self: center;
+
+    color: $color-white;
+    font-size: 4rem;
+  }
+
   .technologies-modules{
     grid-column: 2/-2;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-
-  &-background{
-    position: relative;
-    grid-column: 2 / 5;
-    justify-self: center;
-    grid-row: 1/2;
-    height: 100%;
-    width: calc(8vw * 5);
-    background: linear-gradient(180deg, $color-black-light 0%, $color-black-light-2 100%);
-  }
-
-  // .technologies{
-  //   padding: 5rem 0;
-  //   background: linear-gradient(135deg, $color-black-lightest-3 0%, $color-black-lightest 100%);
-  //   width: 100%;
-  //   position: relative;
-  //   grid-column: 1/-1;
-  //   grid-row: 2/-1;
-  //   display: grid;
-  //   grid-template-columns: 1fr repeat(8, 8vw) 1fr;
-
-  //   &-content{
-  //     padding: 5rem 0;
-  //     grid-column: 2/-2;
-  //     grid-row: 2;
-  //     display: flex;
-  //     flex-wrap: wrap;
-  //     justify-content: center;
-  //     row-gap: 3rem;
-  //     transition: all .5s;
-  //     @media only screen and (max-width: $bp-large){
-  //       column-gap: 5rem;
-  //     }
-  //   }
-  //   .technology{
-  //     width: 20%;
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: center;
-  //     text-align: center;
-  //     gap: 1rem;
-  //     filter: saturate(0.4);
-  //     &-caption{
-  //       color: $color-white;
-  //     }
-  //   }
-    
-  // }
 }

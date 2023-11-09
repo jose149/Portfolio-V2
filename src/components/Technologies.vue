@@ -19,8 +19,7 @@ function shouldShowTechnologyModule(module: TechnologyModuleType):boolean{
 
 <template>
   <section class="section section-technologies">
-    <h2>Technologies</h2>
-    <div class="technology-modules-background"></div>
+    <h2 class="technologies-heading">Technologies</h2>
     <article class="technologies-modules">
       <TechnologyModule
         v-for="technologyModule in technologyModules" 
