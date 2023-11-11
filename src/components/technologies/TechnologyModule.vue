@@ -37,7 +37,7 @@ function setGroupHeight() {
   <div class="technology-module">
     <header class="technology-module-header"
       @click="showModule = !showModule">
-      <SvgIcon name="Chevron" color="white" :size="isSmallDevice? {
+      <SvgIcon class="chevron" :class="{up:showModule}" name="Chevron" color="white" :size="isSmallDevice? {
           height:16,width: 16
         }:{
           height:16,width: 16
@@ -79,9 +79,16 @@ function setGroupHeight() {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      & .chevron {
+        transition: all 0.25s;
+        transform: rotate(-90deg);
+      }
 
       &:hover{
         filter: brightness(1.2);
+      }
+      .up{
+        transform: rotate(0deg);
       }
       .technology-module-heading{
         color:$color-white;
@@ -92,7 +99,7 @@ function setGroupHeight() {
     &-description {
       height: 0;
       overflow: hidden;
-      transition: all 1s;
+      transition: all .5s;
       --webkit-transition: all .5s;
       &.open {
       height: v-bind(groupHeight);
