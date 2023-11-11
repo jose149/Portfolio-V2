@@ -19,7 +19,7 @@ export interface ITechnology {
 export enum TechnologyModuleType{
   FrontEnd ='Front End',
   BackEnd ='Back End',
-  UxUi ='UX/UI'
+  UxUi ='UI/UX'
 }
 
 export interface ITechnologyModule {

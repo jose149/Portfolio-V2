@@ -2,7 +2,7 @@
 import { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
 import { StateKey } from '@/state/state';
-import { inject, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 interface TechnologyModuleTechnology{
   name: string;
   iconName: SvgIconType;
@@ -15,6 +15,22 @@ interface TechnologyModuleProps {
 const props = defineProps<TechnologyModuleProps>()
   const {isSmallDevice} = inject(StateKey)!;
   const showModule = ref<boolean>(props.show);
+
+const techGroup = ref<HTMLDivElement | null>(null);
+const groupHeight = ref<string>("");
+
+onMounted(() => {
+  const resizeObserver = new ResizeObserver(setGroupHeight);
+  if (!techGroup.value) {
+    return;
+  }
+  resizeObserver.observe(techGroup.value);
+  setGroupHeight();
+});
+
+function setGroupHeight() {
+  groupHeight.value = `${techGroup.value?.clientHeight}px`;
+}
 </script>
 
 <template>
@@ -30,19 +46,18 @@ const props = defineProps<TechnologyModuleProps>()
         {{  $props.heading }}
       </h3> 
     </header>
-    <transition name="lifting">
-      <div class="technology-module-description" v-if="showModule">
-      <figure class="technology" v-for="technology in props.technologies" :key="technology.iconName">
-        <SvgIcon :name="technology.iconName" :size="isSmallDevice? {
-          height:50,width: 50
-        }:{
-          height:60,width: 60
-        }"/>
-        <figcaption class="fig-caption technology-caption">{{ technology.name }}</figcaption>
-      </figure>
+      <div class="technology-module-description" :class="{open:showModule}">
+        <div ref="techGroup" class="technologies-container">
+          <figure class="technology" v-for="technology in props.technologies" :key="technology.iconName">
+            <SvgIcon :name="technology.iconName" :size="isSmallDevice? {
+              height:50,width: 50
+            }:{
+              height:60,width: 60
+            }"/>
+            <figcaption class="fig-caption technology-caption">{{ technology.name }}</figcaption>
+          </figure>
+        </div>
     </div>
-    </transition>
-    
   </div>
 
 </template>
@@ -75,15 +90,20 @@ const props = defineProps<TechnologyModuleProps>()
     }
 
     &-description {
-      box-sizing: border-box;
+      height: 0;
       overflow: hidden;
-      box-sizing: border-box;
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: 2rem;
-      flex-shrink: 0;
-      
-      .technology{
+      transition: all 1s;
+      --webkit-transition: all .5s;
+      &.open {
+      height: v-bind(groupHeight);
+    }
+      .technologies-container{
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+
+        .technology{
         width: 20%;
         display: flex;
         flex-direction: column;
@@ -96,6 +116,7 @@ const props = defineProps<TechnologyModuleProps>()
           color: $color-white;
         }
       }
+      } 
     }
   }
 </style>
