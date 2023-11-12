@@ -38,9 +38,9 @@ function setGroupHeight() {
     <header class="technology-module-header"
       @click="showModule = !showModule">
       <SvgIcon class="chevron" :class="{up:showModule}" name="Chevron" color="white" :size="isSmallDevice? {
-          height:16,width: 16
+          height:10, width: 10
         }:{
-          height:16,width: 16
+          height:16, width: 16
         }"/>
       <h3 class="technology-module-heading"> 
         {{  $props.heading }}
@@ -50,9 +50,9 @@ function setGroupHeight() {
         <div ref="techGroup" class="technologies-container">
           <figure class="technology" v-for="technology in props.technologies" :key="technology.iconName">
             <SvgIcon :name="technology.iconName" :size="isSmallDevice? {
-              height:50,width: 50
+              height:30, width: 30
             }:{
-              height:60,width: 60
+              height:60, width: 60
             }"/>
             <figcaption class="fig-caption technology-caption">{{ technology.name }}</figcaption>
           </figure>
@@ -69,7 +69,6 @@ function setGroupHeight() {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: $color-black-dark-2;
     border-radius: 15px;
 
     &-header{

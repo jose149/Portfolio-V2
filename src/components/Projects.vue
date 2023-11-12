@@ -1,5 +1,6 @@
 <template>
   <section class="section section-projects">
+    <h2 class="projects-heading">Projects</h2>
     <Project
     class="project"
     v-for="project in projects"

@@ -1,10 +1,23 @@
 <template>
   <section class="section section-about-me">
+    <div class="about-me-square-background"></div>
+    <h2 class="about-me-heading">About me</h2>
+    <div class="description">
+      <p class="heading-3 description-heading"><span class="primary">Hi,</span> I'm Jose</p>
+      <p class="description-text">I'm a passionated Front end engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p> 
+      <p class="description-text">Recently I have been centered on continuous delivery and integration, design patterns, software quality techniques and best practices.</p>
+        <a 
+          class="cta"
+          href="/assets/documents/JoseCrespiCV.pdf" 
+          download="CV_Jose_Crespi">
+            Download CV
+      </a>
+    </div>
     <div class="introduction">
       <img loading="lazy" class="introduction-image" rel="preload" src="/assets/images/Profile/perfil2.webp" alt="Profile photo">
       <div class="introduction-profile">
         <p class="heading-3 profile-name">José Crespí Valero</p> 
-        <p class="heading-3 profile-job"> Full stack developer</p>
+        <p class="heading-3 profile-job"> Front end engineer</p>
       </div>
         <div class="introduction-media">
           <a href="mailto:crespi.valero.jose@gmail.com" aria-label="Open mail app to write me an email" target="_blank" rel="noreferrer">
@@ -19,17 +32,8 @@
       </div>
     </div> 
 
-    <div class="description">
-      <p class="heading-3 description-heading"><span class="primary">Hi,</span> I'm Jose</p>
-      <p class="description-text">I'm a passionated software engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p> 
-      <p class="description-text">Recently I have been centered on continuous delivery and integration, design patterns, software quality techniques and best practices.</p>
-        <a 
-          class="cta"
-          href="/assets/documents/JoseCrespiCV.pdf" 
-          download="CV_Jose_Crespi">
-            Download CV
-      </a>
-    </div>   
+       
+    
   </section>           
 </template>
 

@@ -1,7 +1,6 @@
 <template>
   <section class="section section-banner">
     <img class="banner-image" src="/assets/images/Profile/perfil1.webp" alt="Profile photo">
-    <div class="banner-image-background"></div>
     <main class="banner-content">
       <FadingCarousel class="carrousel" :logos="mainTechnologylogos!"/>
       <h1 class="heading-1 heading">

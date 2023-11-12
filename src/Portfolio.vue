@@ -38,9 +38,9 @@ onMounted(() => {
     <Banner id="section-0"/>
   </header>
   <main>
-    <Technologies id="section-1"/>
-    <Projects id="section-2"/>
-    <AboutMe id="section-3"/>
+    <AboutMe id="section-1"/>
+    <Technologies id="section-2"/>
+    <Projects id="section-3"/>
     <Contact id="section-4"/>
   </main>
   <footer>

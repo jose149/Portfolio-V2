@@ -1,11 +1,10 @@
 .section-technologies{
-  background: linear-gradient(90deg, $color-black-light 0%, $color-black-light 50vw, $color-black-dark 50vw, $color-black-dark 100%);
-  padding: 5rem;
+  background: $color-background;
+  padding: 5rem 0 10rem 0;
   .technologies-heading{
     padding-bottom: 5rem;
     grid-column: 1/-1;
     justify-self: center;
-
     color: $color-white;
     font-size: 4rem;
   }
