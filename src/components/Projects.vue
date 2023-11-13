@@ -24,7 +24,7 @@ import Project, { type IProject } from './Project.vue'
 import MiniProject, { type IMiniProject } from './MiniProject.vue'
 
 export interface IImage {
-  url: string;
+  path: string;
   alt: string;
 }
 
@@ -33,7 +33,7 @@ const projects: IProject[]= [
   {
     title:'TripPlanner',
     summary: 'As a Sembo Trip Planner key member, I contributed to develop an innovative travel tool that allows users to effortlessly crate full travel experiences integrating accommodation, transportation, and activities. Enhancing the travel experience, making it more enjoyable and accessible for everyone.',
-    image: {url: '/assets/images/Projects/tripPlanner.png', alt: 'Trip Planner'},
+    image: {path: '/assets/images/Projects/TripPlanner.jpg', alt: 'Trip Planner'},
     technologies: ['Vue', 'TypeScript', 'Vitest', 'Cypress', 'StoryBook', 'GraphQL', 'Pinia'],
     url:'https://www.sembo.co.uk/travel/plan?pax=rpp'
   },
@@ -42,12 +42,12 @@ const projects: IProject[]= [
 const miniProjects: IMiniProject[]= [
   {
     title:'Todo List',
-    image: {url: '/assets/images/Miniprojects/TodoList.webp', alt: 'Todo list project'},
+    image: {path: '/assets/images/Miniprojects/TodoList.webp', alt: 'Todo list project'},
     link: 'https://github.com/jose149/ToDoList'
   },
   {
     title:'Organization Table',
-    image: {url: '/assets/images/Miniprojects/UsersList.webp', alt: 'Users list project'},
+    image: {path: '/assets/images/Miniprojects/UsersList.webp', alt: 'Users list project'},
     link: 'https://github.com/jose149/OrganizationTable'
   },
 ]

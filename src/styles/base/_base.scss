@@ -45,7 +45,7 @@ button{
 
 .section{
     display: grid;
-    grid-template-columns: 1fr repeat(8, 8vw) 1fr;
+    grid-template-columns: 1fr repeat(8, 8.5vw) 1fr;
     @media only screen and (max-width: $bp-medium) {
         grid-template-columns: 1fr repeat(8, 11vw) 1fr;
     }

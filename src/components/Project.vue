@@ -6,13 +6,13 @@
           <SvgIcon v-for="technology in project.technologies" :name="technology" :size="isSmallDevice?{width: 20, height:20}:{width: 30, height:30}"/>
         </div>
       </header>
-      <img loading="lazy" class="project-image" src="/assets/images/Projects/tripPlanner.webp" alt="hola">
+      <img loading="lazy" class="project-image" :src="projectImage" :alt="project.image.alt">
       <div class="project-description">
         <p class="project-summary">{{ project.summary }}</p>
         <footer class="project-footer">
           <a class="cta" :href="project.url" target="_blank" rel="noreferrer">
             <SvgIcon name="OpenWindow" :size="{height:20, width: 20}"/>
-            Play
+            Run
           </a>
           <!-- <a class="project-repository">Open details</a> -->
         </footer>
@@ -45,7 +45,9 @@ interface ProjectProps{
   project: IProject;
 }
 
-defineProps<ProjectProps>();
+const props = defineProps<ProjectProps>();
+
+const projectImage = new URL(props.project.image.path, import.meta.url).href;
 
 </script>
 

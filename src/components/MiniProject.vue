@@ -30,7 +30,7 @@ interface MiniProjectProps{
 
 const props = defineProps<MiniProjectProps>()
 
-const imageUrl = new URL(props.miniProject.image.url, import.meta.url).href
+const imageUrl = new URL(props.miniProject.image.path, import.meta.url).href
 
 </script>
 

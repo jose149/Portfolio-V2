@@ -37,7 +37,7 @@
   
 
   .project-image{
-    grid-column: 1/5;
+    grid-column: 1/7;
     width:100%;
     border-radius: 10px;
     border: 1px solid rgba($color-white, 0.1);
@@ -46,9 +46,10 @@
     } 
   }
   .project-description{
-    grid-column: 6/-1;
+    grid-column: 7/-1;
+    padding-left: 5rem;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -66,7 +67,7 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: end;
       @media only screen and (max-width: $bp-medium) {
         justify-content: center;
       }
