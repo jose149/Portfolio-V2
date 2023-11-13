@@ -21,9 +21,9 @@ enum SectionName{
 
 enum SectionId{
   home = '#section-0',
-  technologies = '#section-1',
-  projects = '#section-2',
-  aboutMe = '#section-3',
+  technologies = '#section-2',
+  projects = '#section-3',
+  aboutMe = '#section-1',
 }
 interface ISections{
   name: SectionName;
@@ -55,23 +55,18 @@ export function setUpState(){
       }
   );
 
-
-
-  function scrollTo(section: Section):void{
-    const elementId = `#section-${section}`
-    const elementToScroll = document.querySelector(elementId);
-    if(!elementToScroll){
-      throw Error("The Id of the element to scroll doesn't match");
-    }
-    elementToScroll.scrollIntoView()
-  }
-
   const sections = ref<ISections[]>([
     {
       name: SectionName.home,
       id: SectionId.home,
       iconName: 'Home',
       isWatching: true,
+    },
+    {
+      name: SectionName.aboutMe,
+      id: SectionId.aboutMe,
+      iconName: 'Profile',
+      isWatching: false,
     },
     {
       name: SectionName.technologies,
@@ -84,13 +79,8 @@ export function setUpState(){
       id: SectionId.projects,
       iconName: 'GitHub3',
       isWatching: false,
-    },
-    {
-      name: SectionName.aboutMe,
-      id: SectionId.aboutMe,
-      iconName: 'Profile',
-      isWatching: false,
-    },])
+    }
+  ])
 
 
 
@@ -99,7 +89,6 @@ export function setUpState(){
   return {
     isSmallDevice,
     isScrollAtTop,
-    scrollTo,
     sections
   }
 }

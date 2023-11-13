@@ -8,7 +8,7 @@
       >
         <a :href="section.id" :aria-label="`Move to section ${section.name}`" class="nav-bar-link" :class="{highlighted: section.isWatching}"> 
           <SvgIcon v-if="isSmallDevice" class="nav-bar-icon" :class="{'icon-highlighted': section.isWatching}" :name="section.iconName" :size="{height: 12, width:12}"/>
-          <span v-else > {{section.name}}</span> 
+          <span v-else> {{section.name}}</span> 
         </a>
       </li>  
       <li v-if="!isSmallDevice"

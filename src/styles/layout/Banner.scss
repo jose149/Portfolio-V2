@@ -4,6 +4,9 @@
   height: 100vh;
   align-items: center;
   background: linear-gradient(0deg, $color-black-dark 0%, $color-black-light 100%);
+  @media only screen and (max-width: $bp-large){
+    height: 100dvh;
+  }
   .banner-image{
     position: absolute;
     align-self: flex-end;
