@@ -3,10 +3,12 @@
     <div class="about-me-square-background"></div>
     <h2 class="about-me-heading">About me</h2>
     <div class="description">
-      <p class="heading-3 description-heading"><span class="primary">Hi,</span> I'm Jose</p>
-      <p class="description-text">I'm a passionated Front end engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p> 
-      <p class="description-text">Recently I have been centered on continuous delivery and integration, design patterns, software quality techniques and best practices.</p>
-        <a 
+      <header class="heading-3 description-heading"><span class="primary">Hi,</span> I'm Jose</header>
+      <div class="description-text">
+        <p class="description-paragraph">I'm a passionated Front end engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p> 
+        <p class="description-paragraph">Recently I have been centered on continuous delivery and integration, design patterns, software quality techniques and best practices.</p>
+      </div>
+      <a 
           class="cta"
           href="/assets/documents/JoseCrespiCV.pdf" 
           download="CV_Jose_Crespi">
