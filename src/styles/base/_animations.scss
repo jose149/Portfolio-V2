@@ -66,6 +66,17 @@
     transition: opacity 1s;
 }
 
+
+.light-enter-from{
+    color: transparent;
+}
+.light-enter-to{
+    color: $color-primary-lightest;
+}
+.light-enter-active {
+    
+}
+
 .transition-enter-from,
 .transition-leave-to {
 }
