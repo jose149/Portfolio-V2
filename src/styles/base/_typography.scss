@@ -3,68 +3,41 @@
   flex-direction: column;
   gap: 3rem;
     &-main{
-      // padding-bottom: 1.4rem;
       position: relative;
       font-family: $font-primary;
       color: $color-primary-light;
       font-size: $heading-1-main-font-size;
       font-weight: $heading-1-font-weight;
-      letter-spacing: calc(2px - 1px);
       -webkit-box-reflect: below 0px transparent;
       outline: none;
       text-transform: uppercase;
-      text-align: center;
-      vertical-align: bottom;
       animation: animate 2s linear 2.5s;
       line-height: 100%;
       -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent 30%, rgba($color-primary-light, 0.1) 100%);
       
       @media only screen and (max-width: $bp-medium) {
-        font-size: calc($heading-1-sub-font-size*0.8);
+        font-size: calc($heading-1-main-font-size*0.8);
       }
     }
     &-sub{
       font-family: $font-primary;
       color: $color-white;
+      letter-spacing: calc(2px - 1px);
       font-size: $heading-1-sub-font-size;
       font-weight: $heading-1-font-weight;
       @media only screen and (max-width: $bp-medium) {
-        font-size: calc($heading-1-main-font-size*0.8);
+        font-size: calc($heading-1-sub-font-size*0.8);
       }
     }
 }
 @keyframes animate{
-  0%{
-    color: $color-primary-light;
-  }
   50%{
     color: white;
     text-shadow: 0 0 1.5rem $color-primary-light;
     
   }
-  100%{
-    color: $color-primary-light;
-  }
 }
 
-// .heading-2{
-//     text-transform: uppercase;
-//     font-family: $font-primary;
-//     font-size: 5rem;
-//     font-weight: 700;
-//     line-height: 1;
-//     text-align: center;
-//     @media only screen and (max-width: $bp-smallest) {
-//         font-size: 3rem;
-//       }
-//     &--dark{
-//         color: $color-black;
-//     }
-//     &--light{
-//         color: $color-white;
-//     }
-    
-// }
 .heading-3{
     font-family: $font-primary;
     font-weight: 400;
