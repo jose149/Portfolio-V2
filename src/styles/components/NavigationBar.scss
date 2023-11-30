@@ -45,9 +45,13 @@
         .nav-bar-link-contact:link,
         .nav-bar-link-contact:visited{
             cursor: pointer;
+            padding: $button-padding;
             text-align: center;
             position: relative;
             font-size: 1.8rem;
+            @media only screen and (max-width: $bp-large){
+                padding: 0;
+            }
         }
         .highlighted{
             color: $color-primary-light;
