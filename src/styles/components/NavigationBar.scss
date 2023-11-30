@@ -8,10 +8,19 @@
     z-index: 2;
     transition: all .5s;
     background: transparent;
+    @media only screen and (max-width: $bp-large){
+        padding: .5rem 0;
+    }
 
     .nav-bar-list{
         height: 100%;
         transition: all .3s;
+        @media only screen and (max-width: $bp-large){
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .nav-bar-item, .nav-bar-item-contact{
             padding: 1rem 0;
@@ -19,6 +28,10 @@
             color: $color-white;
             font-weight: 400;
             @media only screen and (max-width: $bp-large){
+                width: 20%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
                 padding: .1rem 0;
             }
         }
@@ -32,7 +45,6 @@
         .nav-bar-link-contact:link,
         .nav-bar-link-contact:visited{
             cursor: pointer;
-            padding: $button-padding;
             text-align: center;
             position: relative;
             font-size: 1.8rem;

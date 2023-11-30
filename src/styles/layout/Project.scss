@@ -17,9 +17,11 @@
     }
   }
   .project-header{
+    grid-column: 1/-1;
     display: flex;
     align-items: center;
     gap: 10rem;
+    overflow: hidden;
     @media only screen and (max-width: $bp-medium) {
       flex-direction: column;
       gap: 3rem;
@@ -28,10 +30,12 @@
       font-size: 3rem;
     }
     .project-technologies{
+      padding-bottom: .5rem;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 3rem;
+      overflow-x: auto;
     }
   }
   
