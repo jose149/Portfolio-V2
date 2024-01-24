@@ -18,6 +18,9 @@
       </li>  
     </ul>
   </nav>
+  <a v-if="isSmallDevice" aria-label="Open mail app to write me an email" class="contact-icon" href="mailto:crespi.valero.jose@gmail.com">
+    <SvgIcon :name="'Mail'" :color="'white'" :size="{height: 20, width:20}"></SvgIcon>
+  </a>
 </template>
   
   
@@ -26,7 +29,7 @@
   import { inject } from 'vue';
   import {StateKey} from '@/state/state';
   import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
-  
+
 
   const {isSmallDevice, isScrollAtTop, sections} = inject(StateKey)!;
   

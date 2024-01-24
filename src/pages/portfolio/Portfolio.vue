@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavigationBar from '@/components/sharedComponents/NavigationBar.vue'
+import Header from '@/modules/header/Header.vue'
 import Banner from '@/components/Banner.vue'
 import Technologies from '@/components/Technologies.vue'
 import Projects from '@/components/Projects.vue'
@@ -9,7 +9,6 @@ import Footer from '@/components/Footer.vue'
 import { StateKey, setUpState } from '@/state/state'
 import { onMounted, provide } from 'vue'
 import { elementIntersectionObserver } from '@/libraries/helpers/IntersectionObserver'
-import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
 
 const PortfolioState = setUpState()
 provide(StateKey, PortfolioState);
@@ -28,28 +27,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <a v-if="PortfolioState.isSmallDevice.value" aria-label="Open mail app to write me an email" class="contact-icon" href="mailto:crespi.valero.jose@gmail.com">
-    <SvgIcon :name="'Mail'" :color="'white'" :size="{height: 20, width:20}"></SvgIcon>
-  </a>
-  <nav>
-    <NavigationBar/>
-  </nav>
-  <header>
-    <Banner id="section-0"/>
-  </header>
+  <Header/>
   <main>
+    <Banner id="section-0"/>
     <AboutMe id="section-1"/>
     <Technologies id="section-2"/>
     <Projects id="section-3"/>
     <Contact id="section-4"/>
   </main>
-  <footer>
-    <Footer/>
-  </footer>
+  <Footer/>
 </template>
 
 <style lang="scss">
-@import "./styles/main.scss";
+@import "@/styles/main.scss";
 #app{
   width: 100%;
   background-color: $color-background;
