@@ -37,5 +37,5 @@
 
 <style scoped lang="scss">
   @import "@/styles/main.scss";
-  @import "@/styles/components/NavigationBar.scss";
+  @import "./NavigationBar.scss";
 </style>
