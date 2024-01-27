@@ -6,28 +6,13 @@ import Projects from '@/components/Projects.vue'
 import AboutMe from '@/components/AboutMe.vue'
 import Contact from '@/components/Contact.vue'
 import Footer from '@/components/Footer.vue'
-import { StateKey, setUpState } from '@/state/state'
-import { onMounted, provide } from 'vue'
-import { elementIntersectionObserver } from '@/libraries/helpers/IntersectionObserver'
+import { usePortfolioStore } from './stores/PortfolioStore'
 
-const PortfolioState = setUpState()
-provide(StateKey, PortfolioState);
-
-onMounted(() => {
-  const sectionsElement = PortfolioState.sections.value.map((section) => document.querySelector(section.id) as HTMLElement)
-
-  sectionsElement.forEach((sectionElement) => elementIntersectionObserver(sectionElement, (isIntersected) => {
-    if(isIntersected){
-      PortfolioState.sections.value.forEach((section) => section.isWatching = false);
-      PortfolioState.sections.value.find((section) => section.id === `#${sectionElement.id}`)!.isWatching = true;
-    }
-  }))
-  
-})
+const portfolioStore = usePortfolioStore()
 </script>
 
 <template>
-  <Header/>
+  <Header :image="''" :links="portfolioStore.sections"/>
   <main>
     <Banner id="section-0"/>
     <AboutMe id="section-1"/>
