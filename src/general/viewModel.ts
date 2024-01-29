@@ -1,4 +1,5 @@
 export interface Image {
-  imageService: string;
-  imageName: string;
+  src: string;
+  alt: string;
 }
+

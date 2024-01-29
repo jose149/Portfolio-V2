@@ -1,5 +1,6 @@
 import { getMarketOrigin } from "@/libraries";
 import { Section } from "./PortfolioViewModel";
+import type { Image } from '@/general/viewModel'
 
 export const portfolioSections: Section[] = [
 {
@@ -28,3 +29,10 @@ export const portfolioSections: Section[] = [
   url: `${getMarketOrigin()}/section-4`
 }
 ]
+
+export function getOwnerLogo():Image{
+  return {
+    src: '/assets/images/Miniprojects/logo.png',
+    alt: 'Owner logo'
+  }
+}

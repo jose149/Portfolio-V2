@@ -3,12 +3,12 @@
     <ul class="nav-bar-list">
       <li 
       class="nav-bar-item"
-      v-for="section in sections"
-      :key="section.id"
+      v-for="item in props.items"
+      :key="item.id"
       >
-        <a :href="section.id" :aria-label="`Move to section ${section.name}`" class="nav-bar-link" :class="{highlighted: section.isWatching}"> 
+        <a :href="item.id" :aria-label="`Move to section ${item.title}`" class="nav-bar-link" :class="{highlighted: section.isWatching}"> 
           <SvgIcon v-if="isSmallDevice" class="nav-bar-icon" :class="{'icon-highlighted': section.isWatching}" :name="section.iconName" :size="{height: 12, width:12}"/>
-          <span v-else> {{section.name}}</span> 
+          <span v-else> {{item.title}}</span> 
         </a>
       </li>  
       <li v-if="!isSmallDevice"
@@ -29,6 +29,13 @@
   import { inject } from 'vue';
   import {StateKey} from '@/state/state';
   import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
+  import { NavigationBarItem } from '@/pages/portfolio/models/PortfolioViewModel';
+
+  interface NavigationBarProps{
+    items: NavigationBarItem[]
+  }
+
+  const props = defineProps<NavigationBarProps>()
 
 
   const {isSmallDevice, isScrollAtTop, sections} = inject(StateKey)!;

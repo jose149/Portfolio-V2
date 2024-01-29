@@ -12,7 +12,7 @@ const portfolioStore = usePortfolioStore()
 </script>
 
 <template>
-  <Header :image="''" :links="portfolioStore.sections"/>
+  <Header :image="portfolioStore.logoImage" :links="portfolioStore.sections"/>
   <main>
     <Banner id="section-0"/>
     <AboutMe id="section-1"/>
