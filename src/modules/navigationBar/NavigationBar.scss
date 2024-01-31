@@ -1,13 +1,8 @@
-.navigation-bar{
-    position: fixed;
-    left: 0px;
-    padding-right: 2rem;
-    width: 100%;
-    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
+.navigation-bar-text{
     display: flex;
-    z-index: 2;
     transition: all .5s;
     background: transparent;
+    
     @media only screen and (max-width: $bp-large){
         padding: .5rem 0;
     }

@@ -8,9 +8,12 @@
         @after-leave="updateVisibleItem(index)"
         appear
       >
+      <!-- <div v-if="isItemVisible(index)">
+          <SvgIcon :name="`${logo}`" :size="isSmallDevice ?{height: 100, width: 100}: {height: 192, width:192}"/>
+        </div> -->
       
         <div v-if="isItemVisible(index)">
-          <SvgIcon :name="`${logo}`" :size="isSmallDevice ?{height: 100, width: 100}: {height: 192, width:192}"/>
+          <SvgIcon :name="`${logo}`" :size="{height: 192, width:192}"/>
         </div>
       </transition>
     </div>
@@ -20,12 +23,9 @@
 
 <script lang="ts" setup>
 
-import { inject, ref } from 'vue';
+import { ref } from 'vue';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
 import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
-import { StateKey } from "@/state/state";
-
-const {isSmallDevice} = inject(StateKey)!;
 
 
 

@@ -1,8 +1,7 @@
 import { getMarketOrigin } from "@/libraries";
 import { Section } from "./PortfolioViewModel";
-import type { Image } from '@/general/viewModel'
 
-export const portfolioSections: Section[] = [
+export function getPortfolioSections(): Section[] {return [
 {
   id: '0',
   title: 'Home',
@@ -28,11 +27,8 @@ export const portfolioSections: Section[] = [
   title: 'Contact',
   url: `${getMarketOrigin()}/section-4`
 }
-]
+]}
 
-export function getOwnerLogo():Image{
-  return {
-    src: '/assets/images/Miniprojects/logo.png',
-    alt: 'Owner logo'
-  }
+export function getOwnerLogoPath():string{
+  return '/assets/images/Miniprojects/logo.png'
 }

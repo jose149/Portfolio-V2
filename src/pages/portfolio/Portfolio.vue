@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Header from '@/modules/header/Header.vue'
 import Banner from '@/components/Banner.vue'
-import Technologies from '@/components/Technologies.vue'
-import Projects from '@/components/Projects.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import Contact from '@/components/Contact.vue'
+// import Technologies from '@/components/Technologies.vue'
+// import Projects from '@/components/Projects.vue'
+// import AboutMe from '@/components/AboutMe.vue'
+// import Contact from '@/components/Contact.vue'
 import Footer from '@/components/Footer.vue'
 import { usePortfolioStore } from './stores/PortfolioStore'
 
@@ -12,13 +12,13 @@ const portfolioStore = usePortfolioStore()
 </script>
 
 <template>
-  <Header :image="portfolioStore.logoImage" :links="portfolioStore.sections"/>
+  <Header :image="portfolioStore.getOwnerLogoImageSource()" :items="portfolioStore.getNavigationTextItems()"/>
   <main>
     <Banner id="section-0"/>
-    <AboutMe id="section-1"/>
-    <Technologies id="section-2"/>
-    <Projects id="section-3"/>
-    <Contact id="section-4"/>
+    <!-- <AboutMe id="section-1"/> -->
+    <!-- <Technologies id="section-2"/> -->
+    <!-- <Projects id="section-3"/> -->
+    <!-- <Contact id="section-4"/> -->
   </main>
   <Footer/>
 </template>

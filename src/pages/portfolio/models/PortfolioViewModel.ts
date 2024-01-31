@@ -4,14 +4,24 @@ export interface Section{
   url: string;
 }
 
+
 export interface NavigationBarItem{
   id: string;
   title: string;
   url: string;
+  isSelected: boolean;
 }
 
-
-export interface NavigationItem{
-  title: string;
+export interface NavigationBarTextItem{
+  id: string;
+  text: string;
   url: string;
+  isSelected?: boolean;
+}
+
+export interface NavigationBarIconItem{
+  id: string;
+  iconName: string;
+  url: string;
+  isSelected: boolean;
 }
