@@ -2,13 +2,15 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import { NavigationBarTextItem, Section } from '../models/PortfolioViewModel';
 import { getOwnerLogoPath, getPortfolioSections } from '../models/PortfolioModel';
-import type { Image } from '@/general/viewModel'
-import { getImageURL } from '@/libraries/helpers/iamges/images';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
+  const SMALL_DEVICE_THRESHOLD = 800
+
   // State
   const sections = ref<Section[]>(getPortfolioSections())
   const ownerLogoPath = ref<string>(getOwnerLogoPath())
+
+  const isSmallDevice = ref<boolean>(window.innerWidth < SMALL_DEVICE_THRESHOLD);
 
   // Actions
 
@@ -30,6 +32,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   return {
     // State
     sections,
+    isSmallDevice,
 
     // Actions
     getNavigationTextItems,

@@ -30,5 +30,5 @@ export function getPortfolioSections(): Section[] {return [
 ]}
 
 export function getOwnerLogoPath():string{
-  return '/assets/images/Miniprojects/logo.png'
+  return '/assets/images/logos/logo.png'
 }

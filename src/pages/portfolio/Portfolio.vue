@@ -2,13 +2,21 @@
 import Header from '@/modules/header/Header.vue'
 import Banner from '@/components/Banner.vue'
 // import Technologies from '@/components/Technologies.vue'
-// import Projects from '@/components/Projects.vue'
+import Projects from '@/components/Projects.vue'
 // import AboutMe from '@/components/AboutMe.vue'
 // import Contact from '@/components/Contact.vue'
-import Footer from '@/components/Footer.vue'
+// import Footer from '@/components/Footer.vue'
 import { usePortfolioStore } from './stores/PortfolioStore'
 
 const portfolioStore = usePortfolioStore()
+const SMALL_DEVICE_THRESHOLD = 800
+  window.addEventListener(
+    'resize',
+    () =>
+      {
+        portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD;
+      }
+  );
 </script>
 
 <template>
@@ -17,10 +25,10 @@ const portfolioStore = usePortfolioStore()
     <Banner id="section-0"/>
     <!-- <AboutMe id="section-1"/> -->
     <!-- <Technologies id="section-2"/> -->
-    <!-- <Projects id="section-3"/> -->
+    <Projects id="section-3"/>
     <!-- <Contact id="section-4"/> -->
   </main>
-  <Footer/>
+  <!-- <Footer/> -->
 </template>
 
 <style lang="scss">

@@ -3,7 +3,7 @@
       <header class="project-header">
         <p class="heading-3 project-heading">{{ project.title }}</p>
         <div class="project-technologies">
-          <SvgIcon v-for="technology in project.technologies" :name="technology" :size="isSmallDevice?{width: 20, height:20}:{width: 30, height:30}"/>
+          <SvgIcon v-for="technology in project.technologies" :name="technology" :size="portfolioStore.isSmallDevice?{width: 20, height:20}:{width: 30, height:30}"/>
         </div>
       </header>
       <img loading="lazy" class="project-image" :src="projectImage" :alt="project.image.alt">
@@ -26,7 +26,7 @@
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
 import type { IImage } from './Projects.vue';
-
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
 
 export interface IProject {
   title: string;
@@ -37,10 +37,8 @@ export interface IProject {
   technologies?: SvgIconType[];
   date?: Date;
 }
-import { StateKey } from "@/state/state";
-import { inject } from 'vue';
 
-const {isSmallDevice} = inject(StateKey)!;
+const portfolioStore = usePortfolioStore()
 interface ProjectProps{
   project: IProject;
 }

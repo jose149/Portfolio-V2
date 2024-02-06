@@ -3,7 +3,7 @@
     <img loading="lazy" class="mini-project-image" :src="imageUrl" :alt="miniProject.image.alt">
     <p class="mini-project-header">
       <span class="heading-3-link header-title">{{ miniProject.title }}</span>
-      <span class="heading-3-link header-link">More details <SvgIcon name="RightArrow" :size="isSmallDevice
+      <span class="heading-3-link header-link">More details <SvgIcon name="RightArrow" :size="portfolioStore.isSmallDevice
           ?{height:15, width: 15}
           :{height:18, width:18}"/></span> 
     </p>
@@ -13,8 +13,7 @@
 <script lang="ts" setup>
 import type { IImage } from './Projects.vue';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
-import { inject } from 'vue';
-import { StateKey } from '@/state/state';
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
 
 export interface IMiniProject {
   title: string;
@@ -22,7 +21,7 @@ export interface IMiniProject {
   link: string
 }
 
-const {isSmallDevice} = inject(StateKey)!;
+const portfolioStore = usePortfolioStore()
 
 interface MiniProjectProps{
   miniProject: IMiniProject;
