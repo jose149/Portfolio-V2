@@ -12,23 +12,23 @@
     width: 100%;
     aspect-ratio: 5 / 3;
     object-fit: cover;
-    
+
     filter: saturate(0.3);
-    transition: all .5s;
+    transition: all 0.5s;
     @media only screen and (max-width: $bp-medium) {
-      filter: none
+      filter: none;
     }
   }
-  
+
   &-header {
     display: flex;
     flex-direction: column;
   }
 }
-.header-title{
+.header-title {
   color: $color-white;
 }
-.header-link{
+.header-link {
   color: $color-primary;
   font-size: 1.8rem;
   line-height: 1;
@@ -46,10 +46,8 @@
     filter: none;
   }
 
-  .mini-project:hover{
+  .mini-project:hover {
     filter: brightness(1.1);
     transform: scale(1.1);
   }
 }
-
-

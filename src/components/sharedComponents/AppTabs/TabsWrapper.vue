@@ -1,42 +1,45 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect } from "vue";
 
-import SelectedUnderline from './SelectedUnderline.vue'
+import SelectedUnderline from "./SelectedUnderline.vue";
 
 interface TabsWrapperProps {
-  tabTitles: any[]
-  selectedTitleIndex: number
+  tabTitles: any[];
+  selectedTitleIndex: number;
 }
 
-type TabsWrapperEmits = (eventName: 'selected-tab-title-index', selectedTitleIndex: number) => void
+type TabsWrapperEmits = (
+  eventName: "selected-tab-title-index",
+  selectedTitleIndex: number,
+) => void;
 
-const props = defineProps<TabsWrapperProps>()
-const emit = defineEmits<TabsWrapperEmits>()
+const props = defineProps<TabsWrapperProps>();
+const emit = defineEmits<TabsWrapperEmits>();
 
-const selectedTitleIndex = ref<number>(props.selectedTitleIndex)
+const selectedTitleIndex = ref<number>(props.selectedTitleIndex);
 
-function setSelectedTabTitleIndex (index: number): void {
-  selectedTitleIndex.value = index
-  emit('selected-tab-title-index', selectedTitleIndex.value)
+function setSelectedTabTitleIndex(index: number): void {
+  selectedTitleIndex.value = index;
+  emit("selected-tab-title-index", selectedTitleIndex.value);
 }
 
 /*
  *  SelectedUnderline animation
  */
-const tabElements = ref<Element[]>([])
-const selectedTabElementWidth = ref(0)
-const left = ref(0)
+const tabElements = ref<Element[]>([]);
+const selectedTabElementWidth = ref(0);
+const left = ref(0);
 watchEffect(
   () => {
     selectedTabElementWidth.value =
-      tabElements.value[selectedTitleIndex.value].clientWidth
+      tabElements.value[selectedTitleIndex.value].clientWidth;
 
     left.value =
       tabElements.value[selectedTitleIndex.value].getBoundingClientRect().left -
-      tabElements.value[0].getBoundingClientRect().left
+      tabElements.value[0].getBoundingClientRect().left;
   },
-  { flush: 'post' }
-)
+  { flush: "post" },
+);
 </script>
 
 <template>

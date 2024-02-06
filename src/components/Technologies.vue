@@ -1,18 +1,21 @@
 <script lang="ts" setup>
-import { technologyModules, TechnologyModuleType } from '@/libraries/data/technologies'
-import TechnologyModule from '@/components/technologies/TechnologyModule.vue'
+import {
+  technologyModules,
+  TechnologyModuleType,
+} from "@/libraries/data/technologies";
+import TechnologyModule from "@/components/technologies/TechnologyModule.vue";
 
-function shouldShowTechnologyModule (module: TechnologyModuleType): boolean {
+function shouldShowTechnologyModule(module: TechnologyModuleType): boolean {
   switch (module) {
     case TechnologyModuleType.FrontEnd:
-      return true
+      return true;
     case TechnologyModuleType.BackEnd:
-      return false
+      return false;
     case TechnologyModuleType.UxUi:
-      return false
+      return false;
 
     default:
-      return false
+      return false;
   }
 }
 </script>
@@ -34,5 +37,4 @@ function shouldShowTechnologyModule (module: TechnologyModuleType): boolean {
 <style scoped lang="scss">
 @import "@/styles/main.scss";
 @import "@/styles/layout/Technologies.scss";
-
 </style>

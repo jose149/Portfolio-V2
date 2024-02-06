@@ -1,42 +1,47 @@
 <script lang="ts" setup>
-import { ref, watchEffect } from 'vue'
-import SelectedUnderline from './SelectedUnderline.vue'
+import { ref, watchEffect } from "vue";
+import SelectedUnderline from "./SelectedUnderline.vue";
 
 export interface AppTabsProps {
-  tabTitles: string[]
-  defaultSelectedTitle?: string
+  tabTitles: string[];
+  defaultSelectedTitle?: string;
 }
 
-const props = defineProps<AppTabsProps>()
+const props = defineProps<AppTabsProps>();
 
-const defaultSelectedTitleIndex = props.tabTitles.findIndex((title) => title === props.defaultSelectedTitle)
+const defaultSelectedTitleIndex = props.tabTitles.findIndex(
+  (title) => title === props.defaultSelectedTitle,
+);
 
-type AppTabsEmits = (event: 'selected-tab-title', selectedTitle: string) => void
+type AppTabsEmits = (
+  event: "selected-tab-title",
+  selectedTitle: string,
+) => void;
 
-const emit = defineEmits<AppTabsEmits>()
+const emit = defineEmits<AppTabsEmits>();
 
-const selectedTitleIndex = ref<number>(defaultSelectedTitleIndex)
+const selectedTitleIndex = ref<number>(defaultSelectedTitleIndex);
 
-function setSelectedTabTitleIndex (titleIndex: number): void {
-  selectedTitleIndex.value = titleIndex
-  const selectedTabTitle = props.tabTitles[titleIndex]
-  emit('selected-tab-title', selectedTabTitle)
+function setSelectedTabTitleIndex(titleIndex: number): void {
+  selectedTitleIndex.value = titleIndex;
+  const selectedTabTitle = props.tabTitles[titleIndex];
+  emit("selected-tab-title", selectedTabTitle);
 }
 
-const tabElements = ref<Element[]>([])
-const selectedTabElementWidth = ref(0)
-const left = ref(0)
+const tabElements = ref<Element[]>([]);
+const selectedTabElementWidth = ref(0);
+const left = ref(0);
 watchEffect(
   () => {
     selectedTabElementWidth.value =
-      tabElements.value[selectedTitleIndex.value].clientWidth
+      tabElements.value[selectedTitleIndex.value].clientWidth;
 
     left.value =
       tabElements.value[selectedTitleIndex.value].getBoundingClientRect().left -
-      tabElements.value[0].getBoundingClientRect().left
+      tabElements.value[0].getBoundingClientRect().left;
   },
-  { flush: 'post' }
-)
+  { flush: "post" },
+);
 </script>
 
 <template>

@@ -1,63 +1,62 @@
-.navigation-bar-horizontal{
+.navigation-bar-horizontal {
+  height: 100%;
+  display: flex;
+  transition: all 0.5s;
+  background: transparent;
+
+  .nav-bar-link,
+  .nav-bar-link:link,
+  .nav-bar-link:visited {
+    position: relative;
+    padding: 0 1rem;
     height: 100%;
+    cursor: pointer;
+    color: $color-white;
+    text-align: center;
+    font-size: 1.8rem;
     display: flex;
-    transition: all .5s;
-    background: transparent;
-    
-    .nav-bar-link, 
-    .nav-bar-link:link,
-    .nav-bar-link:visited{  
-        position: relative;
-        padding: 0 1rem;
-        height: 100%;
-        cursor: pointer;
-        color: $color-white;
-        text-align: center;
-        font-size: 1.8rem;
-        display: flex;
-        align-items: center;
-    }
-    .highlighted{
-        color: $color-primary-light;
-        font-weight: 600;
-    }
+    align-items: center;
+  }
+  .highlighted {
+    color: $color-primary-light;
+    font-weight: 600;
+  }
 
-    .nav-bar-link:hover {
-        color: $color-primary-light;
-        font-weight: 600;
+  .nav-bar-link:hover {
+    color: $color-primary-light;
+    font-weight: 600;
+  }
+
+  @media (hover: hover) {
+    .nav-bar-link:hover.nav-bar-item {
+      filter: brightness(1.2);
     }
-    
-    @media (hover: hover) {
-        .nav-bar-link:hover.nav-bar-item{
-            filter: brightness(1.2);
-        }
-    }
-    
-    .nav-bar-icon{
-        background-color: $color-background-navigation-bar-mobile-icons;
-        padding: 1.5rem;
-        border-radius: 50%;
-        transition: all 0.5s;
-        box-shadow: 0 0 .5rem black;
-        filter: drop-shadow(0 0 .1rem rgba(black,0.2));
-    }
-    .icon-highlighted{
-        background-color: $color-primary;
-    }
-        
-}  
-.desktop{
-    top: 0;
-    justify-content: end;
+  }
+
+  .nav-bar-icon {
+    background-color: $color-background-navigation-bar-mobile-icons;
+    padding: 1.5rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+    box-shadow: 0 0 0.5rem black;
+    filter: drop-shadow(0 0 0.1rem rgba(black, 0.2));
+  }
+  .icon-highlighted {
+    background-color: $color-primary;
+  }
 }
-.mobile{
-    justify-content: space-evenly;
-    bottom: 0;
-    background-color: $color-background-navigation-bar-mobile;
-    color: transparent;
+.desktop {
+  top: 0;
+  justify-content: end;
+}
+.mobile {
+  justify-content: space-evenly;
+  bottom: 0;
+  background-color: $color-background-navigation-bar-mobile;
+  color: transparent;
 }
 
-.top{
-    box-sizing: border-box;
-    background-color: $color-black-dark-3;
+.top {
+  box-sizing: border-box;
+  background-color: $color-black-dark-3;
 }

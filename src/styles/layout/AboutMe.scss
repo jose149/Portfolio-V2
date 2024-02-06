@@ -1,15 +1,15 @@
-.section-about-me{
+.section-about-me {
   position: relative;
   background: $color-black-dark;
-   
-  .about-me-heading{
+
+  .about-me-heading {
     grid-column: 1/-1;
     justify-self: center;
     color: $color-white;
     font-size: 4rem;
     z-index: 1;
   }
-  .about-me-square-background{
+  .about-me-square-background {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     position: absolute;
@@ -17,7 +17,11 @@
     left: 0;
     height: 100%;
     width: 50%;
-    background: linear-gradient(180deg,$color-black-light 0%, $color-black-light-2 100%);
+    background: linear-gradient(
+      180deg,
+      $color-black-light 0%,
+      $color-black-light-2 100%
+    );
     z-index: 0;
     @media only screen and (max-width: $bp-medium) {
       bottom: 0;
@@ -25,8 +29,8 @@
       border-bottom-right-radius: 0;
     }
   }
-  
-  .introduction{
+
+  .introduction {
     grid-row: 2;
     grid-column: 6/-2;
     display: flex;
@@ -34,31 +38,35 @@
     align-items: center;
     gap: 2rem;
     z-index: 1;
-    @media only screen and (max-width: $bp-large){
+    @media only screen and (max-width: $bp-large) {
       grid-column: 2/-2;
       padding-bottom: 5rem;
-    }  
+    }
 
-    &-image{
+    &-image {
       width: 100%;
       padding: 2rem 20% 0 20%;
-      background: radial-gradient(37.61% 45.84% at 50% 70.31%, #8d0f20 0%, #8a1121 97.99%, rgba(174, 21, 41, 0.01) 100%);
-      @media only screen and (max-width: $bp-large){
+      background: radial-gradient(
+        37.61% 45.84% at 50% 70.31%,
+        #8d0f20 0%,
+        #8a1121 97.99%,
+        rgba(174, 21, 41, 0.01) 100%
+      );
+      @media only screen and (max-width: $bp-large) {
         padding: 0 20%;
-      }  
+      }
     }
-    &-profile{
-
-      .profile-name{
-        color:$color-white;
+    &-profile {
+      .profile-name {
+        color: $color-white;
         margin-bottom: 1rem;
       }
-      .profile-job{
+      .profile-job {
         color: $color-white;
       }
     }
-    
-    &-media{
+
+    &-media {
       grid-column: 2/5;
       grid-row: 1/-1;
       width: 100%;
@@ -66,7 +74,7 @@
       justify-content: center;
       align-self: center;
       gap: 1.5rem;
-      a{
+      a {
         box-shadow: 0px 0px 10px rgba(#000000, 0.1);
         padding: 0.5rem;
         border-radius: 5px;
@@ -74,7 +82,7 @@
         transition: all 0.3s;
         background-color: $color-white;
         @media (hover: hover) {
-          &:hover{
+          &:hover {
             background-color: $color-primary;
             fill: $color-white;
             transform: scale(1.3);
@@ -84,7 +92,7 @@
     }
   }
 
-  .description{
+  .description {
     padding-right: 2rem;
     grid-column: 2/6;
     display: flex;
@@ -93,32 +101,32 @@
     justify-content: end;
     gap: 7rem;
     z-index: 1;
-    @media only screen and (max-width: $bp-large){
+    @media only screen and (max-width: $bp-large) {
       grid-row: 3;
       grid-column: 2/-2;
       align-items: center;
-    }  
-    &-heading{
+    }
+    &-heading {
       font-size: 4rem;
-      .primary{
+      .primary {
         color: $color-primary-light;
       }
     }
-    
-    &-text{
+
+    &-text {
       display: flex;
       flex-direction: column;
       gap: 3rem;
     }
 
-    &-paragraph{
+    &-paragraph {
       color: $color-white;
       font-size: 1.8rem;
       font-weight: 300;
       text-align: start;
     }
 
-    .cta{
+    .cta {
       width: max-content;
       position: relative;
       padding: $button-padding;
@@ -127,7 +135,11 @@
       cursor: pointer;
       transition: all $transition-time;
       border-radius: $border-radius;
-      background: linear-gradient(135deg, $color-primary-light 0%, $color-primary-dark 100%);
+      background: linear-gradient(
+        135deg,
+        $color-primary-light 0%,
+        $color-primary-dark 100%
+      );
       color: white;
       @media (hover: hover) {
         &:hover {
@@ -138,13 +150,9 @@
       }
     }
   }
-  
-  
 
-  .experience{
+  .experience {
     grid-column: 2/-2;
     grid-row: 2;
   }
-  
-
 }

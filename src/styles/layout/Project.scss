@@ -1,8 +1,8 @@
-.project{
+.project {
   border-radius: $border-radius;
   padding: 5rem;
   display: grid;
-  grid-template-columns: repeat(4,12%) 1fr repeat(4,12%);
+  grid-template-columns: repeat(4, 12%) 1fr repeat(4, 12%);
   grid-template-rows: min-content min-content;
   justify-content: center;
   row-gap: 5rem;
@@ -11,12 +11,12 @@
   @media only screen and (max-width: $bp-medium) {
     row-gap: 5rem;
   }
-  & > *{
+  & > * {
     @media only screen and (max-width: $bp-medium) {
       grid-column: 1/-1;
     }
   }
-  .project-header{
+  .project-header {
     grid-column: 1/-1;
     display: flex;
     align-items: center;
@@ -26,11 +26,11 @@
       flex-direction: column;
       gap: 3rem;
     }
-    .project-heading{
+    .project-heading {
       font-size: 3rem;
     }
-    .project-technologies{
-      padding-bottom: .5rem;
+    .project-technologies {
+      padding-bottom: 0.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,18 +38,17 @@
       overflow-x: auto;
     }
   }
-  
 
-  .project-image{
+  .project-image {
     grid-column: 1/6;
-    width:100%;
+    width: 100%;
     border-radius: 10px;
     border: 1px solid rgba($color-white, 0.1);
     @media only screen and (max-width: $bp-medium) {
       grid-column: 1/-1;
-    } 
+    }
   }
-  .project-description{
+  .project-description {
     grid-column: 6/-1;
     padding-left: 5rem;
     width: 100%;
@@ -64,11 +63,11 @@
       gap: 5rem;
     }
 
-    .project-summary{
+    .project-summary {
       color: $color-white;
     }
 
-    .project-footer{
+    .project-footer {
       width: 100%;
       display: flex;
       align-items: center;
@@ -77,7 +76,7 @@
         justify-content: center;
       }
 
-      .cta{
+      .cta {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -101,7 +100,7 @@
         }
       }
 
-      .project-repository{
+      .project-repository {
         display: flex;
         font-weight: 600;
         align-items: center;
@@ -112,5 +111,5 @@
         color: $color-primary;
       }
     }
-  }  
+  }
 }

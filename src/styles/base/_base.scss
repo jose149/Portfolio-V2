@@ -1,57 +1,61 @@
-*,*::before,*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    -webkit-tap-highlight-color: transparent;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-tap-highlight-color: transparent;
 }
 
-a, a:visited, a:active{
-    background-color: none;
-    color: currentColor;
-    text-decoration: none;
+a,
+a:visited,
+a:active {
+  background-color: none;
+  color: currentColor;
+  text-decoration: none;
 }
 
-html{
-    box-sizing: border-box;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    @media only screen and (max-width: $bp-large){
-        font-size: 50%;
-    }    
-    @media only screen and (max-width: $bp-small) {
-        font-size: 40%;
-      }
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 40%;
+  }
 }
-body{
-    font-family: $font-primary;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-::selection{
-    background-color: $color-primary;
-    color: $color-white;
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-button{
-    background: none;
-    border: none;
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }
 
-.section{
-    padding: 10rem 0;
-    display: grid;
-    grid-template-columns: 1fr repeat(8, 9vw) 1fr;
-    &:not(:last-child){
-        min-height: 100vh;
-    }
-    @media only screen and (max-width: $bp-medium) {
-        padding: 5rem 0;
-        grid-template-columns: 1fr repeat(8, 11vw) 1fr;
-    }
+button {
+  background: none;
+  border: none;
+}
+
+.section {
+  padding: 10rem 0;
+  display: grid;
+  grid-template-columns: 1fr repeat(8, 9vw) 1fr;
+  &:not(:last-child) {
+    min-height: 100vh;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding: 5rem 0;
+    grid-template-columns: 1fr repeat(8, 11vw) 1fr;
+  }
 }

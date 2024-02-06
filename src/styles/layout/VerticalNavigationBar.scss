@@ -1,4 +1,4 @@
-.navigation-menu{
+.navigation-menu {
   position: sticky;
   top: 0;
   left: 0;
@@ -10,32 +10,29 @@
   justify-content: center;
   align-items: center;
 
-  .navigation-menu-list{
+  .navigation-menu-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
 
-  .navigation-menu__item{
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0;
-    cursor: pointer;
-    
-  }
+    .navigation-menu__item {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+      cursor: pointer;
+    }
 
-
-  &__link, 
-  &__link:link,
-  &__link:visited{
+    &__link,
+    &__link:link,
+    &__link:visited {
       position: relative;
       color: currentColor;
       font-size: 1.8rem;
       font-weight: 400;
       text-transform: uppercase;
+    }
   }
-}
 }

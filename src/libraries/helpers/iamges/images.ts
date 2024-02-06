@@ -1,5 +1,5 @@
-import type { Image } from '@/general/viewModel'
+import type { Image } from "@/general/viewModel";
 
-export function getImageURL (image: Image): URL {
-  return new URL(image.src, import.meta.url)
+export function getImageURL(image: Image): URL {
+  return new URL(image.src, import.meta.url);
 }

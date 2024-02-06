@@ -1,30 +1,31 @@
 <script setup lang="ts">
-import Header from '@/modules/header/Header.vue'
-import Banner from '@/components/Banner.vue'
+import Header from "@/modules/header/Header.vue";
+import Banner from "@/components/Banner.vue";
 // import Technologies from '@/components/Technologies.vue'
-import Projects from '@/components/Projects.vue'
+import Projects from "@/components/Projects.vue";
 // import AboutMe from '@/components/AboutMe.vue'
 // import Contact from '@/components/Contact.vue'
 // import Footer from '@/components/Footer.vue'
-import { usePortfolioStore } from './stores/PortfolioStore'
+import { usePortfolioStore } from "./stores/PortfolioStore";
 
-const portfolioStore = usePortfolioStore()
-const SMALL_DEVICE_THRESHOLD = 800
-window.addEventListener(
-  'resize',
-  () => {
-    portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD
-  }
-)
+const portfolioStore = usePortfolioStore();
+const SMALL_DEVICE_THRESHOLD = 800;
+window.addEventListener("resize", () => {
+  portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD;
+});
 </script>
 
 <template>
-  <Header class="header" :image="portfolioStore.getOwnerLogoImageSource()" :items="portfolioStore.getNavigationTextItems()"/>
+  <Header
+    class="header"
+    :image="portfolioStore.getOwnerLogoImageSource()"
+    :items="portfolioStore.getNavigationTextItems()"
+  />
   <main>
-    <Banner id="section-0"/>
+    <Banner id="section-0" />
     <!-- <AboutMe id="section-1"/> -->
     <!-- <Technologies id="section-2"/> -->
-    <Projects id="section-3"/>
+    <Projects id="section-3" />
     <!-- <Contact id="section-4"/> -->
   </main>
   <!-- <Footer/> -->
@@ -32,15 +33,15 @@ window.addEventListener(
 
 <style lang="scss">
 @import "@/styles/main.scss";
-#app{
+#app {
   width: 100%;
   background-color: $color-background;
   overflow: hidden;
 }
-.header{
+.header {
   height: 60px;
 }
-.contact-icon{
+.contact-icon {
   position: fixed;
   bottom: 10rem;
   right: 5rem;
@@ -49,10 +50,10 @@ window.addEventListener(
   border-radius: 50%;
   transition: all 0.5s;
   z-index: 2;
-  box-shadow: 0 0 .5rem black;
-  filter: drop-shadow(0 0 .5rem black);
+  box-shadow: 0 0 0.5rem black;
+  filter: drop-shadow(0 0 0.5rem black);
 }
-.dark-square{
+.dark-square {
   position: absolute;
   top: 115vh;
   left: 0;
