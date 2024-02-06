@@ -10,13 +10,12 @@ import { usePortfolioStore } from './stores/PortfolioStore'
 
 const portfolioStore = usePortfolioStore()
 const SMALL_DEVICE_THRESHOLD = 800
-  window.addEventListener(
-    'resize',
-    () =>
-      {
-        portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD;
-      }
-  );
+window.addEventListener(
+  'resize',
+  () => {
+    portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD
+  }
+)
 </script>
 
 <template>

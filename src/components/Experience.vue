@@ -1,6 +1,6 @@
 <!-- <template>
     <div class="soft-skills-container">
-      <div 
+      <div
       v-for="fact in experienceFacts"
       :key="fact.title"
       class="experience-fact"
@@ -23,7 +23,7 @@ const {isSmallDevice} = inject(StateKey)!;
   interface ExperienceFacts {
     title: string;
     icon?: SvgIconType
-    quantity?: string; 
+    quantity?: string;
     isLarger?: boolean;
   }
   const experienceFacts: ExperienceFacts[] = [

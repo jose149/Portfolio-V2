@@ -5,26 +5,26 @@
       <span class="heading-3-link header-title">{{ miniProject.title }}</span>
       <span class="heading-3-link header-link">More details <SvgIcon name="RightArrow" :size="portfolioStore.isSmallDevice
           ?{height:15, width: 15}
-          :{height:18, width:18}"/></span> 
+          :{height:18, width:18}"/></span>
     </p>
   </a>
 </template>
 
 <script lang="ts" setup>
-import type { IImage } from './Projects.vue';
-import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
-import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
+import type { IImage } from './Projects.vue'
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore'
 
 export interface IMiniProject {
-  title: string;
-  image: IImage;
+  title: string
+  image: IImage
   link: string
 }
 
 const portfolioStore = usePortfolioStore()
 
-interface MiniProjectProps{
-  miniProject: IMiniProject;
+interface MiniProjectProps {
+  miniProject: IMiniProject
 }
 
 const props = defineProps<MiniProjectProps>()

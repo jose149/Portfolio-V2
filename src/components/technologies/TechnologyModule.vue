@@ -1,35 +1,35 @@
 <script setup lang='ts'>
-import { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import { type SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel'
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
-import { StateKey } from '@/state/state';
-import { inject, onMounted, ref } from 'vue';
-interface TechnologyModuleTechnology{
-  name: string;
-  iconName: SvgIconType;
+import { StateKey } from '@/state/state'
+import { inject, onMounted, ref } from 'vue'
+interface TechnologyModuleTechnology {
+  name: string
+  iconName: SvgIconType
 }
 interface TechnologyModuleProps {
-  heading: string;
+  heading: string
   technologies: TechnologyModuleTechnology[]
-  show: boolean;
+  show: boolean
 }
 const props = defineProps<TechnologyModuleProps>()
-  const {isSmallDevice} = inject(StateKey)!;
-  const showModule = ref<boolean>(props.show);
+const { isSmallDevice } = inject(StateKey)!
+const showModule = ref<boolean>(props.show)
 
-const techGroup = ref<HTMLDivElement | null>(null);
-const groupHeight = ref<string>("");
+const techGroup = ref<HTMLDivElement | null>(null)
+const groupHeight = ref<string>('')
 
 onMounted(() => {
-  const resizeObserver = new ResizeObserver(setGroupHeight);
+  const resizeObserver = new ResizeObserver(setGroupHeight)
   if (!techGroup.value) {
-    return;
+    return
   }
-  resizeObserver.observe(techGroup.value);
-  setGroupHeight();
-});
+  resizeObserver.observe(techGroup.value)
+  setGroupHeight()
+})
 
-function setGroupHeight() {
-  groupHeight.value = `${techGroup.value?.clientHeight}px`;
+function setGroupHeight () {
+  groupHeight.value = `${techGroup.value?.clientHeight}px`
 }
 </script>
 
@@ -42,9 +42,9 @@ function setGroupHeight() {
         }:{
           height:16, width: 16
         }"/>
-      <h3 class="technology-module-heading"> 
+      <h3 class="technology-module-heading">
         {{  $props.heading }}
-      </h3> 
+      </h3>
     </header>
       <div class="technology-module-description" :class="{open:showModule}">
         <div ref="techGroup" class="technologies-container">
@@ -122,7 +122,7 @@ function setGroupHeight() {
           color: $color-white;
         }
       }
-      } 
+      }
     }
   }
 </style>

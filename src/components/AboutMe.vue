@@ -5,12 +5,12 @@
     <div class="description">
       <header class="heading-3 description-heading"><span class="primary">Hi,</span> I'm Jose</header>
       <div class="description-text">
-        <p class="description-paragraph">I'm a passionated Front end engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p> 
+        <p class="description-paragraph">I'm a passionated Front end engineer, focused on developing the best solutions, in the most atomic and profitable way, based on the customers needs.</p>
         <p class="description-paragraph">Recently I have been centered on continuous delivery and integration, design patterns, software quality techniques and best practices.</p>
       </div>
-      <a 
+      <a
           class="cta"
-          href="/assets/documents/JoseCrespiCV.pdf" 
+          href="/assets/documents/JoseCrespiCV.pdf"
           download="CV_Jose_Crespi">
             Download CV
       </a>
@@ -18,7 +18,7 @@
     <div class="introduction">
       <img loading="lazy" class="introduction-image" rel="preload" src="/assets/images/Profile/perfil2.webp" alt="Profile photo">
       <div class="introduction-profile">
-        <p class="heading-3 profile-name">José Crespí Valero</p> 
+        <p class="heading-3 profile-name">José Crespí Valero</p>
         <p class="heading-3 profile-job"> Front end engineer</p>
       </div>
         <div class="introduction-media">
@@ -32,13 +32,10 @@
             <SvgIcon :name="'GitHub2'" :size="{height: 20, width: 20}"/>
           </a>
       </div>
-    </div> 
+    </div>
 
-       
-    
-  </section>           
+  </section>
 </template>
-
 
 <script lang="ts" setup>
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'

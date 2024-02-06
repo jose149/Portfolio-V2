@@ -20,36 +20,34 @@
 </template>
 
 <script lang="ts" setup>
-import { SVG_ICON_TYPE } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import { SVG_ICON_TYPE } from '@/libraries/storybook/svgIcon/SvgIconModel'
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
+
+import { StateKey } from '@/state/state'
+import { inject } from 'vue'
 export interface CardItem {
-  name: string;
-  icon?: string;
+  name: string
+  icon?: string
 }
 
 export interface ICard {
-  title: string;
-  items: CardItem[];
+  title: string
+  items: CardItem[]
 }
 
-import { StateKey } from "@/state/state";
-import { inject } from 'vue';
-
-const {isSmallDevice} = inject(StateKey)!;
-
-
+const { isSmallDevice } = inject(StateKey)!
 
 interface ProductCardProps {
-  card: ICard,
-  isSelected?: boolean;
-  isHighlighted?: boolean;
+  card: ICard
+  isSelected?: boolean
+  isHighlighted?: boolean
 }
 
-defineProps<ProductCardProps>();
+defineProps<ProductCardProps>()
 
-function isIconAble (icon: string):boolean{
+function isIconAble (icon: string): boolean {
   return SVG_ICON_TYPE.some((svgIcon) => svgIcon === icon)
-} 
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -69,7 +67,7 @@ function isIconAble (icon: string):boolean{
     align-items: center;
     -webkit-transition: all .2s;
     backdrop-filter: blur(25px);
-    transition: all .3s;  
+    transition: all .3s;
     transform: translate(-50%, -50%);
     filter: brightness(0.8);
     @media only screen and (max-width: $bp-smallest) {

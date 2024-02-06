@@ -5,7 +5,7 @@
       <FadingCarousel class="carrousel" :logos="mainTechnologylogos!"/>
       <h1 class="heading-1 heading">
         <span class="heading-1-main">Jose Crespi Valero</span>
-        <span 
+        <span
           class="heading-1-sub"
           >Front end developer
         </span>
@@ -17,14 +17,13 @@
   </section>
 </template>
 
-
 <script lang="ts" setup>
 import FadingCarousel from '@/components/sharedComponents/FadingCarousel.vue'
-import {getMainTechnologies} from '@/libraries/data/technologies'
-import {Section} from "@/state/state";
+import { getMainTechnologies } from '@/libraries/data/technologies'
+import { Section } from '@/state/state'
 
 const mainTechnologies = getMainTechnologies()
-const mainTechnologylogos = mainTechnologies.map((technology) => technology.iconName).filter((icon) => !!icon) as string[]
+const mainTechnologylogos = mainTechnologies.map((technology) => technology.iconName).filter((icon) => !!icon)
 </script>
 
 <style scoped lang="scss">

@@ -1,15 +1,14 @@
 export const SVG_ICON_TYPE = [
-  'Bitbucket','Chevron','Cypress','Docker', 'ElasticSearch' ,'Git', 'GitHub3', 'Home', 'Jenkins', 'Kibana','Javascript2', 'Kubernetes', 'Menu','Netlify', 'Octopus', 'Pinia', 'Phone', 'TypeScript', 'GraphQL', 'Jest', 'Grafana', 'Sass', 'Screen', 'Server', 'StoryBook', 'Figma','GoogleAnalytics','GoogleTagManager', 'Hotjar', 'DotNet','CSharp','Vitest','Vue', 'Mail', 'Linkedin', 'GitHub2'
-];
+  'Bitbucket', 'Chevron', 'Cypress', 'Docker', 'ElasticSearch', 'Git', 'GitHub3', 'Home', 'Jenkins', 'Kibana', 'Javascript2', 'Kubernetes', 'Menu', 'Netlify', 'Octopus', 'Pinia', 'Phone', 'TypeScript', 'GraphQL', 'Jest', 'Grafana', 'Sass', 'Screen', 'Server', 'StoryBook', 'Figma', 'GoogleAnalytics', 'GoogleTagManager', 'Hotjar', 'DotNet', 'CSharp', 'Vitest', 'Vue', 'Mail', 'Linkedin', 'GitHub2'
+]
 
-
-export type SvgIconType = (typeof SVG_ICON_TYPE)[number];
+export type SvgIconType = (typeof SVG_ICON_TYPE)[number]
 
 export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
   Bitbucket: 'bitbucket',
-  Chevron:'chevron',
-  Cypress:'cypress',
-  Design:'design',
+  Chevron: 'chevron',
+  Cypress: 'cypress',
+  Design: 'design',
   Docker: 'docker',
   ElasticSearch: 'elasticSearch',
   Git: 'git',
@@ -22,8 +21,8 @@ export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
   Netlify: 'netlify',
   Octopus: 'octopusDeploy',
   TypeScript: 'typeScript',
-  GraphQL:  'graphQL',
-  Home:'home',
+  GraphQL: 'graphQL',
+  Home: 'home',
   Jest: 'jest',
   Javascript2: 'javascript2',
   Grafana: 'grafana',
@@ -33,23 +32,23 @@ export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
   StoryBook: 'storyBook',
   Figma: 'figma',
   GoogleAnalytics: 'googleAnalytics',
-  GoogleTagManager:'googleTagManager',
-  Hotjar:'hotjar',
+  GoogleTagManager: 'googleTagManager',
+  Hotjar: 'hotjar',
   OpenWindow: 'openWindow',
-  Pinia:'pinia',
-  Profile:'profile',
-  Phone:'phone',
+  Pinia: 'pinia',
+  Profile: 'profile',
+  Phone: 'phone',
   DotNet: 'dotNet',
-  CSharp:'cSharp',
+  CSharp: 'cSharp',
   Arrow: 'arrow',
   RightArrow: 'rightArrow',
   Timer: 'timer',
-  EyePlus:'eyePlus',
+  EyePlus: 'eyePlus',
   Mobile: 'mobile',
-  Rocket:'rocket',
+  Rocket: 'rocket',
   Vue: 'vue',
   Vitest: 'vite',
-  Mail: 'mail', 
+  Mail: 'mail',
   Linkedin: 'linkedin',
   GitHub2: 'gitHub2'
 }
@@ -66,10 +65,10 @@ export const SVG_ICON_COLOR = [
   'greyedOutGold',
   'grey',
   'white',
-  'black',
-] as const;
+  'black'
+] as const
 
-export type SvgIconColor = (typeof SVG_ICON_COLOR)[number];
+export type SvgIconColor = (typeof SVG_ICON_COLOR)[number]
 
 export const SVG_ICON_COLOR_MAP: Record<SvgIconColor, string> = {
   currentColor: 'currentColor',
@@ -81,351 +80,350 @@ export const SVG_ICON_COLOR_MAP: Record<SvgIconColor, string> = {
   greyedOutGold: '#413E20',
   grey: '#AAA',
   white: '#FFFFFF',
-  black: '#1A191E',
-};
+  black: '#1A191E'
+}
 
 export interface SvgIconDefaultSettings {
-  width?: number;
-  height?: number;
-  color?: SvgIconColor;
-  colorProperty: 'fill' | 'stroke';
+  width?: number
+  height?: number
+  color?: SvgIconColor
+  colorProperty: 'fill' | 'stroke'
 }
 
 export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
-  SvgIconType,
-  Required<SvgIconDefaultSettings>
+SvgIconType,
+Required<SvgIconDefaultSettings>
 > = {
-  Bitbucket:{
+  Bitbucket: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Chevron:{
+  Chevron: {
     width: 30,
     height: 30,
     color: 'currentColor',
-    colorProperty: 'stroke',
+    colorProperty: 'stroke'
   },
-  Cypress:{
+  Cypress: {
     width: 120,
     height: 120,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Design:{
+  Design: {
     width: 50,
     height: 50,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Docker:{
+  Docker: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  ElasticSearch:{
+  ElasticSearch: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Git:{
+  Git: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  GitHub:{
+  GitHub: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  GitHub3:{
+  GitHub3: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Home:{
+  Home: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Javascript2:{
+  Javascript2: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Jenkins:{
+  Jenkins: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Kibana:{
+  Kibana: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Kubernetes:{
+  Kubernetes: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Menu:{
+  Menu: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Netlify:{
+  Netlify: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Octopus:{
+  Octopus: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   Pinia: {
     width: 319,
     height: 477,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Profile:{
+  Profile: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   TypeScript: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  GraphQL:{
+  GraphQL: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Jest:{
+  Jest: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Grafana:{
+  Grafana: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Sass:{
+  Sass: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Screen:{
+  Screen: {
     width: 50,
     height: 50,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Server:{
+  Server: {
     width: 50,
     height: 50,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  StoryBook:{
+  StoryBook: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   Figma: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   GoogleAnalytics: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  GoogleTagManager:{
+  GoogleTagManager: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Hotjar:{
+  Hotjar: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  DotNet:{
+  DotNet: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  CSharp:{
+  CSharp: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Arrow:{
+  Arrow: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   RightArrow: {
     width: 18,
     height: 18,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Timer:{
+  Timer: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  EyePlus:{
+  EyePlus: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Mobile:{
+  Mobile: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   OpenWindow: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Phone:{
+  Phone: {
     width: 16,
     height: 16,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Rocket:{
+  Rocket: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
-  Vitest:{
+  Vitest: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   Vue: {
     width: 128,
     height: 128,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   Mail: {
     width: 30,
     height: 30,
     color: 'currentColor',
-    colorProperty: 'stroke',
-  }, 
+    colorProperty: 'stroke'
+  },
   Linkedin: {
     width: 30,
     height: 30,
     color: 'currentColor',
-    colorProperty: 'fill',
+    colorProperty: 'fill'
   },
   GitHub2: {
     width: 60,
     height: 60,
     color: 'currentColor',
-    colorProperty: 'fill',
-  },
+    colorProperty: 'fill'
+  }
 }
 
 export interface SvgIconTranslate {
-  x?: number;
-  y?: number;
-  unit?: 'px';
+  x?: number
+  y?: number
+  unit?: 'px'
 }
 
 export interface SvgIconSize {
-  width?: number;
-  height?: number;
-  unit?: 'px';
+  width?: number
+  height?: number
+  unit?: 'px'
 }
 
 export interface SvgIconTransformedProps {
-  width: string;
-  height: string;
-  viewBox: string;
+  width: string
+  height: string
+  viewBox: string
   style: {
     // NOTE: without display: block on svg wrapping div is a bit larger,
     // which break alignment in general
-    display: 'block';
-    fill?: SvgIconColor;
-    stroke?: SvgIconColor;
-    translate?: string;
-  };
+    display: 'block'
+    fill?: SvgIconColor
+    stroke?: SvgIconColor
+    translate?: string
+  }
 }
 
-
-export function transformPropsFormat(
+export function transformPropsFormat (
   name: SvgIconType,
   translate?: SvgIconTranslate,
   size?: SvgIconSize,
   color?: SvgIconColor
 ): SvgIconTransformedProps {
-  const defaultSettings = SVG_ICON_DEFAULT_SETTINGS_MAP[name];
-  const width = size?.width ?? defaultSettings.width;
-  const height = size?.height ?? defaultSettings.height;
-  const unit = translate?.unit ?? 'px';
-  const x = translate?.x ?? 0;
-  const y = translate?.y ?? 0;
+  const defaultSettings = SVG_ICON_DEFAULT_SETTINGS_MAP[name]
+  const width = size?.width ?? defaultSettings.width
+  const height = size?.height ?? defaultSettings.height
+  const unit = translate?.unit ?? 'px'
+  const x = translate?.x ?? 0
+  const y = translate?.y ?? 0
   const translateStyle =
-    x || y ? { translate: `${x}${unit} ${y}${unit}` } : undefined;
+    x || y ? { translate: `${x}${unit} ${y}${unit}` } : undefined
 
   const style = {
     [defaultSettings.colorProperty]:
       SVG_ICON_COLOR_MAP[color ?? defaultSettings.color],
     ...(!!translateStyle && translateStyle),
-    display: 'block' as const,
-  };
+    display: 'block' as const
+  }
 
   return {
     width: `${width}px`,
     height: `${height}px`,
     viewBox: `0 0 ${defaultSettings.width} ${defaultSettings.height}`,
-    style,
-  };
+    style
+  }
 }

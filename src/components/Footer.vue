@@ -5,12 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { StateKey } from "@/state/state";
-import { inject } from 'vue';
+import { StateKey } from '@/state/state'
+import { inject } from 'vue'
 
-const {isSmallDevice} = inject(StateKey)!;
+const { isSmallDevice } = inject(StateKey)!
 </script>
-  
+
   <style scoped lang="scss">
   @import "@/styles/main.scss";
   .footer{
@@ -29,5 +29,5 @@ const {isSmallDevice} = inject(StateKey)!;
   .large{
     padding-bottom: 10rem;
   }
-  
+
   </style>

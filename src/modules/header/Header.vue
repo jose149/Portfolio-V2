@@ -1,11 +1,11 @@
 <script setup lang='ts'>
 import NavigationBarHorizontal from '@/modules/navigationBar/NavigationBarHorizontal.vue'
 
-import { NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel';
+import { type NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel'
 
-interface HeaderProps{
-  image: string;
-  items: NavigationBarTextItem[];
+interface HeaderProps {
+  image: string
+  items: NavigationBarTextItem[]
 }
 
 const props = defineProps<HeaderProps>()

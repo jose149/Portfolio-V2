@@ -1,28 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 
-import type { AppButtonState, AppButtonType } from './AppButton.model';
-import LoadingDots from './LoadingDots.vue';
+import type { AppButtonState, AppButtonType } from './AppButton.model'
+import LoadingDots from './LoadingDots.vue'
 
 export interface AppButtonProps {
-  type: AppButtonType;
-  state?: AppButtonState;
-  wide?: boolean;
+  type: AppButtonType
+  state?: AppButtonState
+  wide?: boolean
 }
 
-const props = withDefaults(defineProps<AppButtonProps>(), { state: 'default' });
+const props = withDefaults(defineProps<AppButtonProps>(), { state: 'default' })
 
-interface AppButtonEmits {
-  (click: 'click', event: MouseEvent): void;
-}
+type AppButtonEmits = (click: 'click', event: MouseEvent) => void
 
-const emit = defineEmits<AppButtonEmits>();
+const emit = defineEmits<AppButtonEmits>()
 
-const inLoadingState = computed(() => props.state === 'loading');
+const inLoadingState = computed(() => props.state === 'loading')
 
-function handleClick(event: MouseEvent): void {
+function handleClick (event: MouseEvent): void {
   if (props.state === 'default') {
-    emit('click', event);
+    emit('click', event)
   }
 }
 </script>

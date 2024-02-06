@@ -21,14 +21,12 @@
 </section>
 </template>
 
-
 <script lang="ts" setup>
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
-import { StateKey } from "@/state/state";
-import { inject } from 'vue';
+import { StateKey } from '@/state/state'
+import { inject } from 'vue'
 
-const {isSmallDevice} = inject(StateKey)!;
-
+const { isSmallDevice } = inject(StateKey)!
 
 </script>
 

@@ -1,6 +1,6 @@
 <!-- <template>
   <section id="section--2" class="section mini-projects">
-      <MiniProject 
+      <MiniProject
       class="mini-project"
         v-for="miniProject in miniProjects"
         :key="miniProject.title"
@@ -8,7 +8,6 @@
   </section>
 
 </template>
-
 
 <script lang="ts" setup>
 import MiniProject, { type IMiniProject } from './MiniProject.vue'

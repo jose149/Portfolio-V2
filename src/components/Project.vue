@@ -21,31 +21,30 @@
 
 </template>
 
-
 <script lang="ts" setup>
-import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
-import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
-import type { IImage } from './Projects.vue';
-import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue'
+import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel'
+import type { IImage } from './Projects.vue'
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore'
 
 export interface IProject {
-  title: string;
-  summary: string;
-  image: IImage;
-  url: string;
-  description?: string;
-  technologies?: SvgIconType[];
-  date?: Date;
+  title: string
+  summary: string
+  image: IImage
+  url: string
+  description?: string
+  technologies?: SvgIconType[]
+  date?: Date
 }
 
 const portfolioStore = usePortfolioStore()
-interface ProjectProps{
-  project: IProject;
+interface ProjectProps {
+  project: IProject
 }
 
-const props = defineProps<ProjectProps>();
+const props = defineProps<ProjectProps>()
 
-const projectImage = new URL(props.project.image.path, import.meta.url).href;
+const projectImage = new URL(props.project.image.path, import.meta.url).href
 
 </script>
 
