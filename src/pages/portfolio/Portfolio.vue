@@ -20,7 +20,7 @@ const SMALL_DEVICE_THRESHOLD = 800
 </script>
 
 <template>
-  <Header :image="portfolioStore.getOwnerLogoImageSource()" :items="portfolioStore.getNavigationTextItems()"/>
+  <Header class="header" :image="portfolioStore.getOwnerLogoImageSource()" :items="portfolioStore.getNavigationTextItems()"/>
   <main>
     <Banner id="section-0"/>
     <!-- <AboutMe id="section-1"/> -->
@@ -37,6 +37,9 @@ const SMALL_DEVICE_THRESHOLD = 800
   width: 100%;
   background-color: $color-background;
   overflow: hidden;
+}
+.header{
+  height: 60px;
 }
 .contact-icon{
   position: fixed;

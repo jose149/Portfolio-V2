@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import NavigationBarText from '@/modules/navigationBar/NavigationBarText.vue'
+import NavigationBarHorizontal from '@/modules/navigationBar/NavigationBarHorizontal.vue'
 
 import { NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel';
 
@@ -13,8 +13,8 @@ const props = defineProps<HeaderProps>()
 
 <template>
   <header class="portfolio-header">
-    <img :src="props.image" alt="Jose Logo"/>
-    <NavigationBarText :items="props.items"/>
+    <img class="header-logo" :src="props.image" alt="Jose Logo"/>
+    <NavigationBarHorizontal :items="props.items"/>
   </header>
 </template>
 
@@ -23,11 +23,15 @@ const props = defineProps<HeaderProps>()
   position: fixed;
   left: 0px;
   top: 0;
-  padding-right: 2rem;
+  padding: 0 2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
   z-index: 2;
+  .header-logo{
+    max-height: 100%;
+  }
 }
 </style>
