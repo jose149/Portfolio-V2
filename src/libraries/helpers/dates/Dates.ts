@@ -1,10 +1,10 @@
-import { type Locale, enGB, es } from "date-fns/locale";
+import { type Locale, enGB, es } from 'date-fns/locale';
 
 export function getLocale(langCode?: string): Locale {
   switch (langCode) {
-    case "en":
+    case 'en':
       return enGB;
-    case "es":
+    case 'es':
       return es;
     default:
       return enGB;

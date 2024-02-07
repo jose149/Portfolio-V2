@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { inject } from "vue";
-import { StateKey } from "@/state/state";
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import { type NavigationBarIconItem } from "@/pages/portfolio/models/PortfolioViewModel";
+import { inject } from 'vue';
+import { StateKey } from '@/state/state';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import { type NavigationBarIconItem } from '@/pages/portfolio/models/PortfolioViewModel';
 
 interface NavigationBarIconsProps {
   items: NavigationBarIconItem[];
@@ -23,7 +23,7 @@ const { isSmallDevice, isScrollAtTop } = inject(StateKey)!;
     }"
   >
     <ul class="nav-bar-list">
-      <li class="nav-bar-item" v-for="item in props.items" :key="item.id">
+      <li v-for="item in props.items" class="nav-bar-item" :key="item.id">
         <a
           :href="item.id"
           :aria-label="`Move to section ${item.id}`"
@@ -49,11 +49,11 @@ const { isSmallDevice, isScrollAtTop } = inject(StateKey)!;
       :name="'Mail'"
       :color="'white'"
       :size="{ height: 20, width: 20 }"
-    ></SvgIcon>
+    />
   </a>
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "./NavigationBar.scss";
+@import '@/styles/main.scss';
+@import './NavigationBar.scss';
 </style>

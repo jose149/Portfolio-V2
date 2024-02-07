@@ -9,7 +9,7 @@
       <FadingCarousel class="carrousel" :logos="mainTechnologylogos!" />
       <h1 class="heading-1 heading">
         <span class="heading-1-main">Jose Crespi Valero</span>
-        <span class="heading-1-sub">Front end developer </span>
+        <span class="heading-1-sub">Front end developer</span>
       </h1>
       <a
         class="cta"
@@ -24,9 +24,9 @@
 </template>
 
 <script lang="ts" setup>
-import FadingCarousel from "@/components/sharedComponents/FadingCarousel.vue";
-import { getMainTechnologies } from "@/libraries/data/technologies";
-import { Section } from "@/state/state";
+import FadingCarousel from '@/components/sharedComponents/FadingCarousel.vue';
+import { getMainTechnologies } from '@/libraries/data/technologies';
+import { Section } from '@/state/state';
 
 const mainTechnologies = getMainTechnologies();
 const mainTechnologylogos = mainTechnologies
@@ -35,6 +35,6 @@ const mainTechnologylogos = mainTechnologies
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "@/styles/layout/Banner.scss";
+@import '@/styles/main.scss';
+@import '@/styles/layout/Banner.scss';
 </style>

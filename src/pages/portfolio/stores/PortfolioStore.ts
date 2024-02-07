@@ -1,15 +1,15 @@
-import { ref } from "vue";
-import { defineStore } from "pinia";
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
 import {
   type NavigationBarTextItem,
   type Section,
-} from "../models/PortfolioViewModel";
+} from '../models/PortfolioViewModel';
 import {
   getOwnerLogoPath,
   getPortfolioSections,
-} from "../models/PortfolioModel";
+} from '../models/PortfolioModel';
 
-export const usePortfolioStore = defineStore("PortfolioStore", () => {
+export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
 
   // State
@@ -17,7 +17,7 @@ export const usePortfolioStore = defineStore("PortfolioStore", () => {
   const ownerLogoPath = ref<string>(getOwnerLogoPath());
 
   const isSmallDevice = ref<boolean>(
-    window.innerWidth < SMALL_DEVICE_THRESHOLD,
+    window.innerWidth < SMALL_DEVICE_THRESHOLD
   );
 
   // Actions

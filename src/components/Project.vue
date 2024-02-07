@@ -1,7 +1,9 @@
 <template>
   <div class="project">
     <header class="project-header">
-      <p class="heading-3 project-heading">{{ project.title }}</p>
+      <p class="heading-3 project-heading">
+        {{ project.title }}
+      </p>
       <div class="project-technologies">
         <SvgIcon
           v-for="technology in project.technologies"
@@ -21,7 +23,9 @@
       :alt="project.image.alt"
     />
     <div class="project-description">
-      <p class="project-summary">{{ project.summary }}</p>
+      <p class="project-summary">
+        {{ project.summary }}
+      </p>
       <footer class="project-footer">
         <a class="cta" :href="project.url" target="_blank" rel="noreferrer">
           <SvgIcon name="OpenWindow" :size="{ height: 20, width: 20 }" />
@@ -34,10 +38,10 @@
 </template>
 
 <script lang="ts" setup>
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import type { SvgIconType } from "@/libraries/storybook/svgIcon/SvgIconModel";
-import type { IImage } from "./Projects.vue";
-import { usePortfolioStore } from "@/pages/portfolio/stores/PortfolioStore";
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import type { IImage } from './Projects.vue';
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
 
 export interface IProject {
   title: string;
@@ -60,8 +64,8 @@ const projectImage = new URL(props.project.image.path, import.meta.url).href;
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "@/styles/layout/Project.scss";
+@import '@/styles/main.scss';
+@import '@/styles/layout/Project.scss';
 
 @media (min-width: 1024px) {
 }

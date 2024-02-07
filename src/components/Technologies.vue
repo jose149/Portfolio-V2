@@ -2,8 +2,8 @@
 import {
   technologyModules,
   TechnologyModuleType,
-} from "@/libraries/data/technologies";
-import TechnologyModule from "@/components/technologies/TechnologyModule.vue";
+} from '@/libraries/data/technologies';
+import TechnologyModule from '@/components/technologies/TechnologyModule.vue';
 
 function shouldShowTechnologyModule(module: TechnologyModuleType): boolean {
   switch (module) {
@@ -35,6 +35,6 @@ function shouldShowTechnologyModule(module: TechnologyModuleType): boolean {
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "@/styles/layout/Technologies.scss";
+@import '@/styles/main.scss';
+@import '@/styles/layout/Technologies.scss';
 </style>

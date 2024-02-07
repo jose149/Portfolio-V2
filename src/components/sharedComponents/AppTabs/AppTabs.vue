@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, watchEffect } from "vue";
-import SelectedUnderline from "./SelectedUnderline.vue";
+import { ref, watchEffect } from 'vue';
+import SelectedUnderline from './SelectedUnderline.vue';
 
 export interface AppTabsProps {
   tabTitles: string[];
@@ -10,12 +10,12 @@ export interface AppTabsProps {
 const props = defineProps<AppTabsProps>();
 
 const defaultSelectedTitleIndex = props.tabTitles.findIndex(
-  (title) => title === props.defaultSelectedTitle,
+  (title) => title === props.defaultSelectedTitle
 );
 
 type AppTabsEmits = (
-  event: "selected-tab-title",
-  selectedTitle: string,
+  event: 'selected-tab-title',
+  selectedTitle: string
 ) => void;
 
 const emit = defineEmits<AppTabsEmits>();
@@ -25,7 +25,7 @@ const selectedTitleIndex = ref<number>(defaultSelectedTitleIndex);
 function setSelectedTabTitleIndex(titleIndex: number): void {
   selectedTitleIndex.value = titleIndex;
   const selectedTabTitle = props.tabTitles[titleIndex];
-  emit("selected-tab-title", selectedTabTitle);
+  emit('selected-tab-title', selectedTabTitle);
 }
 
 const tabElements = ref<Element[]>([]);
@@ -40,7 +40,7 @@ watchEffect(
       tabElements.value[selectedTitleIndex.value].getBoundingClientRect().left -
       tabElements.value[0].getBoundingClientRect().left;
   },
-  { flush: "post" },
+  { flush: 'post' }
 );
 </script>
 
@@ -69,7 +69,7 @@ watchEffect(
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .tabs-wrapper {
   max-width: 100%;
   position: relative;

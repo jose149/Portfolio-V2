@@ -13,6 +13,7 @@
     </button>
     <ProductCard
       v-for="(item, index) in items"
+      :key="index"
       class="carroussel-item"
       :style="{
         transform:
@@ -22,7 +23,6 @@
         'z-index': `${getItemDeep(index)}`,
         opacity: `${isItemVisible(index) ? 1 : 0}`,
       }"
-      :key="index"
       :card="item"
       :is-selected="index === currentIndex"
       :is-highlighted="index === configuration.initialIndex"
@@ -42,10 +42,10 @@
 </template>
 
 <script lang="ts" setup>
-import ProductCard from "@/components/sharedComponents/ProductCard.vue";
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import { inject, onMounted, ref } from "vue";
-import { StateKey } from "@/state/state";
+import ProductCard from '@/components/sharedComponents/ProductCard.vue';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import { inject, onMounted, ref } from 'vue';
+import { StateKey } from '@/state/state';
 
 const { isSmallDevice } = inject(StateKey)!;
 
@@ -103,8 +103,8 @@ function getItemDeep(index: number): number {
   return totalItems - Math.abs(relativeIndex - currentIndex.value);
 }
 
-function rotateCarrousselTo(side: "left" | "right"): void {
-  if (side === "left") {
+function rotateCarrousselTo(side: 'left' | 'right'): void {
+  if (side === 'left') {
     if (currentIndex.value === 0) {
       currentIndex.value = numberOfItems - 1;
       return;
@@ -128,7 +128,7 @@ onMounted(() => {});
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .horizontal-carroussel {
   position: relative;
   width: 100%;

@@ -6,7 +6,9 @@
       selected: isSelected,
     }"
   >
-    <p class="card-title">{{ card.title }}</p>
+    <p class="card-title">
+      {{ card.title }}
+    </p>
     <ul class="card-list">
       <li v-for="item in card.items" :key="item.name" class="card-item">
         <SvgIcon
@@ -22,24 +24,26 @@
         <span class="item-name">{{ item.name }}</span>
       </li>
     </ul>
-    <a class="card-link"
-      >SHOW MORE<SvgIcon
+    <a class="card-link">
+      SHOW MORE
+      <SvgIcon
         class="right-arrow"
         name="RightArrow"
         :color="isHighlighted ? 'white' : 'primary'"
         :size="
           isSmallDevice ? { height: 12, width: 12 } : { height: 20, width: 20 }
         "
-    /></a>
+      />
+    </a>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { SVG_ICON_TYPE } from "@/libraries/storybook/svgIcon/SvgIconModel";
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
+import { SVG_ICON_TYPE } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
-import { StateKey } from "@/state/state";
-import { inject } from "vue";
+import { StateKey } from '@/state/state';
+import { inject } from 'vue';
 export interface CardItem {
   name: string;
   icon?: string;
@@ -67,7 +71,7 @@ function isIconAble(icon: string): boolean {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .card {
   padding: 2rem;
   height: 100%;

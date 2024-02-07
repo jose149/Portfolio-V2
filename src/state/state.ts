@@ -1,5 +1,5 @@
-import type { SvgIconType } from "../libraries/storybook/svgIcon/SvgIconModel";
-import { ref, type InjectionKey } from "vue";
+import type { SvgIconType } from '../libraries/storybook/svgIcon/SvgIconModel';
+import { ref, type InjectionKey } from 'vue';
 
 export interface StateProps {}
 
@@ -12,17 +12,17 @@ export enum Section {
 }
 
 enum SectionName {
-  home = "Home",
-  technologies = "Technologies",
-  projects = "Projects",
-  aboutMe = "About me",
+  home = 'Home',
+  technologies = 'Technologies',
+  projects = 'Projects',
+  aboutMe = 'About me',
 }
 
 enum SectionId {
-  home = "#section-0",
-  technologies = "#section-2",
-  projects = "#section-3",
-  aboutMe = "#section-1",
+  home = '#section-0',
+  technologies = '#section-2',
+  projects = '#section-3',
+  aboutMe = '#section-1',
 }
 interface ISections {
   name: SectionName;
@@ -34,15 +34,15 @@ interface ISections {
 export function setUpState() {
   const SMALL_DEVICE_THRESHOLD = 800;
   const isSmallDevice = ref<boolean>(
-    window.innerWidth < SMALL_DEVICE_THRESHOLD,
+    window.innerWidth < SMALL_DEVICE_THRESHOLD
   );
   const isScrollAtTop = ref<boolean>(window.scrollY === 0);
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     isSmallDevice.value = window.innerWidth < SMALL_DEVICE_THRESHOLD;
   });
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     isScrollAtTop.value = window.scrollY === 0;
   });
 
@@ -50,25 +50,25 @@ export function setUpState() {
     {
       name: SectionName.home,
       id: SectionId.home,
-      iconName: "Home",
+      iconName: 'Home',
       isWatching: true,
     },
     {
       name: SectionName.aboutMe,
       id: SectionId.aboutMe,
-      iconName: "Profile",
+      iconName: 'Profile',
       isWatching: false,
     },
     {
       name: SectionName.technologies,
       id: SectionId.technologies,
-      iconName: "Javascript2",
+      iconName: 'Javascript2',
       isWatching: false,
     },
     {
       name: SectionName.projects,
       id: SectionId.projects,
-      iconName: "GitHub3",
+      iconName: 'GitHub3',
       isWatching: false,
     },
   ]);
@@ -82,5 +82,5 @@ export function setUpState() {
 
 export type State = ReturnType<typeof setUpState>;
 
-export const StateSymbol = Symbol("state");
+export const StateSymbol = Symbol('state');
 export const StateKey: InjectionKey<State> = StateSymbol;

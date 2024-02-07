@@ -1,36 +1,36 @@
-import { getMarketOrigin } from "@/libraries";
-import { type Section } from "./PortfolioViewModel";
+import { getMarketOrigin } from '@/libraries';
+import { type Section } from './PortfolioViewModel';
 
 export function getPortfolioSections(): Section[] {
   return [
     {
-      id: "0",
-      title: "Home",
+      id: '0',
+      title: 'Home',
       url: `${getMarketOrigin()}/section-0`,
     },
     {
-      id: "1",
-      title: "AboutMe",
+      id: '1',
+      title: 'AboutMe',
       url: `${getMarketOrigin()}/section-1`,
     },
     {
-      id: "2",
-      title: "Technologies",
+      id: '2',
+      title: 'Technologies',
       url: `${getMarketOrigin()}/section-2`,
     },
     {
-      id: "3",
-      title: "Projects",
+      id: '3',
+      title: 'Projects',
       url: `${getMarketOrigin()}/section-3`,
     },
     {
-      id: "4",
-      title: "Contact",
+      id: '4',
+      title: 'Contact',
       url: `${getMarketOrigin()}/section-4`,
     },
   ];
 }
 
 export function getOwnerLogoPath(): string {
-  return "/assets/images/logos/logo.png";
+  return '/assets/images/logos/logo.png';
 }

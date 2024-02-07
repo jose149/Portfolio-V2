@@ -1,10 +1,11 @@
 <template>
   <section class="section section-about-me">
-    <div class="about-me-square-background"></div>
+    <div class="about-me-square-background" />
     <h2 class="about-me-heading">About me</h2>
     <div class="description">
       <header class="heading-3 description-heading">
-        <span class="primary">Hi,</span> I'm Jose
+        <span class="primary">Hi,</span>
+        I'm Jose
       </header>
       <div class="description-text">
         <p class="description-paragraph">
@@ -72,12 +73,12 @@
 </template>
 
 <script lang="ts" setup>
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "@/styles/layout/AboutMe.scss";
+@import '@/styles/main.scss';
+@import '@/styles/layout/AboutMe.scss';
 
 @media (min-width: 1024px) {
 }

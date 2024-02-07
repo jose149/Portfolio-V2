@@ -1,18 +1,22 @@
 <template>
   <footer class="footer" :class="{ large: isSmallDevice }">
-    <p>© <span class="primary">José Crespí</span> Portfolio 2023</p>
+    <p>
+      ©
+      <span class="primary">José Crespí</span>
+      Portfolio 2023
+    </p>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { StateKey } from "@/state/state";
-import { inject } from "vue";
+import { StateKey } from '@/state/state';
+import { inject } from 'vue';
 
 const { isSmallDevice } = inject(StateKey)!;
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .footer {
   padding: 3rem;
   background-color: $color-black-light;

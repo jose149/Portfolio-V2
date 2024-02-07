@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { transformPropsFormat, SVG_ICON_FILE_NAME_MAP } from "./SvgIconModel";
+import { transformPropsFormat, SVG_ICON_FILE_NAME_MAP } from './SvgIconModel';
 
 import type {
   SvgIconColor,
@@ -7,9 +7,9 @@ import type {
   SvgIconTranslate,
   SvgIconType,
   SvgIconTransformedProps,
-} from "./SvgIconModel";
+} from './SvgIconModel';
 
-import { computed, defineAsyncComponent } from "vue";
+import { computed, defineAsyncComponent } from 'vue';
 
 export interface SvgIconProps {
   name: SvgIconType;
@@ -21,7 +21,7 @@ export interface SvgIconProps {
 const props = defineProps<SvgIconProps>();
 
 const settings = computed<SvgIconTransformedProps>(() =>
-  transformPropsFormat(props.name, props.translate, props.size, props.color),
+  transformPropsFormat(props.name, props.translate, props.size, props.color)
 );
 
 const dynamicComponent = computed(() => {

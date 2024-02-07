@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { type SvgIconType } from "@/libraries/storybook/svgIcon/SvgIconModel";
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import { StateKey } from "@/state/state";
-import { inject, onMounted, ref } from "vue";
+import { type SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import { StateKey } from '@/state/state';
+import { inject, onMounted, ref } from 'vue';
 interface TechnologyModuleTechnology {
   name: string;
   iconName: SvgIconType;
@@ -17,7 +17,7 @@ const { isSmallDevice } = inject(StateKey)!;
 const showModule = ref<boolean>(props.show);
 
 const techGroup = ref<HTMLDivElement | null>(null);
-const groupHeight = ref<string>("");
+const groupHeight = ref<string>('');
 
 onMounted(() => {
   const resizeObserver = new ResizeObserver(setGroupHeight);
@@ -60,9 +60,9 @@ function setGroupHeight() {
     <div class="technology-module-description" :class="{ open: showModule }">
       <div ref="techGroup" class="technologies-container">
         <figure
-          class="technology"
           v-for="technology in props.technologies"
           :key="technology.iconName"
+          class="technology"
         >
           <SvgIcon
             :name="technology.iconName"
@@ -88,7 +88,7 @@ function setGroupHeight() {
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .technology-module {
   position: relative;
   width: 100%;

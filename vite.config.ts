@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import eslintPlugin from "vite-plugin-eslint";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import eslintPlugin from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,10 +11,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@",
-        replacement: "/src",
+        find: '@',
+        replacement: '/src',
       },
-      { find: "@view", replacement: "/src/components" },
+      { find: '@view', replacement: '/src/components' },
     ],
   },
 });

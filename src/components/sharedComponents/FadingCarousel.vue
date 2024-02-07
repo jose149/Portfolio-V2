@@ -3,9 +3,9 @@
     <div v-for="(logo, index) in logos" :key="index">
       <transition
         name="fade"
+        appear
         @after-enter="itemToShow = null"
         @after-leave="updateVisibleItem(index)"
-        appear
       >
         <!-- <div v-if="isItemVisible(index)">
           <SvgIcon :name="`${logo}`" :size="isSmallDevice ?{height: 100, width: 100}: {height: 192, width:192}"/>
@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import type { SvgIconType } from "@/libraries/storybook/svgIcon/SvgIconModel";
+import { ref } from 'vue';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
 interface FaidingCarousselResponseProps {
   logos: SvgIconType[];

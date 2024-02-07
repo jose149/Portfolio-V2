@@ -1,12 +1,12 @@
-import type { SvgIconType } from "../storybook/svgIcon/SvgIconModel";
+import type { SvgIconType } from '../storybook/svgIcon/SvgIconModel';
 
 export enum TechnologyModule {
-  FrontEndDelivery = "Front End Delivery",
-  FrontEndDiscovery = "Front End Discovery",
-  FrontEndOperations = "Front End Operations",
-  BackEndDelivery = "Back End Delivery",
-  BackEndDiscovery = "Back End Discovery",
-  BackEndOperations = "Back End Operations",
+  FrontEndDelivery = 'Front End Delivery',
+  FrontEndDiscovery = 'Front End Discovery',
+  FrontEndOperations = 'Front End Operations',
+  BackEndDelivery = 'Back End Delivery',
+  BackEndDiscovery = 'Back End Discovery',
+  BackEndOperations = 'Back End Operations',
 }
 
 export interface ITechnology {
@@ -17,9 +17,9 @@ export interface ITechnology {
 }
 
 export enum TechnologyModuleType {
-  FrontEnd = "Front End",
-  BackEnd = "Back End",
-  UxUi = "UI/UX",
+  FrontEnd = 'Front End',
+  BackEnd = 'Back End',
+  UxUi = 'UI/UX',
 }
 
 export interface ITechnologyModule {
@@ -31,150 +31,150 @@ export interface ITechnologyModule {
 
 export const frontEndDeliveryTechnologies: ITechnology[] = [
   {
-    name: "Vue 3",
+    name: 'Vue 3',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Vue",
+    iconName: 'Vue',
     isMostRelevant: true,
   },
   {
-    name: "TypeScript 5",
+    name: 'TypeScript 5',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "TypeScript",
+    iconName: 'TypeScript',
     isMostRelevant: true,
   },
   {
-    name: "Vitest",
+    name: 'Vitest',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Vitest",
+    iconName: 'Vitest',
     isMostRelevant: true,
   },
   {
-    name: "Cypress",
+    name: 'Cypress',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Cypress",
+    iconName: 'Cypress',
     isMostRelevant: true,
   },
   {
-    name: "Sass",
+    name: 'Sass',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Sass",
+    iconName: 'Sass',
     isMostRelevant: true,
   },
   {
-    name: "Jest",
+    name: 'Jest',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Jest",
+    iconName: 'Jest',
     isMostRelevant: true,
   },
   {
-    name: "StoryBook",
+    name: 'StoryBook',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "StoryBook",
+    iconName: 'StoryBook',
   },
   {
-    name: "Pinia",
+    name: 'Pinia',
     module: TechnologyModule.FrontEndDelivery,
-    iconName: "Pinia",
+    iconName: 'Pinia',
   },
 ];
 
 const frontEndDiscoveryTechnologies: ITechnology[] = [
   {
-    name: "Figma",
+    name: 'Figma',
     module: TechnologyModule.FrontEndDiscovery,
-    iconName: "Figma",
+    iconName: 'Figma',
     isMostRelevant: true,
   },
   {
-    name: "Google Analytics 4",
+    name: 'Google Analytics 4',
     module: TechnologyModule.FrontEndDiscovery,
-    iconName: "GoogleAnalytics",
+    iconName: 'GoogleAnalytics',
   },
   {
-    name: "Google Tag Manager",
+    name: 'Google Tag Manager',
     module: TechnologyModule.FrontEndDiscovery,
-    iconName: "GoogleTagManager",
+    iconName: 'GoogleTagManager',
   },
   // {name:'LucidChart', module: TechnologyModule.FrontEndDiscovery, iconName:'LC'},
   // {name:'Miro', module: TechnologyModule.FrontEndDiscovery, iconName:'Miro'},
   {
-    name: "Hotjar",
+    name: 'Hotjar',
     module: TechnologyModule.FrontEndDiscovery,
-    iconName: "Hotjar",
+    iconName: 'Hotjar',
   },
 ];
 
 const frontEndDevOpsTechnologies: ITechnology[] = [
   {
-    name: "Bitbucket",
+    name: 'Bitbucket',
     module: TechnologyModule.FrontEndOperations,
-    iconName: "Bitbucket",
+    iconName: 'Bitbucket',
     isMostRelevant: true,
   },
   {
-    name: "Netlify",
+    name: 'Netlify',
     module: TechnologyModule.FrontEndOperations,
-    iconName: "Netlify",
+    iconName: 'Netlify',
     isMostRelevant: true,
   },
   {
-    name: "Jenkins",
+    name: 'Jenkins',
     module: TechnologyModule.FrontEndOperations,
-    iconName: "Jenkins",
+    iconName: 'Jenkins',
     isMostRelevant: true,
   },
 ];
 
 const backEndDeliveryTechnologies: ITechnology[] = [
   {
-    name: ".Net",
+    name: '.Net',
     module: TechnologyModule.BackEndDelivery,
-    iconName: "DotNet",
+    iconName: 'DotNet',
   },
-  { name: "C#", module: TechnologyModule.BackEndDelivery, iconName: "CSharp" },
+  { name: 'C#', module: TechnologyModule.BackEndDelivery, iconName: 'CSharp' },
   {
-    name: "GraphQL",
+    name: 'GraphQL',
     module: TechnologyModule.BackEndDelivery,
-    iconName: "GraphQL",
+    iconName: 'GraphQL',
     isMostRelevant: true,
   },
 ];
 
 const backEndDiscoveryTechnologies: ITechnology[] = [
   {
-    name: "Grafana",
+    name: 'Grafana',
     module: TechnologyModule.BackEndDiscovery,
-    iconName: "Grafana",
+    iconName: 'Grafana',
     isMostRelevant: true,
   },
   {
-    name: "Kibana",
+    name: 'Kibana',
     module: TechnologyModule.BackEndDiscovery,
-    iconName: "Kibana",
+    iconName: 'Kibana',
   },
   {
-    name: "Elastic Search",
+    name: 'Elastic Search',
     module: TechnologyModule.BackEndDiscovery,
-    iconName: "ElasticSearch",
+    iconName: 'ElasticSearch',
   },
 ];
 
 const backEndDevOpsTechnologies: ITechnology[] = [
   {
-    name: "Docker",
+    name: 'Docker',
     module: TechnologyModule.BackEndOperations,
-    iconName: "Docker",
+    iconName: 'Docker',
     isMostRelevant: true,
   },
   {
-    name: "Kubernetes",
+    name: 'Kubernetes',
     module: TechnologyModule.BackEndOperations,
-    iconName: "Kubernetes",
+    iconName: 'Kubernetes',
   },
   {
-    name: "Octopus",
+    name: 'Octopus',
     module: TechnologyModule.BackEndOperations,
-    iconName: "Octopus",
+    iconName: 'Octopus',
   },
 ];
 
@@ -194,27 +194,27 @@ export function getMainTechnologies(): ITechnology[] {
 export const technologyModules: ITechnologyModule[] = [
   {
     type: TechnologyModuleType.FrontEnd,
-    iconName: "Screen",
+    iconName: 'Screen',
     technologies: [
       ...frontEndDeliveryTechnologies,
       ...frontEndDevOpsTechnologies,
     ],
-    description: "Technologies used for deliver the front end side",
+    description: 'Technologies used for deliver the front end side',
   },
   {
     type: TechnologyModuleType.BackEnd,
-    iconName: "Server",
+    iconName: 'Server',
     technologies: [
       ...backEndDeliveryTechnologies,
       ...backEndDiscoveryTechnologies,
       ...backEndDevOpsTechnologies,
     ],
-    description: "Technologies used for deliver the back end side",
+    description: 'Technologies used for deliver the back end side',
   },
   {
     type: TechnologyModuleType.UxUi,
-    iconName: "Design",
+    iconName: 'Design',
     technologies: frontEndDiscoveryTechnologies,
-    description: "Technologies used for discover the front end side",
+    description: 'Technologies used for discover the front end side',
   },
 ];

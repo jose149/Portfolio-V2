@@ -17,7 +17,7 @@ const props = defineProps<SelectedUnderlineProps>();
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 .selected-underline {
   height: 2px;
   position: absolute;

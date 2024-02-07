@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import Header from "@/modules/header/Header.vue";
-import Banner from "@/components/Banner.vue";
+import Header from '@/modules/header/Header.vue';
+import Banner from '@/components/Banner.vue';
 // import Technologies from '@/components/Technologies.vue'
-import Projects from "@/components/Projects.vue";
+// import Projects from "@/components/Projects.vue";
 // import AboutMe from '@/components/AboutMe.vue'
 // import Contact from '@/components/Contact.vue'
 // import Footer from '@/components/Footer.vue'
-import { usePortfolioStore } from "./stores/PortfolioStore";
+import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
 
 const portfolioStore = usePortfolioStore();
 const SMALL_DEVICE_THRESHOLD = 800;
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD;
 });
 </script>
@@ -32,7 +32,7 @@ window.addEventListener("resize", () => {
 </template>
 
 <style lang="scss">
-@import "@/styles/main.scss";
+@import '@/styles/main.scss';
 #app {
   width: 100%;
   background-color: $color-background;

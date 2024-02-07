@@ -44,14 +44,14 @@
 </template>
 
 <script lang="ts" setup>
-import SvgIcon from "@/libraries/storybook/svgIcon/SvgIcon.vue";
-import { StateKey } from "@/state/state";
-import { inject } from "vue";
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import { StateKey } from '@/state/state';
+import { inject } from 'vue';
 
 const { isSmallDevice } = inject(StateKey)!;
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "@/styles/layout/Contact.scss";
+@import '@/styles/main.scss';
+@import '@/styles/layout/Contact.scss';
 </style>

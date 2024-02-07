@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { type NavigationBarTextItem } from "@/pages/portfolio/models/PortfolioViewModel";
+import { type NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel';
 
 interface NavigationBarTextProps {
   items: NavigationBarTextItem[];
@@ -24,6 +24,6 @@ const props = defineProps<NavigationBarTextProps>();
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/main.scss";
-@import "./NavigationBar.scss";
+@import '@/styles/main.scss';
+@import './NavigationBar.scss';
 </style>
