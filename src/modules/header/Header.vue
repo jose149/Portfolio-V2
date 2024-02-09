@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import NavigationBarHorizontal from '@/modules/navigationBar/NavigationBarHorizontal.vue';
-
-import { type NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel';
+import NavigationBarHorizontal from '@/components/shared/navigationBar/NavigationBarHorizontal.vue';
+import { HeaderConfig } from './HeaderViewModel';
 
 interface HeaderProps {
-  image: string;
-  items: NavigationBarTextItem[];
+  config: HeaderConfig;
 }
 
 const props = defineProps<HeaderProps>();
@@ -13,8 +11,8 @@ const props = defineProps<HeaderProps>();
 
 <template>
   <header class="portfolio-header">
-    <img class="header-logo" :src="props.image" alt="Jose Logo" />
-    <NavigationBarHorizontal :items="props.items" />
+    <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
+    <NavigationBarHorizontal :items="props.config.links" />
   </header>
 </template>
 

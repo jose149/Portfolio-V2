@@ -37,3 +37,4 @@ const mainTechnologylogos = mainTechnologies
 @import '@/styles/main.scss';
 @import '@/styles/layout/Banner.scss';
 </style>
+@/pages/portfolio/models/technologies

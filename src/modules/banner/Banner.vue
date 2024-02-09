@@ -1,33 +1,88 @@
-.section-banner {
+<script lang="ts" setup>
+import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
+import { BannerConfig } from '.';
+
+interface BannerProps {
+  config: BannerConfig;
+}
+
+const props = defineProps<BannerProps>();
+</script>
+
+<template>
+  <section class="banner">
+    <img
+      class="banner-image"
+      :src="props.config.profileImage"
+      alt="Profile photo"
+    />
+    <div class="banner-square"></div>
+
+    <article class="banner-content">
+      <FadingCarousel class="banner-carroussel" :logos="props.config.logos!" />
+      <h1 class="heading-1 heading">
+        <span class="heading-1-main">{{ props.config.heading.name }}</span>
+        <span class="heading-1-sub">{{ props.config.heading.job }}</span>
+      </h1>
+      <button
+        class="cta"
+        href="mailto:crespi.valero.jose@gmail.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Contact
+      </button>
+    </article>
+  </section>
+</template>
+
+<style scoped lang="scss">
+@import '@/styles/main.scss';
+.banner {
   position: relative;
   width: 100%;
   height: 100vh;
-  align-items: center;
   background: linear-gradient(
     0deg,
     $color-black-dark 0%,
     $color-black-light 100%
   );
+  display: grid;
+  grid-template-columns: 1fr repeat(8, 9vw) 1fr;
+  align-items: center;
+
   @media only screen and (max-width: $bp-large) {
     height: 100dvh;
   }
   .banner-image {
-    position: absolute;
     align-self: flex-end;
+    position: absolute;
+    bottom: 10vh;
     justify-self: center;
-    margin-bottom: 10vh;
     grid-column: 2 / 5;
     max-height: 70%;
     width: auto;
     z-index: 0;
     @media only screen and (max-width: $bp-large) {
       height: 60%;
-      grid-column: 2 / 5;
       justify-self: end;
+      grid-column: 2 / 6;
     }
-    @media only screen and (max-width: $bp-medium) {
-      grid-column: 2 / 5;
-    }
+  }
+
+  .banner-square {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 15px;
+    height: 10vh;
+    width: 50%;
+    background: linear-gradient(
+      180deg,
+      $color-black-light 0%,
+      $color-black-light-2 100%
+    );
+    z-index: 0;
   }
 
   .banner-content {
@@ -38,29 +93,28 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 4rem;
+    gap: 5rem;
     @media only screen and (max-width: $bp-medium) {
       justify-self: center;
       grid-column: 2 / -2;
       align-items: center;
     }
-    .carrousel {
+    .banner-carroussel {
       align-self: center;
       width: 19.2rem;
       height: 19.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .heading {
       display: flex;
       flex-direction: column;
+
       @media only screen and (max-width: $bp-medium) {
         align-items: center;
       }
     }
     .cta {
+      line-height: 1.6;
       width: max-content;
       position: relative;
       padding: $button-padding;
@@ -85,3 +139,4 @@
     }
   }
 }
+</style>

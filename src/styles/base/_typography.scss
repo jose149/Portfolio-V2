@@ -1,7 +1,7 @@
 .heading-1 {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   &-main {
     position: relative;
     font-family: $font-primary;
@@ -15,6 +15,7 @@
     line-height: 100%;
     -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent
           30%, rgba($color-primary-light, 0.1) 100%);
+    text-shadow: -2px 2px 5px rgba($color: #000000, $alpha: 1);
 
     @media only screen and (max-width: $bp-medium) {
       font-size: calc($heading-1-main-font-size * 0.8);

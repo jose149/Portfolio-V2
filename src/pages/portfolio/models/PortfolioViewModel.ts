@@ -11,13 +11,6 @@ export interface NavigationBarItem {
   isSelected: boolean;
 }
 
-export interface NavigationBarTextItem {
-  id: string;
-  text: string;
-  url: string;
-  isSelected?: boolean;
-}
-
 export interface NavigationBarIconItem {
   id: string;
   iconName: string;

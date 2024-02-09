@@ -1,36 +1,23 @@
-import { getMarketOrigin } from '@/libraries';
-import { type Section } from './PortfolioViewModel';
+import { Profile, type Section } from './PortfolioViewModel';
+import { PROFILE, sections } from './data/data';
+import { ITechnology, getMainTechnologiesFromData } from './data/technologies';
 
 export function getPortfolioSections(): Section[] {
-  return [
-    {
-      id: '0',
-      title: 'Home',
-      url: `${getMarketOrigin()}/section-0`,
-    },
-    {
-      id: '1',
-      title: 'AboutMe',
-      url: `${getMarketOrigin()}/section-1`,
-    },
-    {
-      id: '2',
-      title: 'Technologies',
-      url: `${getMarketOrigin()}/section-2`,
-    },
-    {
-      id: '3',
-      title: 'Projects',
-      url: `${getMarketOrigin()}/section-3`,
-    },
-    {
-      id: '4',
-      title: 'Contact',
-      url: `${getMarketOrigin()}/section-4`,
-    },
-  ];
+  return sections;
 }
 
 export function getOwnerLogoPath(): string {
   return '/assets/images/logos/logo.png';
+}
+
+export function getProfile(): Profile {
+  return PROFILE;
+}
+
+export function getMainTechnologies(): ITechnology[] {
+  return getMainTechnologiesFromData();
+}
+
+export function getBannerImageSrc(): string {
+  return '/assets/images/Profile/perfil1.webp';
 }

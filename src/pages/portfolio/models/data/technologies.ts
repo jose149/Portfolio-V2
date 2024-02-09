@@ -1,6 +1,7 @@
-import type { SvgIconType } from '../storybook/svgIcon/SvgIconModel';
+import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
-export enum TechnologyModule {
+/* eslint-disable */
+enum TechnologyModule {
   FrontEndDelivery = 'Front End Delivery',
   FrontEndDiscovery = 'Front End Discovery',
   FrontEndOperations = 'Front End Operations',
@@ -16,7 +17,7 @@ export interface ITechnology {
   isMostRelevant?: boolean;
 }
 
-export enum TechnologyModuleType {
+enum TechnologyModuleType {
   FrontEnd = 'Front End',
   BackEnd = 'Back End',
   UxUi = 'UI/UX',
@@ -187,7 +188,7 @@ const allTechnologies = [
   ...backEndDevOpsTechnologies,
 ];
 
-export function getMainTechnologies(): ITechnology[] {
+export function getMainTechnologiesFromData(): ITechnology[] {
   return allTechnologies.filter((technology) => technology.isMostRelevant);
 }
 

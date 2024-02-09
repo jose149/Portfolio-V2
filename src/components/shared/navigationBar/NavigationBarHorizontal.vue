@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { type NavigationBarTextItem } from '@/pages/portfolio/models/PortfolioViewModel';
+import type { NavigationBarLink } from '@/pages/portfolio/models/PortfolioViewModel';
 
 interface NavigationBarTextProps {
-  items: NavigationBarTextItem[];
+  items: NavigationBarLink[];
 }
 
 const props = defineProps<NavigationBarTextProps>();
@@ -14,11 +14,11 @@ const props = defineProps<NavigationBarTextProps>();
       v-for="item in props.items"
       :key="item.id"
       :href="item.id"
-      :aria-label="`Move to section ${item.text}`"
+      :aria-label="`Move to section ${item.name}`"
       class="nav-bar-link"
       :class="{ highlighted: item.isSelected }"
     >
-      {{ item.text }}
+      {{ item.name }}
     </a>
   </nav>
 </template>

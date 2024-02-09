@@ -1,12 +1,17 @@
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 import {
-  type NavigationBarTextItem,
+  BannerConfig,
+  HeaderConfig,
+  type NavigationBarLink,
   type Section,
 } from '../models/PortfolioViewModel';
 import {
+  getBannerImageSrc,
+  getMainTechnologies,
   getOwnerLogoPath,
   getPortfolioSections,
+  getProfile,
 } from '../models/PortfolioModel';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
@@ -21,12 +26,11 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   );
 
   // Actions
-
-  function getNavigationTextItems(): NavigationBarTextItem[] {
+  function getNavigationBarLinks(): NavigationBarLink[] {
     return sections.value.map((section) => ({
       id: section.id,
-      text: section.title,
-      url: section.url,
+      name: section.title,
+      src: section.url,
     }));
   }
 
@@ -34,7 +38,28 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     return new URL(ownerLogoPath.value, import.meta.url).href;
   }
 
+  function getBannerCarrousselLogos(): string[] {
+    return getMainTechnologies()
+      .map((technology) => technology.iconName)
+      .filter((icon) => !!icon);
+  }
+
+  function getBannerImage(): string {
+    return getBannerImageSrc();
+  }
+
   // Getters
+
+  const headerConfig = computed<HeaderConfig>(() => ({
+    logo: getOwnerLogoImageSource(),
+    links: getNavigationBarLinks(),
+  }));
+
+  const bannerConfig = computed<BannerConfig>(() => ({
+    heading: getProfile(),
+    logos: getBannerCarrousselLogos(),
+    profileImage: getBannerImage(),
+  }));
 
   return {
     // State
@@ -42,9 +67,9 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     isSmallDevice,
 
     // Actions
-    getNavigationTextItems,
-    getOwnerLogoImageSource,
 
     // Getters
+    headerConfig,
+    bannerConfig,
   };
 });
