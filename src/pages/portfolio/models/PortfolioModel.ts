@@ -1,4 +1,5 @@
-import { Profile, type Section } from './PortfolioViewModel';
+import { Profile } from '@/modules/banner/BannerViewModel';
+import { type Section } from './PortfolioViewModel';
 import { PROFILE, sections } from './data/data';
 import { ITechnology, getMainTechnologiesFromData } from './data/technologies';
 

@@ -1,30 +1,31 @@
 import { getMarketOrigin } from '@/libraries';
-import { Profile, Section } from '../PortfolioViewModel';
+import { Section } from '../PortfolioViewModel';
+import { Profile } from '@/modules/banner/BannerViewModel';
 
 export const sections: Section[] = [
   {
     id: '0',
-    title: 'Home',
+    name: 'Home',
     url: `${getMarketOrigin()}/section-0`,
   },
   {
     id: '1',
-    title: 'AboutMe',
+    name: 'AboutMe',
     url: `${getMarketOrigin()}/section-1`,
   },
   {
     id: '2',
-    title: 'Technologies',
+    name: 'Technologies',
     url: `${getMarketOrigin()}/section-2`,
   },
   {
     id: '3',
-    title: 'Projects',
+    name: 'Projects',
     url: `${getMarketOrigin()}/section-3`,
   },
   {
     id: '4',
-    title: 'Contact',
+    name: 'Contact',
     url: `${getMarketOrigin()}/section-4`,
   },
 ];
