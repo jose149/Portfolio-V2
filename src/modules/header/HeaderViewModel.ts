@@ -9,4 +9,5 @@ export interface NavigationBarLink {
   src: string;
   iconName: string;
   isSelected?: boolean;
+  isHighlighted?: boolean;
 }

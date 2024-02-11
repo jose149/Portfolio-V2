@@ -31,7 +31,8 @@ export const sections: Section[] = [
     id: '4',
     name: 'Contact',
     url: `${getMarketOrigin()}/section-4`,
-    iconName: 'Phone',
+    iconName: 'Mail',
+    isHighlighted: true,
   },
 ];
 

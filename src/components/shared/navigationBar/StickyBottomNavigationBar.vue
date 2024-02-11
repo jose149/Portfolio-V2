@@ -41,15 +41,16 @@ const props = defineProps<NavigationBarTextProps>();
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: $color-background-navigation-bar-mobile;
+  background-color: inherit;
   z-index: 2;
   .navigation-bar-link,
   .navigation-bar-link:link,
   .navigation-bar-link:visited {
+    border: solid 1px rgba($color: white, $alpha: 0.1);
     position: relative;
     border-radius: 15px;
     height: 100%;
-    background-color: $color-background-navigation-bar-mobile-icons;
+    aspect-ratio: 4/3;
     display: flex;
     align-items: center;
     justify-content: center;

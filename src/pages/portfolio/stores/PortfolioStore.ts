@@ -32,6 +32,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
       name: section.name,
       src: section.url,
       iconName: section.iconName,
+      isHighlighted: section.isHighlighted,
     }));
   }
 

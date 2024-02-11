@@ -3,6 +3,7 @@ export interface Section {
   name: string;
   url: string;
   iconName: string;
+  isHighlighted?: boolean;
 }
 
 export interface NavigationBarIconItem {

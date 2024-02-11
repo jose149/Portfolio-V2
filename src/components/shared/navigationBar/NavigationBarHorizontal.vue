@@ -16,7 +16,10 @@ const props = defineProps<NavigationBarTextProps>();
       :href="item.id"
       :aria-label="`Move to section ${item.name}`"
       class="nav-bar-link"
-      :class="{ highlighted: item.isSelected }"
+      :class="{
+        selected: item.isSelected,
+        highlighted: item.isHighlighted,
+      }"
     >
       {{ item.name }}
     </a>
@@ -25,5 +28,54 @@ const props = defineProps<NavigationBarTextProps>();
 
 <style scoped lang="scss">
 @import '@/styles/main.scss';
-@import './NavigationBar.scss';
+.navigation-bar-horizontal {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  background: transparent;
+
+  .nav-bar-link,
+  .nav-bar-link:link,
+  .nav-bar-link:visited {
+    position: relative;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    color: $color-white;
+    text-align: center;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .highlighted {
+    @extend .nav-bar-link;
+    border-radius: $border-radius;
+    padding: ($button-padding !important);
+    width: max-content;
+    background: $button-cta-background;
+    font: $font-button;
+    transition: all $transition-time;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-2px);
+        transform-origin: center;
+        filter: brightness(1.1);
+      }
+    }
+  }
+  .selected {
+    color: $color-primary-light;
+    font-weight: 600;
+  }
+
+  @media (hover: hover) {
+    .nav-bar-link:hover {
+      color: $color-primary-light;
+      font-weight: 600;
+      filter: brightness(1.2);
+    }
+  }
+}
 </style>
