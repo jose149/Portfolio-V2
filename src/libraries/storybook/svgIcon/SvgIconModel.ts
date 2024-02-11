@@ -417,6 +417,7 @@ export interface SvgIconSize {
   width?: number;
   height?: number;
   unit?: 'px';
+  wide?: boolean;
 }
 
 export interface SvgIconTransformedProps {
@@ -440,8 +441,8 @@ export function transformPropsFormat(
   color?: SvgIconColor
 ): SvgIconTransformedProps {
   const defaultSettings = SVG_ICON_DEFAULT_SETTINGS_MAP[name];
-  const width = size?.width ?? defaultSettings.width;
-  const height = size?.height ?? defaultSettings.height;
+  const width = size?.wide ? '100%' : size?.width ?? defaultSettings.width;
+  const height = size?.wide ? '100%' : size?.height ?? defaultSettings.height;
   const unit = translate?.unit ?? 'px';
   const x = translate?.x ?? 0;
   const y = translate?.y ?? 0;

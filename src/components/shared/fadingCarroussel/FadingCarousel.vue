@@ -33,12 +33,8 @@ function updateVisibleItem(index: number): void {
         @after-enter="itemToShow = null"
         @after-leave="updateVisibleItem(index)"
       >
-        <!-- <div v-if="isItemVisible(index)">
-          <SvgIcon :name="`${logo}`" :size="isSmallDevice ?{height: 100, width: 100}: {height: 192, width:192}"/>
-        </div> -->
-
         <div v-if="isItemVisible(index)">
-          <SvgIcon :name="`${logo}`" />
+          <SvgIcon :name="`${logo}`" :size="{ wide: true }" />
         </div>
       </transition>
     </div>

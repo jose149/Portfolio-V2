@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
 import { BannerConfig } from '.';
+import BannerHeading from './components/BannerHeading.vue';
+import BannerGridLayout from './layouts/BannerGridLayout.vue';
 
 interface BannerProps {
   config: BannerConfig;
@@ -11,28 +12,22 @@ const props = defineProps<BannerProps>();
 
 <template>
   <section class="banner">
-    <img
-      class="banner-image"
-      :src="props.config.profileImage"
-      alt="Profile photo"
-    />
-    <div class="banner-square"></div>
-
-    <article class="banner-content">
-      <FadingCarousel class="banner-carroussel" :logos="props.config.logos!" />
-      <h1 class="heading-1 heading">
-        <span class="heading-1-main">{{ props.config.heading.name }}</span>
-        <span class="heading-1-sub">{{ props.config.heading.job }}</span>
-      </h1>
-      <button
-        class="cta"
-        href="mailto:crespi.valero.jose@gmail.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Contact
-      </button>
-    </article>
+    <BannerGridLayout>
+      <template #left3Column>
+        <img
+          class="banner-image"
+          :src="props.config.profileImage"
+          alt="Profile photo"
+        />
+      </template>
+      <template #right5Column>
+        <BannerHeading
+          :heading="props.config.heading"
+          :logos="props.config.logos"
+        />
+      </template>
+    </BannerGridLayout>
+    <div class="banner-backgorund-square"></div>
   </section>
 </template>
 
@@ -45,24 +40,19 @@ const props = defineProps<BannerProps>();
   background: linear-gradient(
     0deg,
     $color-black-dark 0%,
-    $color-black-light 100%
+    $color-black-light 70%,
+    $color-black-dark 120%
   );
-  display: grid;
-  grid-template-columns: 1fr repeat(8, 9vw) 1fr;
-  align-items: center;
 
   @media only screen and (max-width: $bp-large) {
     height: 100dvh;
   }
+
   .banner-image {
-    align-self: flex-end;
-    position: absolute;
-    bottom: 10vh;
-    justify-self: center;
-    grid-column: 2 / 5;
+    margin-bottom: calc(10vh - 4px);
     max-height: 70%;
     width: auto;
-    z-index: 0;
+
     @media only screen and (max-width: $bp-large) {
       height: 60%;
       justify-self: end;
@@ -70,72 +60,23 @@ const props = defineProps<BannerProps>();
     }
   }
 
-  .banner-square {
+  .banner-backgorund-square {
     position: absolute;
     bottom: 0;
     left: 0;
     border-top-right-radius: 15px;
     height: 10vh;
     width: 50%;
-    background: linear-gradient(
-      180deg,
-      $color-black-light 0%,
-      $color-black-light-2 100%
-    );
-    z-index: 0;
-  }
+    // background: linear-gradient(
+    //   180deg,
+    //   $color-black-light 0%,
+    //   $color-black-light-2 100%
+    // );
+    background-color: #1d1d1d;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23050505' fill-opacity='0.34' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
-  .banner-content {
-    justify-self: end;
-    z-index: 1;
-    grid-column: 5/-2;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 5rem;
-    @media only screen and (max-width: $bp-medium) {
-      justify-self: center;
-      grid-column: 2 / -2;
-      align-items: center;
-    }
-    .banner-carroussel {
-      align-self: center;
-      width: 19.2rem;
-      height: 19.2rem;
-    }
-
-    .heading {
-      display: flex;
-      flex-direction: column;
-
-      @media only screen and (max-width: $bp-medium) {
-        align-items: center;
-      }
-    }
-    .cta {
-      line-height: 1.6;
-      width: max-content;
-      position: relative;
-      padding: $button-padding;
-      font-size: $button-font-size;
-      font-weight: $button-font-weight;
-      cursor: pointer;
-      transition: all $transition-time;
-      border-radius: $border-radius;
-      background: linear-gradient(
-        135deg,
-        $color-primary-light 0%,
-        $color-primary-dark 100%
-      );
-      color: white;
-      @media (hover: hover) {
-        &:hover {
-          transform: translateY(-2px);
-          transform-origin: center;
-          filter: brightness(1.1);
-        }
-      }
+    @media only screen and (max-width: $bp-large) {
+      width: 100%;
     }
   }
 }
