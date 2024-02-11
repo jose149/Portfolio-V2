@@ -1,7 +1,12 @@
 import { Profile } from '@/modules/banner/BannerViewModel';
 import { type Section } from './PortfolioViewModel';
 import { PROFILE, sections } from './data/data';
-import { ITechnology, getMainTechnologiesFromData } from './data/technologies';
+import {
+  ITechnology,
+  ITechnologyModule,
+  getMainTechnologiesFromData,
+  technologyModules,
+} from './data/technologies';
 
 export function getPortfolioSections(): Section[] {
   return sections;
@@ -21,4 +26,8 @@ export function getMainTechnologies(): ITechnology[] {
 
 export function getBannerImageSrc(): string {
   return '/assets/images/Profile/perfil1.webp';
+}
+
+export function getTechnologyModules(): ITechnologyModule[] {
+  return technologyModules;
 }

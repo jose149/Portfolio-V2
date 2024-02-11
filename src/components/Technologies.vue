@@ -38,4 +38,3 @@ function shouldShowTechnologyModule(module: TechnologyModuleType): boolean {
 @import '@/styles/main.scss';
 @import '@/styles/layout/Technologies.scss';
 </style>
-@/pages/portfolio/models/technologies

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Header from '@/modules/header/Header.vue';
 import Banner from '@/modules/banner/Banner.vue';
+import Technologies from '@/modules/technologies/Technologies.vue';
 import StickyBottomNavigationBar from '@/components/shared/navigationBar/StickyBottomNavigationBar.vue';
 // import Technologies from '@/components/Technologies.vue';
 // import Projects from "@/components/Projects.vue";
@@ -28,7 +29,7 @@ window.addEventListener('resize', () => {
   />
   <main>
     <Banner id="section-0" :config="portfolioStore.bannerConfig" />
-    <!-- <Technologies id="section-2" /> -->
+    <Technologies id="section-2" :config="portfolioStore.TechnologiesConfig" />
     <!-- <AboutMe id="section-1"/> -->
     <Projects id="section-3" />
     <!-- <Contact id="section-4"/> -->

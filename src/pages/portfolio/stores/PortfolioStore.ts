@@ -7,12 +7,14 @@ import {
   getOwnerLogoPath,
   getPortfolioSections,
   getProfile,
+  getTechnologyModules,
 } from '../models/PortfolioModel';
 import {
   HeaderConfig,
   NavigationBarLink,
 } from '@/modules/header/HeaderViewModel';
 import { BannerConfig } from '@/modules/banner';
+import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
@@ -63,6 +65,16 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     profileImage: getBannerImage(),
   }));
 
+  const TechnologiesConfig = computed<TechnologiesConfig>(() => {
+    const technologyModules = getTechnologyModules();
+    return {
+      technologyModules: technologyModules.map((technologyModule) => ({
+        name: technologyModule.type,
+        logos: technologyModule.iconName,
+      })),
+    };
+  });
+
   return {
     // State
     sections,
@@ -73,5 +85,6 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     // Getters
     headerConfig,
     bannerConfig,
+    TechnologiesConfig,
   };
 });
