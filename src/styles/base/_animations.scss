@@ -66,6 +66,17 @@
   transition: opacity 1s;
 }
 
+.electric-shine-enter-active {
+  animation: electric-shine 2s linear 2.5s;
+}
+
+@keyframes electric-shine {
+  50% {
+    color: white;
+    text-shadow: 0 0 1.5rem $color-primary-light;
+  }
+}
+
 .transition-enter-from,
 .transition-leave-to {
 }
