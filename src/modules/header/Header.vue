@@ -7,7 +7,6 @@ interface HeaderProps {
 }
 
 const props = defineProps<HeaderProps>();
-console.log(props.config.links);
 </script>
 
 <template>

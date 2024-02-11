@@ -55,6 +55,7 @@ const props = defineProps<BannerProps>();
 
     @media only screen and (max-width: $bp-large) {
       height: 60%;
+      margin-bottom: 6vh;
     }
   }
 
@@ -63,7 +64,7 @@ const props = defineProps<BannerProps>();
     bottom: 0;
     left: 0;
     border-top-right-radius: 15px;
-    height: 10vh;
+    height: 6vh;
     width: 50%;
     // background: linear-gradient(
     //   180deg,

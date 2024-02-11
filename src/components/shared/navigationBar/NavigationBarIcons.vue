@@ -23,7 +23,7 @@ const { isSmallDevice, isScrollAtTop } = inject(StateKey)!;
     }"
   >
     <ul class="nav-bar-list">
-      <li v-for="item in props.items" class="nav-bar-item" :key="item.id">
+      <li v-for="item in props.items" :key="item.id" class="nav-bar-item">
         <a
           :href="item.id"
           :aria-label="`Move to section ${item.id}`"

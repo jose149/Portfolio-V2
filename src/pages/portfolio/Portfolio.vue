@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Header from '@/modules/header/Header.vue';
 import Banner from '@/modules/banner/Banner.vue';
-// import Technologies from '@/components/Technologies.vue'
+import StickyBottomNavigationBar from '@/components/shared/navigationBar/StickyBottomNavigationBar.vue';
+// import Technologies from '@/components/Technologies.vue';
 // import Projects from "@/components/Projects.vue";
 // import AboutMe from '@/components/AboutMe.vue'
 // import Contact from '@/components/Contact.vue'
@@ -21,11 +22,14 @@ window.addEventListener('resize', () => {
     class="header"
     :config="portfolioStore.headerConfig"
   />
-  <StickyBottomNavigationBar />
+  <StickyBottomNavigationBar
+    v-else
+    :items="portfolioStore.headerConfig.links"
+  />
   <main>
     <Banner id="section-0" :config="portfolioStore.bannerConfig" />
+    <!-- <Technologies id="section-2" /> -->
     <!-- <AboutMe id="section-1"/> -->
-    <!-- <Technologies id="section-2"/> -->
     <Projects id="section-3" />
     <!-- <Contact id="section-4"/> -->
   </main>
