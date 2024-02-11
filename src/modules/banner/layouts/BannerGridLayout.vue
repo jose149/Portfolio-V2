@@ -23,13 +23,16 @@
     grid-template-columns: 1fr repeat(8, 11vw) 1fr;
   }
   .left-3-column {
+    height: 100%;
     grid-column: 2/5;
     align-self: end;
     justify-self: center;
+    display: flex;
+    align-items: end;
     z-index: 0;
     @media only screen and (max-width: $bp-large) {
       grid-row: 1;
-      grid-column: 1/4;
+      grid-column: 1/3;
     }
   }
 

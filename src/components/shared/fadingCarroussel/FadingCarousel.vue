@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
+import { SvgIconSizeUnit } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
 interface FaidingCarousselResponseProps {
   logos: SvgIconType[];
@@ -34,7 +35,10 @@ function updateVisibleItem(index: number): void {
         @after-leave="updateVisibleItem(index)"
       >
         <div v-if="isItemVisible(index)">
-          <SvgIcon :name="`${logo}`" :size="{ wide: true }" />
+          <SvgIcon
+            :name="`${logo}`"
+            :size="{ height: 100, width: 100, unit: SvgIconSizeUnit['%'] }"
+          />
         </div>
       </transition>
     </div>

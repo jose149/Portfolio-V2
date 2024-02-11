@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { BannerConfig } from '.';
-import BannerHeading from './components/BannerHeading.vue';
+import BannerPresentation from './components/BannerPresentation.vue';
 import BannerGridLayout from './layouts/BannerGridLayout.vue';
 
 interface BannerProps {
@@ -21,7 +21,7 @@ const props = defineProps<BannerProps>();
         />
       </template>
       <template #right5Column>
-        <BannerHeading
+        <BannerPresentation
           :heading="props.config.heading"
           :logos="props.config.logos"
         />
@@ -49,14 +49,12 @@ const props = defineProps<BannerProps>();
   }
 
   .banner-image {
-    margin-bottom: calc(10vh - 4px);
+    margin-bottom: 10vh;
     max-height: 70%;
     width: auto;
 
     @media only screen and (max-width: $bp-large) {
       height: 60%;
-      justify-self: end;
-      grid-column: 2 / 6;
     }
   }
 

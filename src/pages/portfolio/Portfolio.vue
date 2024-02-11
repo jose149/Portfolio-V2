@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Header from '@/modules/header/Header.vue';
-import Banner from '@/modules/banner/banner.vue';
+import Banner from '@/modules/banner/Banner.vue';
 // import Technologies from '@/components/Technologies.vue'
 // import Projects from "@/components/Projects.vue";
 // import AboutMe from '@/components/AboutMe.vue'
@@ -16,7 +16,12 @@ window.addEventListener('resize', () => {
 </script>
 
 <template>
-  <Header class="header" :config="portfolioStore.headerConfig" />
+  <Header
+    v-if="!portfolioStore.isSmallDevice"
+    class="header"
+    :config="portfolioStore.headerConfig"
+  />
+  <StickyBottomNavigationBar />
   <main>
     <Banner id="section-0" :config="portfolioStore.bannerConfig" />
     <!-- <AboutMe id="section-1"/> -->

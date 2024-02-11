@@ -1,11 +1,6 @@
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
-import {
-  BannerConfig,
-  HeaderConfig,
-  type NavigationBarLink,
-  type Section,
-} from '../models/PortfolioViewModel';
+import { type Section } from '../models/PortfolioViewModel';
 import {
   getBannerImageSrc,
   getMainTechnologies,
@@ -13,6 +8,11 @@ import {
   getPortfolioSections,
   getProfile,
 } from '../models/PortfolioModel';
+import {
+  HeaderConfig,
+  NavigationBarLink,
+} from '@/modules/header/HeaderViewModel';
+import { BannerConfig } from '@/modules/banner';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
@@ -29,7 +29,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   function getNavigationBarLinks(): NavigationBarLink[] {
     return sections.value.map((section) => ({
       id: section.id,
-      name: section.title,
+      name: section.name,
       src: section.url,
     }));
   }

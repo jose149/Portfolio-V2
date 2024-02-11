@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { NavigationBarLink } from '@/pages/portfolio/models/PortfolioViewModel';
+import { NavigationBarLink } from '@/modules/header/HeaderViewModel';
 
 interface NavigationBarTextProps {
   items: NavigationBarLink[];

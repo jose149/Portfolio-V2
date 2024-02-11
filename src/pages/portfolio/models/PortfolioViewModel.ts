@@ -1,14 +1,7 @@
 export interface Section {
   id: string;
-  title: string;
+  name: string;
   url: string;
-}
-
-export interface NavigationBarItem {
-  id: string;
-  title: string;
-  url: string;
-  isSelected: boolean;
 }
 
 export interface NavigationBarIconItem {

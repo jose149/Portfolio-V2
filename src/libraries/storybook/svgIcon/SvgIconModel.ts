@@ -410,14 +410,18 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
 export interface SvgIconTranslate {
   x?: number;
   y?: number;
-  unit?: 'px';
+  unit?: SvgIconSizeUnit;
+}
+
+export enum SvgIconSizeUnit {
+  px = 'px',
+  '%' = '%',
 }
 
 export interface SvgIconSize {
   width?: number;
   height?: number;
-  unit?: 'px';
-  wide?: boolean;
+  unit?: SvgIconSizeUnit;
 }
 
 export interface SvgIconTransformedProps {
@@ -441,8 +445,8 @@ export function transformPropsFormat(
   color?: SvgIconColor
 ): SvgIconTransformedProps {
   const defaultSettings = SVG_ICON_DEFAULT_SETTINGS_MAP[name];
-  const width = size?.wide ? '100%' : size?.width ?? defaultSettings.width;
-  const height = size?.wide ? '100%' : size?.height ?? defaultSettings.height;
+  const width = size?.width ?? defaultSettings.width;
+  const height = size?.height ?? defaultSettings.height;
   const unit = translate?.unit ?? 'px';
   const x = translate?.x ?? 0;
   const y = translate?.y ?? 0;
@@ -457,8 +461,8 @@ export function transformPropsFormat(
   };
 
   return {
-    width: `${width}px`,
-    height: `${height}px`,
+    width: `${width}${size?.unit ?? 'px'}`,
+    height: `${height}${size?.unit ?? 'px'}`,
     viewBox: `0 0 ${defaultSettings.width} ${defaultSettings.height}`,
     style,
   };
