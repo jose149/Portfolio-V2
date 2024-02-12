@@ -15,6 +15,7 @@ import {
 } from '@/modules/header/HeaderViewModel';
 import { BannerConfig } from '@/modules/banner';
 import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
+import { shouldShowTechnologyModule } from './PortfolioStoreLogic';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
@@ -70,7 +71,13 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     return {
       technologyModules: technologyModules.map((technologyModule) => ({
         name: technologyModule.type,
-        logos: technologyModule.iconName,
+        figures: technologyModule.technologies.map((technology) => {
+          return {
+            caption: technology.name,
+            iconName: technology.iconName,
+          };
+        }),
+        startCollapsed: shouldShowTechnologyModule(technologyModule.type),
       })),
     };
   });

@@ -416,6 +416,8 @@ export interface SvgIconTranslate {
 export enum SvgIconSizeUnit {
   px = 'px',
   '%' = '%',
+  rem = 'rem',
+  vw = 'vw',
 }
 
 export interface SvgIconSize {

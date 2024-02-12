@@ -38,6 +38,9 @@ $heading-1-sub-font-size: 4rem;
 $heading-1-font-weight: 800;
 $heading-1-sub-letter-spacing: 1px;
 
+$heading-2-font-weight: 700;
+$heading-2-font-size: 4rem;
+
 // Buttons
 $button-font-size: 1.8rem;
 $button-font-weight: 600;
@@ -71,5 +74,7 @@ $font-heading-1-main: $heading-1-font-weight $heading-1-main-font-size / 1
 
 $font-heading-1-sub: $heading-1-font-weight $heading-1-sub-font-size
   $font-primary;
+
+$font-heading-2: $heading-2-font-weight $heading-2-font-size / 1 $font-primary;
 
 $font-button: $button-font-weight $button-font-size / 1 $font-primary;

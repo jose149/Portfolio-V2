@@ -38,9 +38,9 @@ const props = defineProps<BannerProps>();
   width: 100%;
   height: 100vh;
   background: linear-gradient(
-    0deg,
+    -20deg,
     $color-black-dark 0%,
-    $color-black-light 70%,
+    $color-black-light 90%,
     $color-black-dark 120%
   );
 
@@ -65,7 +65,7 @@ const props = defineProps<BannerProps>();
     left: 0;
     border-top-right-radius: 15px;
     height: 10vh;
-    width: 50%;
+    width: 45%;
     // background: linear-gradient(
     //   180deg,
     //   $color-black-light 0%,

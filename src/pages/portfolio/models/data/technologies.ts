@@ -17,7 +17,7 @@ export interface ITechnology {
   isMostRelevant?: boolean;
 }
 
-enum TechnologyModuleType {
+export enum TechnologyModuleType {
   FrontEnd = 'Front End',
   BackEnd = 'Back End',
   UxUi = 'UI/UX',

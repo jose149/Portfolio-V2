@@ -1,6 +1,12 @@
 export interface TechnologyModule {
   name: string;
-  logos: string[];
+  figures: Figure[];
+  startCollapsed: boolean;
+}
+
+export interface Figure {
+  caption: string;
+  iconName: string;
 }
 
 export interface TechnologiesConfig {
