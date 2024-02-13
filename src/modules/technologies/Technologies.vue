@@ -31,7 +31,12 @@ const props = defineProps<TechnologiesProps>();
 @import '@/styles/main.scss';
 .section-technologies {
   position: relative;
-  background: $color-background;
+  background: linear-gradient(
+    -10deg,
+    $color-black-light 0%,
+    $color-black-light 20%,
+    $color-black-dark 60%
+  );
 
   .technologies-heading {
     color: $color-white;
