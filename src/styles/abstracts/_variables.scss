@@ -14,20 +14,28 @@ $color-secundary: #dda636;
 $color-secundary-hover: rgb(246, 197, 63);
 
 $color-white: #eeeeee;
-$color-black-light: #1d1d1d;
+
 $color-black-light-2: #212121;
-$color-black-lightest: #252525;
 $color-black-lightest-2: #464646;
 $color-black-lightest-3: #414141;
 $color-black-lightest-4: #494848;
 
 $color-black-dark-2: #191919;
 $color-black-dark-3: #101010;
-$color-black-dark: #050505;
-$color-primary: #ae1529;
-$color-primary-light: #ed2c44;
-$color-primary-lighest: #ee445c;
-$color-primary-dark: #8b1121;
+
+// $color-primary: #ae1529;
+// $color-primary-light: #ed2c44;
+// $color-primary-dark: #8b1121;
+
+// Colors
+$background-color-1: #030303;
+$background-color-2: #1b1b1b;
+$background-color-3: #101010;
+$background-color-4: #181818;
+$color-primary: #b71328;
+$color-primary-hover: #e81934;
+$color-primary-light: #ea1c37;
+$color-primary-dark: #a01124;
 
 // Fonts
 $font-primary: 'Inter', sans-serif;
@@ -86,3 +94,11 @@ $font-heading-2: $heading-2-font-weight $heading-2-font-size $font-primary;
 
 $font-link: $link-font-weight $link-font-size $primary-font-family;
 $font-button: $button-font-weight $button-font-size $primary-font-family;
+
+// Sections
+// $banner-background: linear-gradient(
+//   -10deg,
+//   $background-color-1: 40%,
+//   $background-color-2 80%,
+//   $background-color-1: 120%
+// );

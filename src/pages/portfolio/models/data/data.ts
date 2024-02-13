@@ -11,21 +11,21 @@ export const sections: Section[] = [
   },
   {
     id: '1',
-    name: 'AboutMe',
-    url: `${getMarketOrigin()}/section-1`,
-    iconName: 'Profile',
-  },
-  {
-    id: '2',
     name: 'Technologies',
     url: `${getMarketOrigin()}/section-2`,
     iconName: 'Javascript2',
   },
   {
-    id: '3',
+    id: '2',
     name: 'Projects',
     url: `${getMarketOrigin()}/section-3`,
     iconName: 'GitHub3',
+  },
+  {
+    id: '3',
+    name: 'About me',
+    url: `${getMarketOrigin()}/section-1`,
+    iconName: 'Profile',
   },
   {
     id: '4',

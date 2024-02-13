@@ -62,6 +62,9 @@ button {
 .single-column-grid {
   display: grid;
   grid-template-columns: 1fr calc(12rem * 8) 1fr;
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: 1fr 100vw 1fr;
+  }
   .single-column {
     width: 100%;
     grid-column: 2/3;
@@ -77,6 +80,11 @@ button {
 }
 
 .heading-2 {
+  margin-left: 2rem;
   color: $color-white;
   font: $font-heading-2;
+  @media only screen and (max-width: $bp-large) {
+    margin: 0;
+    align-self: center;
+  }
 }

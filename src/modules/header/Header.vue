@@ -7,46 +7,50 @@ interface HeaderProps {
 }
 
 const props = defineProps<HeaderProps>();
+
+window.addEventListener('scroll', function () {
+  var navbar = document.getElementsByClassName('portfolio-header');
+
+  if (window.scrollY > 0) {
+    // Cambia 50 por la cantidad de píxeles que desees para activar el cambio de color
+    navbar[0].classList.remove('transparent');
+  } else {
+    navbar[0].classList.add('transparent');
+  }
+});
 </script>
 
 <template>
-  <header class="portfolio-header single-column-grid">
-    <div class="portfolio-header-content single-column">
-      <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
-      <NavigationBarHorizontal :items="props.config.links" />
-    </div>
+  <header class="portfolio-header transparent">
+    <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
+    <NavigationBarHorizontal :items="props.config.links" />
   </header>
 </template>
 
 <style scoped lang="scss">
+@import '@/styles/main.scss';
 .portfolio-header {
   position: fixed;
   left: 0px;
   top: 0;
-  height: fit-content;
+  padding: 0 7rem;
+  height: 6rem;
   width: 100%;
-  // box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
+  background-color: $background-color-3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 1);
   z-index: 2;
-
-  &-content {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .header-logo {
-      max-height: 70%;
-      width: auto;
-    }
+  transition: 0.5s;
+  .header-logo {
+    max-height: 70%;
+    width: auto;
   }
 }
-.single-column-grid {
-  display: grid;
-  grid-template-columns: 1fr calc(8 * 12rem) 1fr;
-  grid-template-rows: 7rem;
-  .single-column {
-    grid-column: 2/3;
-    height: 100%;
-    width: 100%;
-  }
+
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
 }
 </style>

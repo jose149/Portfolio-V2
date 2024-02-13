@@ -66,9 +66,7 @@ const props = defineProps<NavigationBarTextProps>();
 
   @media (hover: hover) {
     .nav-bar-link:hover {
-      color: $color-primary-light;
-      font-weight: 600;
-      filter: brightness(1.2);
+      color: $color-primary-hover;
     }
   }
 }

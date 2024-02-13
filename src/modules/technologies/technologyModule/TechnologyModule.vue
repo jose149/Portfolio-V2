@@ -70,17 +70,12 @@ function setGroupHeight() {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  background: linear-gradient(
-    -20deg,
-    $color-black-dark 0%,
-    $color-black-light 90%,
-    $color-black-dark 120%
-  );
-  box-shadow: 0px 0px 5px rgba(white, 0.1);
+  border-radius: 5px;
+  background: $background-color-4;
 
   &-description {
     height: 0;
+    width: 100%;
     overflow: hidden;
     transition: all 0.5s;
     --webkit-transition: all 0.5s;
@@ -88,13 +83,14 @@ function setGroupHeight() {
       height: v-bind(groupHeight);
     }
     .technologies-container {
-      padding: 2rem;
+      padding: 3rem;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      row-gap: 2rem;
+      gap: 2rem;
 
       .technology {
-        width: 20%;
+        width: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;

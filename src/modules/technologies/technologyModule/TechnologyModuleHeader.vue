@@ -40,12 +40,6 @@ const props = defineProps<TechnologyModuleHeaderProps>();
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: linear-gradient(
-    -20deg,
-    $color-black-dark 0%,
-    $color-black-light 90%,
-    $color-black-dark 120%
-  );
   & .chevron {
     transition: all 0.25s;
     transform: rotate(-90deg);

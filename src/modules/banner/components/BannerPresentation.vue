@@ -68,6 +68,7 @@ onMounted(() => {
   margin-left: v-bind(presentationMargin);
 
   @media only screen and (max-width: $bp-large) {
+    margin: 0;
     align-items: center;
   }
 

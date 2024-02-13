@@ -19,7 +19,7 @@ const { isSmallDevice } = inject(StateKey)!;
 @import '@/styles/main.scss';
 .footer {
   padding: 3rem;
-  background-color: $color-black-light;
+  background-color: $background-color-2;
   font-size: 1.6rem;
   font-weight: 500;
   color: $color-white;

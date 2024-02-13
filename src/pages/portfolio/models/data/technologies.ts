@@ -44,7 +44,7 @@ export const frontEndDeliveryTechnologies: ITechnology[] = [
     isMostRelevant: true,
   },
   {
-    name: 'Vitest',
+    name: 'Vite',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Vitest',
     isMostRelevant: true,

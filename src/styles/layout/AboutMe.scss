@@ -1,6 +1,6 @@
 .section-about-me {
   position: relative;
-  background: $color-black-dark;
+  background: $background-color-1:
 
   .about-me-heading {
     grid-column: 1/-1;
@@ -19,7 +19,7 @@
     width: 50%;
     background: linear-gradient(
       180deg,
-      $color-black-light 0%,
+      $background-color-2 0%,
       $color-black-light-2 100%
     );
     z-index: 0;
