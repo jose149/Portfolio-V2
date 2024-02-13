@@ -37,32 +37,28 @@ const props = defineProps<NavigationBarTextProps>();
   .nav-bar-link,
   .nav-bar-link:link,
   .nav-bar-link:visited {
-    position: relative;
     padding: 1rem 1.5rem;
-    cursor: pointer;
     color: $color-white;
-    text-align: center;
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
+    font: $font-link;
+    text-transform: uppercase;
+    cursor: pointer;
   }
 
-  .highlighted {
-    @extend .nav-bar-link;
-    border-radius: $border-radius;
-    width: max-content;
-    background: $button-cta-background;
-    font: $font-button;
-    transition: all $transition-time;
+  // .highlighted {
+  //   @extend .nav-bar-link;
+  //   border-radius: $border-radius;
+  //   width: max-content;
+  //   background: $button-cta-background;
+  //   transition: all $transition-time;
 
-    @media (hover: hover) {
-      &:hover {
-        transform: translateY(-2px);
-        transform-origin: center;
-        filter: brightness(1.1);
-      }
-    }
-  }
+  //   @media (hover: hover) {
+  //     &:hover {
+  //       transform: translateY(-2px);
+  //       transform-origin: center;
+  //       filter: brightness(1.1);
+  //     }
+  //   }
+  // }
   .selected {
     color: $color-primary-light;
     font-weight: 600;

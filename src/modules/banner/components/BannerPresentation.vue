@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { Profile } from '../BannerViewModel';
 import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
 
@@ -8,6 +9,25 @@ interface BannerHeadingProps {
 }
 
 const props = defineProps<BannerHeadingProps>();
+
+const button = ref<HTMLDivElement | null>(null);
+const presentationMargin = ref<string>();
+onMounted(() => {
+  if (!button.value) {
+    return;
+  }
+  const resizeObserver = new ResizeObserver(setButttonWidth);
+
+  resizeObserver.observe(button.value);
+  setButttonWidth();
+
+  function setButttonWidth() {
+    if (!button.value) {
+      return;
+    }
+    presentationMargin.value = `-${button.value.clientWidth / 2}px`;
+  }
+});
 </script>
 
 <template>
@@ -15,12 +35,14 @@ const props = defineProps<BannerHeadingProps>();
     <FadingCarousel class="banner-carroussel" :logos="props.logos!" />
     <h1 class="banner-heading">
       <transition name="electric-shine" appear>
-        <span class="banner-heading-main">Jose Crespi Valero</span>
+        <span class="banner-heading-main">Hello Im Jose Crespi Valero</span>
       </transition>
 
       <span class="banner-heading-sub">Front end developer</span>
     </h1>
+
     <button
+      ref="button"
       class="cta"
       href="mailto:crespi.valero.jose@gmail.com"
       target="_blank"
@@ -39,7 +61,8 @@ const props = defineProps<BannerHeadingProps>();
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 5rem;
+  gap: 2.5rem;
+  margin-left: v-bind(presentationMargin);
 
   @media only screen and (max-width: $bp-large) {
     align-items: center;
@@ -49,36 +72,36 @@ const props = defineProps<BannerHeadingProps>();
     align-self: center;
     width: 19.2rem;
     height: 19.2rem;
+    margin-bottom: 3rem;
   }
 
   .banner-heading {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
     // -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent
     //       30%, rgba($color-primary-light, 0.1) 100%);
 
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (max-width: $bp-large) {
       align-items: center;
     }
 
     &-main {
       color: $color-primary-light;
       font: $font-heading-1-main;
-
-      @media only screen and (max-width: $bp-medium) {
-        font-size: calc($heading-1-main-font-size * 0.8);
-      }
+      line-height: 1;
     }
 
     &-sub {
       color: $color-white;
       font: $font-heading-1-sub;
-
-      @media only screen and (max-width: $bp-medium) {
-        font-size: calc($heading-1-sub-font-size * 0.8);
-        letter-spacing: calc($heading-1-sub-letter-spacing * 0.8);
-      }
+      line-height: 1;
     }
+  }
+
+  .banner-phrase {
+    color: rgba($color: #dadada, $alpha: 1);
+    font: $font-link;
   }
 
   .cta {
@@ -88,6 +111,7 @@ const props = defineProps<BannerHeadingProps>();
     background: $button-cta-background;
     color: white;
     font: $font-button;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all $transition-time;
 
