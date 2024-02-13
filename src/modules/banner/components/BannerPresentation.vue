@@ -34,9 +34,12 @@ onMounted(() => {
   <div class="banner-presentation">
     <FadingCarousel class="banner-carroussel" :logos="props.logos!" />
     <h1 class="banner-heading">
-      <transition name="electric-shine" appear>
-        <span class="banner-heading-main">Hello Im Jose Crespi Valero</span>
-      </transition>
+      <span class="banner-heading-main">
+        Hello Im
+        <transition name="electric-shine" appear>
+          <span>Jose Crespi Valero</span>
+        </transition>
+      </span>
 
       <span class="banner-heading-sub">Front end developer</span>
     </h1>
