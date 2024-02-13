@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { Figure } from '../technologiesViewModel';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
@@ -6,11 +7,28 @@ interface TechnologyModuleDescriptionProps {
   figures: Figure[];
 }
 
+interface TechnologyModuleDescriptionEmits {
+  (eventName: 'resizeOberserver', techGroup: HTMLDivElement | null): void;
+}
+
 const props = defineProps<TechnologyModuleDescriptionProps>();
+
+const emit = defineEmits<TechnologyModuleDescriptionEmits>();
+
+const techGroup = ref<HTMLDivElement | null>(null);
+onMounted(() => {
+  const resizeObserver = new ResizeObserver(() =>
+    emit('resizeOberserver', techGroup.value)
+  );
+  if (!techGroup.value) {
+    return;
+  }
+  resizeObserver.observe(techGroup.value);
+});
 </script>
 
 <template>
-  <div class="technologies-container">
+  <div ref="techGroup" class="technologies-container">
     <figure
       v-for="figure in props.figures"
       :key="figure.iconName"

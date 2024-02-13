@@ -33,13 +33,12 @@ const props = defineProps<NavigationBarTextProps>();
   display: flex;
   align-items: center;
   transition: all 0.5s;
-  background: transparent;
 
   .nav-bar-link,
   .nav-bar-link:link,
   .nav-bar-link:visited {
     position: relative;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
     cursor: pointer;
     color: $color-white;
     text-align: center;
@@ -51,7 +50,6 @@ const props = defineProps<NavigationBarTextProps>();
   .highlighted {
     @extend .nav-bar-link;
     border-radius: $border-radius;
-    padding: ($button-padding !important);
     width: max-content;
     background: $button-cta-background;
     font: $font-button;

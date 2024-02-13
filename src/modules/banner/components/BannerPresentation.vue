@@ -15,10 +15,10 @@ const props = defineProps<BannerHeadingProps>();
     <FadingCarousel class="banner-carroussel" :logos="props.logos!" />
     <h1 class="banner-heading">
       <transition name="electric-shine" appear>
-        <span class="banner-heading-main">{{ props.heading.name }}</span>
+        <span class="banner-heading-main">Jose Crespi Valero</span>
       </transition>
 
-      <span class="banner-heading-sub">{{ props.heading.job }}</span>
+      <span class="banner-heading-sub">Front end developer</span>
     </h1>
     <button
       class="cta"
@@ -34,6 +34,7 @@ const props = defineProps<BannerHeadingProps>();
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .banner-presentation {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +54,6 @@ const props = defineProps<BannerHeadingProps>();
   .banner-heading {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     // -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent
     //       30%, rgba($color-primary-light, 0.1) 100%);
 
@@ -63,7 +63,6 @@ const props = defineProps<BannerHeadingProps>();
 
     &-main {
       color: $color-primary-light;
-      text-transform: uppercase;
       font: $font-heading-1-main;
 
       @media only screen and (max-width: $bp-medium) {
@@ -74,7 +73,6 @@ const props = defineProps<BannerHeadingProps>();
     &-sub {
       color: $color-white;
       font: $font-heading-1-sub;
-      letter-spacing: $heading-1-sub-letter-spacing;
 
       @media only screen and (max-width: $bp-medium) {
         font-size: calc($heading-1-sub-font-size * 0.8);

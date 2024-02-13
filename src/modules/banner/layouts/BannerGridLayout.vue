@@ -41,8 +41,7 @@
   }
 
   .right-5-column {
-    grid-column: -7/-2;
-    justify-self: flex-end;
+    grid-column: -6/-2;
     z-index: 1;
     @media only screen and (max-width: $bp-large) {
       grid-row: 1;

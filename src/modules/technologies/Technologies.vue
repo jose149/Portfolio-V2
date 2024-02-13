@@ -67,7 +67,7 @@ const props = defineProps<TechnologiesProps>();
   left: 0;
   border-bottom-right-radius: 15px;
   height: 95%;
-  width: 45%;
+  width: 50%;
   // background: linear-gradient(
   //   180deg,
   //   $color-black-light-2 0%,

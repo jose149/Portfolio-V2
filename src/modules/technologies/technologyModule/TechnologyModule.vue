@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { Figure } from '@/modules/technologies/technologiesViewModel';
 import TechnologyModuleHeader from './TechnologyModuleHeader.vue';
-import TechnologyModuleDescription from './TechnologyModuleDescription.vue';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
 interface TechnologyModuleProps {
   heading: string;
@@ -41,7 +41,24 @@ function setGroupHeight() {
       @click="toggleCollapseBox"
     />
     <div class="technology-module-description" :class="{ open: !isCollapsed }">
-      <TechnologyModuleDescription ref="techGroup" :figures="props.figures" />
+      <div ref="techGroup" class="technologies-container">
+        <figure
+          v-for="figure in props.figures"
+          :key="figure.iconName"
+          class="technology"
+        >
+          <SvgIcon
+            :name="figure.iconName"
+            :size="{
+              height: 30,
+              width: 30,
+            }"
+          />
+          <figcaption class="fig-caption technology-caption">
+            {{ figure.caption }}
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +86,26 @@ function setGroupHeight() {
     --webkit-transition: all 0.5s;
     &.open {
       height: v-bind(groupHeight);
+    }
+    .technologies-container {
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 2rem;
+
+      .technology {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        filter: saturate(0.7);
+        &-caption {
+          color: $color-white;
+        }
+      }
     }
   }
 }

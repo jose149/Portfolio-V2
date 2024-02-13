@@ -10,9 +10,11 @@ const props = defineProps<HeaderProps>();
 </script>
 
 <template>
-  <header class="portfolio-header">
-    <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
-    <NavigationBarHorizontal :items="props.config.links" />
+  <header class="portfolio-header single-column-grid">
+    <div class="portfolio-header-content single-column">
+      <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
+      <NavigationBarHorizontal :items="props.config.links" />
+    </div>
   </header>
 </template>
 
@@ -21,15 +23,30 @@ const props = defineProps<HeaderProps>();
   position: fixed;
   left: 0px;
   top: 0;
-  padding: 0 2rem;
+  height: fit-content;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
+  // box-shadow: 1px 0 10px rgba(0, 0, 0, 0.8);
   z-index: 2;
-  .header-logo {
-    max-height: 100%;
+
+  &-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-logo {
+      max-height: 70%;
+      width: auto;
+    }
+  }
+}
+.single-column-grid {
+  display: grid;
+  grid-template-columns: 1fr calc(8 * 12rem) 1fr;
+  grid-template-rows: 7rem;
+  .single-column {
+    grid-column: 2/3;
+    height: 100%;
+    width: 100%;
   }
 }
 </style>
