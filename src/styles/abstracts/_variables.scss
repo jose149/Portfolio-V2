@@ -41,8 +41,8 @@ $heading-1-main-font-size: 2.2rem;
 $heading-1-sub-font-size: 4rem;
 $heading-1-font-weight: 600;
 
-$heading-2-font-weight: 700;
-$heading-2-font-size: 4rem;
+$heading-2-font-weight: 600;
+$heading-2-font-size: 3rem;
 
 // Links
 $link-font-size: 1.4rem;
@@ -82,8 +82,7 @@ $font-heading-1-main: $heading-1-font-weight $heading-1-main-font-size
 $font-heading-1-sub: $heading-1-font-weight $heading-1-sub-font-size
   $font-primary;
 
-$font-heading-2: $heading-2-font-weight $heading-2-font-size
-  $font-family-primary-bold;
+$font-heading-2: $heading-2-font-weight $heading-2-font-size $font-primary;
 
 $font-link: $link-font-weight $link-font-size $primary-font-family;
 $font-button: $button-font-weight $button-font-size $primary-font-family;

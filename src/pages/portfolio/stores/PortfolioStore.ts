@@ -3,10 +3,12 @@ import { defineStore } from 'pinia';
 import { type Section } from '../models/PortfolioViewModel';
 import {
   getBannerImageSrc,
+  getMainProjects,
   getMainTechnologies,
   getOwnerLogoPath,
   getPortfolioSections,
   getProfile,
+  getSubProjects,
   getTechnologyModules,
 } from '../models/PortfolioModel';
 import {
@@ -16,6 +18,7 @@ import {
 import { BannerConfig } from '@/modules/banner';
 import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
 import { shouldShowTechnologyModule } from './PortfolioStoreLogic';
+import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
@@ -66,7 +69,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     profileImage: getBannerImage(),
   }));
 
-  const TechnologiesConfig = computed<TechnologiesConfig>(() => {
+  const technologiesConfig = computed<TechnologiesConfig>(() => {
     const technologyModules = getTechnologyModules();
     return {
       technologyModules: technologyModules.map((technologyModule) => ({
@@ -82,6 +85,11 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     };
   });
 
+  const projectsConfig = computed<ProjectsConfig>(() => ({
+    mainProjects: getMainProjects(),
+    subProjects: getSubProjects(),
+  }));
+
   return {
     // State
     sections,
@@ -92,6 +100,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     // Getters
     headerConfig,
     bannerConfig,
-    TechnologiesConfig,
+    technologiesConfig,
+    projectsConfig,
   };
 });

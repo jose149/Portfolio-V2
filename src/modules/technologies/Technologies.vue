@@ -11,8 +11,8 @@ const props = defineProps<TechnologiesProps>();
 
 <template>
   <section class="section-technologies single-column-grid">
-    <div class="single-column">
-      <h2 class="technologies-heading">Technologies</h2>
+    <div class="single-column section-content">
+      <h2 class="heading-2">Technologies</h2>
       <div class="technologies-modules">
         <TechnologyModule
           v-for="technologyModule in props.config.technologyModules"
@@ -38,11 +38,6 @@ const props = defineProps<TechnologiesProps>();
     $color-black-dark 60%
   );
 
-  .technologies-heading {
-    color: $color-white;
-    font: $font-heading-2;
-  }
-
   .technologies-modules {
     width: 100%;
     display: flex;
@@ -51,27 +46,12 @@ const props = defineProps<TechnologiesProps>();
   }
 }
 
-.single-column-grid {
-  padding: 10rem 0;
-  display: grid;
-  grid-template-columns: 1fr calc(12rem * 8) 1fr;
-  .single-column {
-    width: 100%;
-    grid-column: 2/3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-    z-index: 1;
-  }
-}
-
 .technologies-backgorund-square {
   position: absolute;
   top: 0;
   left: 0;
   border-bottom-right-radius: 15px;
-  height: 95%;
+  height: 100%;
   width: 50%;
   // background: linear-gradient(
   //   180deg,
