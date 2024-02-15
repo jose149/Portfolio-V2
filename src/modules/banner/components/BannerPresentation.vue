@@ -91,7 +91,7 @@ onMounted(() => {
     }
 
     &-main {
-      color: $color-primary-light;
+      color: $color-primary;
       font: $font-heading-1-main;
       line-height: 1;
     }

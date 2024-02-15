@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="banner-grid-layout">
+  <div class="banner-grid-layout eight-column-grid">
     <div class="left-3-column">
       <slot name="left3Column"></slot>
     </div>
@@ -14,14 +14,8 @@
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .banner-grid-layout {
-  width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr repeat(8, 12rem) 1fr;
   align-items: center;
-  @media only screen and (max-width: $bp-large) {
-    grid-template-columns: repeat(8, 12.5vw);
-  }
   .left-3-column {
     height: 100%;
     grid-column: 2/5;

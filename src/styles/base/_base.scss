@@ -59,15 +59,16 @@ button {
   }
 }
 
-.single-column-grid {
+.eight-column-grid {
   display: grid;
-  grid-template-columns: 1fr calc(12rem * 8) 1fr;
+  grid-template-columns: 1fr repeat(8, 14rem) 1fr;
   @media only screen and (max-width: $bp-large) {
-    grid-template-columns: 1fr 100vw 1fr;
+    grid-template-columns: repeat(8, 12.5vw);
   }
+
   .single-column {
     width: 100%;
-    grid-column: 2/3;
+    grid-column: 2/-2;
     z-index: 1;
   }
 }

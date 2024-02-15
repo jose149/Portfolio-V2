@@ -4,10 +4,9 @@ import Banner from '@/modules/banner/Banner.vue';
 import Projects from '@/modules/projects/Projects.vue';
 import Technologies from '@/modules/technologies/Technologies.vue';
 import StickyBottomNavigationBar from '@/components/shared/navigationBar/StickyBottomNavigationBar.vue';
-// import Projects from "@/components/Projects.vue";
-// import AboutMe from '@/components/AboutMe.vue'
-// import Contact from '@/components/Contact.vue'
-// import Footer from '@/components/Footer.vue'
+import AboutMe from '@/modules/aboutMe/AboutMe.vue';
+import Contact from '@/modules/contact/Contact.vue';
+import Footer from '@/modules/footer/Footer.vue';
 import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
 
 const portfolioStore = usePortfolioStore();
@@ -29,44 +28,32 @@ window.addEventListener('resize', () => {
   />
   <main>
     <Banner id="section-0" :config="portfolioStore.bannerConfig" />
-    <Technologies id="section-2" :config="portfolioStore.technologiesConfig" />
-    <Projects id="section-3" :config="portfolioStore.projectsConfig" />
-    <!-- <AboutMe id="section-1"/> -->
+    <Technologies id="section-1" :config="portfolioStore.technologiesConfig" />
+    <Projects id="section-2" :config="portfolioStore.projectsConfig" />
+    <AboutMe id="section-3" />
 
-    <!-- <Contact id="section-4"/> -->
+    <Contact id="section-4" />
   </main>
-  <!-- <Footer/> -->
+  <Footer />
 </template>
 
 <style lang="scss">
 @import '@/styles/main.scss';
 #app {
   width: 100%;
-  background-color: $color-background;
+  background-color: $background-color-1;
   overflow: hidden;
 }
-.header {
-  height: 60px;
-}
-.contact-icon {
-  position: fixed;
-  bottom: 10rem;
-  right: 5rem;
-  background-color: $color-primary;
-  padding: 1.5rem;
-  border-radius: 50%;
-  transition: all 0.5s;
-  z-index: 2;
-  box-shadow: 0 0 0.5rem black;
-  filter: drop-shadow(0 0 0.5rem black);
-}
-.dark-square {
-  position: absolute;
-  top: 115vh;
-  left: 0;
-  height: 165vh;
-  width: 50%;
-  background-color: $color-background2;
-  z-index: 1;
-}
+// .contact-icon {
+//   position: fixed;
+//   bottom: 10rem;
+//   right: 5rem;
+//   background-color: $color-primary;
+//   padding: 1.5rem;
+//   border-radius: 50%;
+//   transition: all 0.5s;
+//   z-index: 2;
+//   box-shadow: 0 0 0.5rem black;
+//   filter: drop-shadow(0 0 0.5rem black);
+// }
 </style>

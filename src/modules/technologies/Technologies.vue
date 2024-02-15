@@ -10,7 +10,7 @@ const props = defineProps<TechnologiesProps>();
 </script>
 
 <template>
-  <section class="section-technologies single-column-grid">
+  <section class="section-technologies eight-column-grid">
     <div class="single-column section-content">
       <h2 class="heading-2">Technologies</h2>
       <div class="technologies-modules">
