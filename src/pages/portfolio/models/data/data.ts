@@ -4,35 +4,39 @@ import { Profile } from '@/modules/banner/BannerViewModel';
 
 export const sections: Section[] = [
   {
-    id: '0',
+    id: 'section-1',
     name: 'Home',
     url: `${getMarketOrigin()}/section-0`,
     iconName: 'Home',
+    active: false,
   },
   {
-    id: '1',
+    id: 'section-2',
     name: 'Technologies',
     url: `${getMarketOrigin()}/section-2`,
     iconName: 'Javascript2',
+    active: false,
   },
   {
-    id: '2',
+    id: 'section-3',
     name: 'Projects',
     url: `${getMarketOrigin()}/section-3`,
     iconName: 'GitHub3',
+    active: false,
   },
   {
-    id: '3',
+    id: 'section-4',
     name: 'About me',
     url: `${getMarketOrigin()}/section-1`,
     iconName: 'Profile',
+    active: false,
   },
   {
-    id: '4',
+    id: 'section-5',
     name: 'Contact',
     url: `${getMarketOrigin()}/section-4`,
     iconName: 'Mail',
-    isHighlighted: true,
+    active: false,
   },
 ];
 

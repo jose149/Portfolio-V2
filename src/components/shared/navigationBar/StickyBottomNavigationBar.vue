@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { NavigationBarLink } from '@/modules/header/HeaderViewModel';
+import { NavigationBarItem } from '@/modules/header/HeaderViewModel';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import { SvgIconSizeUnit } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
 interface NavigationBarTextProps {
-  items: NavigationBarLink[];
+  items: NavigationBarItem[];
 }
 
 const props = defineProps<NavigationBarTextProps>();
@@ -18,10 +18,10 @@ const props = defineProps<NavigationBarTextProps>();
       :href="item.id"
       :aria-label="`Move to section ${item.name}`"
       class="navigation-bar-link"
-      :class="{ highlighted: item.isSelected }"
+      :class="{ highlighted: item.active }"
     >
       <SvgIcon
-        :class="{ 'icon-highlighted': item.isSelected }"
+        :class="{ 'icon-highlighted': item.active }"
         :name="item.iconName"
         :size="{ height: 60, width: 60, unit: SvgIconSizeUnit['%'] }"
         :color="'white'"

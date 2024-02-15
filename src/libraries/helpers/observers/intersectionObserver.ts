@@ -1,10 +1,11 @@
 export function elementIntersectionObserver(
   element: HTMLElement,
   callback: (isIntersected: boolean) => void,
-  margin = -100
+  margin = -300
 ): void {
   const intersectionObserver = new IntersectionObserver(
     ([entry]) => {
+      console.log(entry.target);
       callback(entry.isIntersecting);
     },
     { rootMargin: `${margin}px` }

@@ -8,11 +8,15 @@ import AboutMe from '@/modules/aboutMe/AboutMe.vue';
 import Contact from '@/modules/contact/Contact.vue';
 import Footer from '@/modules/footer/Footer.vue';
 import { usePortfolioStore } from '@/pages/portfolio/stores/PortfolioStore';
+import { onMounted } from 'vue';
 
 const portfolioStore = usePortfolioStore();
 const SMALL_DEVICE_THRESHOLD = 800;
 window.addEventListener('resize', () => {
   portfolioStore.isSmallDevice = window.innerWidth < SMALL_DEVICE_THRESHOLD;
+});
+onMounted(() => {
+  portfolioStore.setSectionsIntersectionObserver();
 });
 </script>
 
@@ -24,15 +28,14 @@ window.addEventListener('resize', () => {
   />
   <StickyBottomNavigationBar
     v-else
-    :items="portfolioStore.headerConfig.links"
+    :items="portfolioStore.headerConfig.sections"
   />
   <main>
-    <Banner id="section-0" :config="portfolioStore.bannerConfig" />
-    <Technologies id="section-1" :config="portfolioStore.technologiesConfig" />
-    <Projects id="section-2" :config="portfolioStore.projectsConfig" />
-    <AboutMe id="section-3" />
-
-    <Contact id="section-4" />
+    <Banner id="section-1" :config="portfolioStore.bannerConfig" />
+    <Technologies id="section-2" :config="portfolioStore.technologiesConfig" />
+    <Projects id="section-3" :config="portfolioStore.projectsConfig" />
+    <AboutMe id="section-4" />
+    <Contact id="section-5" />
   </main>
   <Footer />
 </template>

@@ -23,7 +23,7 @@ window.addEventListener('scroll', function () {
 <template>
   <header class="portfolio-header transparent">
     <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
-    <NavigationBarHorizontal :items="props.config.links" />
+    <NavigationBarHorizontal :items="props.config.sections" />
   </header>
 </template>
 

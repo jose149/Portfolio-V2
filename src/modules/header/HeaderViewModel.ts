@@ -1,13 +1,8 @@
+import { Section } from '@/pages/portfolio/models/PortfolioViewModel';
+
 export interface HeaderConfig {
   logo: string;
-  links: NavigationBarLink[];
+  sections: Section[];
 }
 
-export interface NavigationBarLink {
-  id: string;
-  name: string;
-  src: string;
-  iconName: string;
-  isSelected?: boolean;
-  isHighlighted?: boolean;
-}
+export type NavigationBarItem = Section;

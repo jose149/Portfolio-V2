@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { NavigationBarLink } from '@/modules/header/HeaderViewModel';
+import { NavigationBarItem } from '@/modules/header/HeaderViewModel';
 
 interface NavigationBarTextProps {
-  items: NavigationBarLink[];
+  items: NavigationBarItem[];
 }
 
 const props = defineProps<NavigationBarTextProps>();
@@ -17,8 +17,7 @@ const props = defineProps<NavigationBarTextProps>();
       :aria-label="`Move to section ${item.name}`"
       class="nav-bar-link"
       :class="{
-        selected: item.isSelected,
-        highlighted: item.isHighlighted,
+        active: item.active,
       }"
     >
       {{ item.name }}
@@ -59,9 +58,8 @@ const props = defineProps<NavigationBarTextProps>();
   //     }
   //   }
   // }
-  .selected {
-    color: $color-primary-light;
-    font-weight: 600;
+  .active {
+    color: $color-primary;
   }
 
   @media (hover: hover) {

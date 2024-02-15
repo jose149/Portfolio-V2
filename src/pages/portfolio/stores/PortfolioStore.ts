@@ -11,14 +11,12 @@ import {
   getSubProjects,
   getTechnologyModules,
 } from '../models/PortfolioModel';
-import {
-  HeaderConfig,
-  NavigationBarLink,
-} from '@/modules/header/HeaderViewModel';
+import { HeaderConfig } from '@/modules/header/HeaderViewModel';
 import { BannerConfig } from '@/modules/banner';
 import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
 import { shouldShowTechnologyModule } from './PortfolioStoreLogic';
 import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
+import { elementIntersectionObserver } from '@/libraries/helpers/observers/intersectionObserver';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 800;
@@ -32,16 +30,6 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   );
 
   // Actions
-  function getNavigationBarLinks(): NavigationBarLink[] {
-    return sections.value.map((section) => ({
-      id: section.id,
-      name: section.name,
-      src: section.url,
-      iconName: section.iconName,
-      isHighlighted: section.isHighlighted,
-    }));
-  }
-
   function getOwnerLogoImageSource(): string {
     return new URL(ownerLogoPath.value, import.meta.url).href;
   }
@@ -56,11 +44,27 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     return getBannerImageSrc();
   }
 
+  function setSectionsIntersectionObserver(): void {
+    sections.value.forEach((section) => {
+      const sectionElement = document.getElementById(section.id);
+      if (!sectionElement) {
+        throw new Error(
+          `section HTML Element ${section.name} with Id ${section.id} not found in the Dom`
+        );
+      }
+      elementIntersectionObserver(sectionElement, setActive);
+    });
+  }
+
+  function setActive(): void {
+    sections.value.forEach((section) => (section.active = false));
+  }
+
   // Getters
 
   const headerConfig = computed<HeaderConfig>(() => ({
     logo: getOwnerLogoImageSource(),
-    links: getNavigationBarLinks(),
+    sections: sections.value,
   }));
 
   const bannerConfig = computed<BannerConfig>(() => ({
@@ -96,6 +100,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     isSmallDevice,
 
     // Actions
+    setSectionsIntersectionObserver,
 
     // Getters
     headerConfig,

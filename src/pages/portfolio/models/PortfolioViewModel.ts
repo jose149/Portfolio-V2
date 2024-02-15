@@ -3,12 +3,9 @@ export interface Section {
   name: string;
   url: string;
   iconName: string;
-  isHighlighted?: boolean;
+  active?: boolean;
 }
 
-export interface NavigationBarIconItem {
-  id: string;
-  iconName: string;
-  url: string;
-  isSelected: boolean;
+export interface PortfolioConfig {
+  sections: Section[];
 }
