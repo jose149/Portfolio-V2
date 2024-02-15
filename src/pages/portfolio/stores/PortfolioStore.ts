@@ -61,12 +61,14 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
           );
         }
         sections.value.forEach((section) => (section.active = false));
+        console.log('setting all to false');
         if (isIntersected) {
           const currentSection = sections.value.find(
-            (section) => section.id === `#${sectionElement.id}`
+            (section) => section.id === `${sectionElement.id}`
           );
           if (currentSection) {
             currentSection.active = true;
+            console.log(currentSection.name, currentSection.active);
           }
         }
       }
@@ -75,10 +77,10 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
 
   // Getters
 
-  const headerConfig = computed<HeaderConfig>(() => ({
-    logo: getOwnerLogoImageSource(),
-    sections: sections.value,
-  }));
+  const headerConfig = computed<HeaderConfig>(() => {
+    console.log('headerConfig');
+    return { logo: getOwnerLogoImageSource(), sections: sections.value };
+  });
 
   const bannerConfig = computed<BannerConfig>(() => ({
     heading: getProfile(),

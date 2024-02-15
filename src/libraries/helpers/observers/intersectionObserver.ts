@@ -5,7 +5,6 @@ export function elementIntersectionObserver(
 ): void {
   const intersectionObserver = new IntersectionObserver(
     ([entry]) => {
-      console.log(entry.target);
       callback(entry.isIntersecting);
     },
     { rootMargin: `${margin}px` }
