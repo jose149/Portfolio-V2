@@ -53,11 +53,24 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
         );
       }
       elementIntersectionObserver(sectionElement, setActive);
-    });
-  }
 
-  function setActive(): void {
-    sections.value.forEach((section) => (section.active = false));
+      function setActive(isIntersected: boolean): void {
+        if (!sectionElement) {
+          throw new Error(
+            `section HTML Element ${section.name} with Id ${section.id} not found in the Dom`
+          );
+        }
+        sections.value.forEach((section) => (section.active = false));
+        if (isIntersected) {
+          const currentSection = sections.value.find(
+            (section) => section.id === `#${sectionElement.id}`
+          );
+          if (currentSection) {
+            currentSection.active = true;
+          }
+        }
+      }
+    });
   }
 
   // Getters
