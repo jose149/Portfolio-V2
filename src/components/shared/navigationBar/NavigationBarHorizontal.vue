@@ -5,7 +5,13 @@ interface NavigationBarTextProps {
   items: NavigationBarItem[];
 }
 
+interface NavigationBarTextEmits {
+  (eventName: 'item-clicked', sectionId: string): void;
+}
+
 const props = defineProps<NavigationBarTextProps>();
+
+const emit = defineEmits<NavigationBarTextEmits>();
 </script>
 
 <template>
@@ -19,6 +25,7 @@ const props = defineProps<NavigationBarTextProps>();
       :class="{
         active: item.active,
       }"
+      @click="emit('item-clicked', item.id)"
     >
       {{ item.name }}
     </a>
@@ -41,6 +48,10 @@ const props = defineProps<NavigationBarTextProps>();
     font: $font-link;
     text-transform: uppercase;
     cursor: pointer;
+
+    &.active {
+      color: $color-primary;
+    }
   }
 
   // .highlighted {
@@ -58,9 +69,6 @@ const props = defineProps<NavigationBarTextProps>();
   //     }
   //   }
   // }
-  .active {
-    color: $color-primary;
-  }
 
   @media (hover: hover) {
     .nav-bar-link:hover {

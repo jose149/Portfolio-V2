@@ -43,9 +43,9 @@ const props = defineProps<TechnologiesProps>();
 
 .technologies-background-square {
   position: absolute;
-  top: 0;
+  top: -5vh;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 50%;
   background-color: $background-color-3;
 }

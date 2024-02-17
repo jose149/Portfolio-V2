@@ -2,11 +2,11 @@
 
 <template>
   <div class="banner-grid-layout eight-column-grid">
-    <div class="left-3-column">
-      <slot name="left3Column"></slot>
+    <div class="left-column">
+      <slot name="leftColumn"></slot>
     </div>
-    <div class="right-5-column">
-      <slot name="right5Column"></slot>
+    <div class="right-column">
+      <slot name="rightColumn"></slot>
     </div>
   </div>
 </template>
@@ -14,9 +14,11 @@
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .banner-grid-layout {
+  position: relative;
   height: 100%;
   align-items: center;
-  .left-3-column {
+  .left-column {
+    position: absolute;
     height: 100%;
     grid-column: 2/5;
     align-self: end;
@@ -34,14 +36,11 @@
     }
   }
 
-  .right-5-column {
-    grid-column: 6/-2;
+  .right-column {
+    grid-row: 1;
+    grid-column: 1/-1;
+    justify-self: center;
     z-index: 1;
-    @media only screen and (max-width: $bp-large) {
-      grid-row: 1;
-      grid-column: 1/-1;
-      justify-self: center;
-    }
   }
 }
 </style>

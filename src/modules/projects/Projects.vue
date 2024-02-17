@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ProjectsConfig } from './projectsViewModel';
-import MainProject from './components/MainProject.vue';
-import SubProject from './components/SubProject.vue';
+import ProjectCard from './components/ProjectCard.vue';
 
 interface ProjectsProps {
   config: ProjectsConfig;
@@ -14,20 +13,13 @@ const props = defineProps<ProjectsProps>();
   <section class="section-projects eight-column-grid">
     <div class="single-column section-content">
       <h2 class="heading-2">Projects</h2>
-      <div class="main-projects">
-        <MainProject
-          v-for="project in props.config.mainProjects"
-          :key="project.heading"
-          :project="project"
-        />
-      </div>
-      <div class="sub-projects">
-        <SubProject
-          v-for="project in props.config.subProjects"
-          :key="project.heading"
-          :project="project"
-        />
-      </div>
+    </div>
+    <div class="projects">
+      <ProjectCard
+        v-for="project in props.config.projects"
+        :key="project.name"
+        :project="project"
+      />
     </div>
     <div class="technologies-backgorund-square"></div>
   </section>
@@ -38,14 +30,13 @@ const props = defineProps<ProjectsProps>();
 .section-projects {
   background: $background-color-1;
 }
-.sub-projects {
+.projects {
   border-radius: $border-radius;
   grid-column: 2/-2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
   @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 }

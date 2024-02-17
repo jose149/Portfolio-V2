@@ -50,8 +50,8 @@ function setGroupHeight() {
           <SvgIcon
             :name="figure.iconName"
             :size="{
-              height: 30,
-              width: 30,
+              height: 50,
+              width: 50,
             }"
           />
           <figcaption class="fig-caption technology-caption">
@@ -76,18 +76,16 @@ function setGroupHeight() {
   &-description {
     height: 0;
     width: 100%;
-    overflow: hidden;
     transition: all 0.5s;
-    --webkit-transition: all 0.5s;
     &.open {
       height: v-bind(groupHeight);
     }
     .technologies-container {
-      padding: 3rem;
+      padding: 3rem 5rem;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 3rem;
 
       .technology {
         width: 100px;

@@ -19,8 +19,8 @@ $primary-font-family: 'Hind Siliguri', sans-serif;
 // weights 300, 400, 500, 600, 700
 
 // Headings
-$heading-1-main-font-size: 2.2rem;
-$heading-1-sub-font-size: 4rem;
+$heading-1-main-font-size: 4rem;
+$heading-1-sub-font-size: 2.2rem;
 $heading-1-font-weight: 600;
 
 $heading-2-font-weight: 600;
@@ -47,7 +47,7 @@ $transition-time: 0.2s;
 
 // pasa a 10
 
-$bp-largest: 75em; // 1200px
+$bp-largest: 68.75em; // 1100px
 $bp-large: 62.5em; // 1000px
 $bp-medium: 50em; // 800px;
 $bp-small: 37.5em; // 600px;

@@ -5,8 +5,12 @@ import { HeaderConfig } from './HeaderViewModel';
 interface HeaderProps {
   config: HeaderConfig;
 }
+interface HeaderEmits {
+  (eventName: 'navigation-item-clicked', sectionId: string): void;
+}
 
 const props = defineProps<HeaderProps>();
+const emit = defineEmits<HeaderEmits>();
 
 window.addEventListener('scroll', function () {
   var navbar = document.getElementsByClassName('portfolio-header');
@@ -23,7 +27,10 @@ window.addEventListener('scroll', function () {
 <template>
   <header class="portfolio-header transparent">
     <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
-    <NavigationBarHorizontal :items="props.config.sections" />
+    <NavigationBarHorizontal
+      :items="props.config.sections"
+      @item-clicked="emit('navigation-item-clicked', $event)"
+    />
   </header>
 </template>
 

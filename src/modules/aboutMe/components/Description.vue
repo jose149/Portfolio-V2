@@ -17,11 +17,7 @@
         design patterns, software quality techniques and best practices.
       </p>
     </div>
-    <a
-      class="cta"
-      href="/assets/documents/JoseCrespiCV.pdf"
-      download="CV_Jose_Crespi"
-    >
+    <a class="cta" href="/documents/JoseCrespiCV.pdf" download="CV_Jose_Crespi">
       Download CV
     </a>
   </div>

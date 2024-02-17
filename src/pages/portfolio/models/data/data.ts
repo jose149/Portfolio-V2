@@ -8,13 +8,15 @@ export const sections: Section[] = [
     name: 'Home',
     url: `${getMarketOrigin()}/section-0`,
     iconName: 'Home',
-    active: false,
+    visibilityRatio: 0,
+    active: true,
   },
   {
     id: 'section-2',
     name: 'Technologies',
     url: `${getMarketOrigin()}/section-2`,
     iconName: 'Javascript2',
+    visibilityRatio: 0,
     active: false,
   },
   {
@@ -22,6 +24,7 @@ export const sections: Section[] = [
     name: 'Projects',
     url: `${getMarketOrigin()}/section-3`,
     iconName: 'GitHub3',
+    visibilityRatio: 0,
     active: false,
   },
   {
@@ -29,15 +32,17 @@ export const sections: Section[] = [
     name: 'About me',
     url: `${getMarketOrigin()}/section-1`,
     iconName: 'Profile',
+    visibilityRatio: 0,
     active: false,
   },
-  {
-    id: 'section-5',
-    name: 'Contact',
-    url: `${getMarketOrigin()}/section-4`,
-    iconName: 'Mail',
-    active: false,
-  },
+  // {
+  //   id: 'section-5',
+  //   name: 'Contact',
+  //   url: `${getMarketOrigin()}/section-4`,
+  //   iconName: 'Mail',
+  //   visibilityRatio: 0,
+  //   active: false,
+  // },
 ];
 
 export const PROFILE: Profile = {

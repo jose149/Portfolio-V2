@@ -3,6 +3,7 @@ export interface Section {
   name: string;
   url: string;
   iconName: string;
+  visibilityRatio: number;
   active?: boolean;
 }
 

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
 import { Profile } from '../BannerViewModel';
 import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
 
@@ -9,25 +8,6 @@ interface BannerHeadingProps {
 }
 
 const props = defineProps<BannerHeadingProps>();
-
-const button = ref<HTMLDivElement | null>(null);
-const presentationMargin = ref<string>();
-onMounted(() => {
-  if (!button.value) {
-    return;
-  }
-  const resizeObserver = new ResizeObserver(setButttonWidth);
-
-  resizeObserver.observe(button.value);
-  setButttonWidth();
-
-  function setButttonWidth() {
-    if (!button.value) {
-      return;
-    }
-    presentationMargin.value = `-${button.value.clientWidth / 2}px`;
-  }
-});
 </script>
 
 <template>
@@ -35,7 +15,6 @@ onMounted(() => {
     <FadingCarousel class="banner-carroussel" :logos="props.logos!" />
     <h1 class="banner-heading">
       <span class="banner-heading-main">
-        Hello Im
         <transition name="electric-shine" appear>
           <span>Jose Crespi Valero</span>
         </transition>
@@ -63,14 +42,8 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   gap: 2.5rem;
-  margin-left: v-bind(presentationMargin);
-
-  @media only screen and (max-width: $bp-large) {
-    margin: 0;
-    align-items: center;
-  }
 
   .banner-carroussel {
     align-self: center;
@@ -82,13 +55,10 @@ onMounted(() => {
   .banner-heading {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     // -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent
     //       30%, rgba($color-primary-light, 0.1) 100%);
-
-    @media only screen and (max-width: $bp-large) {
-      align-items: center;
-    }
 
     &-main {
       color: $color-primary;

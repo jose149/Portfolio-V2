@@ -61,8 +61,8 @@ button {
 
 .eight-column-grid {
   display: grid;
-  grid-template-columns: 1fr repeat(8, 14rem) 1fr;
-  @media only screen and (max-width: $bp-large) {
+  grid-template-columns: 1fr repeat(8, calc(13.75rem - 0.3rem)) 1fr;
+  @media only screen and (max-width: $bp-largest) {
     grid-template-columns: repeat(8, 12.5vw);
   }
 

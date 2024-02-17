@@ -13,14 +13,14 @@ const props = defineProps<BannerProps>();
 <template>
   <section class="banner">
     <BannerGridLayout>
-      <template #left3Column>
+      <template #leftColumn>
         <img
           class="banner-image"
           :src="props.config.profileImage"
           alt="Profile photo"
         />
       </template>
-      <template #right5Column>
+      <template #rightColumn>
         <BannerPresentation
           :heading="props.config.heading"
           :logos="props.config.logos"
@@ -35,7 +35,7 @@ const props = defineProps<BannerProps>();
 .banner {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   background: linear-gradient(
     -20deg,
     $background-color-1 50%,
@@ -45,6 +45,7 @@ const props = defineProps<BannerProps>();
   .banner-image {
     max-height: auto;
     width: 100%;
+    margin-bottom: 5vh;
 
     @media only screen and (max-width: $bp-large) {
       height: 60%;

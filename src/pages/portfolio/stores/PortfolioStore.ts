@@ -3,12 +3,11 @@ import { defineStore } from 'pinia';
 import { type Section } from '../models/PortfolioViewModel';
 import {
   getBannerImageSrc,
-  getMainProjects,
+  getProjects,
   getMainTechnologies,
   getOwnerLogoPath,
   getPortfolioSections,
   getProfile,
-  getSubProjects,
   getTechnologyModules,
 } from '../models/PortfolioModel';
 import { HeaderConfig } from '@/modules/header/HeaderViewModel';
@@ -54,31 +53,53 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
       }
       elementIntersectionObserver(sectionElement, setActive);
 
-      function setActive(isIntersected: boolean): void {
+      function setActive(entries: IntersectionObserverEntry[]): void {
         if (!sectionElement) {
           throw new Error(
             `section HTML Element ${section.name} with Id ${section.id} not found in the Dom`
           );
         }
-        sections.value.forEach((section) => (section.active = false));
-        console.log('setting all to false');
-        if (isIntersected) {
-          const currentSection = sections.value.find(
-            (section) => section.id === `${sectionElement.id}`
+
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          // console.log(id, entry.intersectionRatio, entry.isIntersecting);
+          const sectionIndex = sections.value.findIndex(
+            (section) => section.id === id
           );
-          if (currentSection) {
-            currentSection.active = true;
-            console.log(currentSection.name, currentSection.active);
+
+          if (entry.isIntersecting) {
+            sections.value[sectionIndex].visibilityRatio =
+              entry.intersectionRatio;
+
+            const isSectionMostVisible = !sections.value.some((section) => {
+              if (section.id === entry.target.id) {
+                return false;
+              } else {
+                return section.visibilityRatio >= entry.intersectionRatio;
+              }
+            });
+
+            if (isSectionMostVisible) {
+              sections.value.forEach((section) => (section.active = false));
+              sections.value[sectionIndex].active = true;
+            }
           }
-        }
+        });
       }
     });
+  }
+
+  function scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (!element) {
+      return;
+    }
+    element.scrollIntoView();
   }
 
   // Getters
 
   const headerConfig = computed<HeaderConfig>(() => {
-    console.log('headerConfig');
     return { logo: getOwnerLogoImageSource(), sections: sections.value };
   });
 
@@ -105,8 +126,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   });
 
   const projectsConfig = computed<ProjectsConfig>(() => ({
-    mainProjects: getMainProjects(),
-    subProjects: getSubProjects(),
+    projects: getProjects(),
   }));
 
   return {
@@ -116,6 +136,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
 
     // Actions
     setSectionsIntersectionObserver,
+    scrollTo,
 
     // Getters
     headerConfig,

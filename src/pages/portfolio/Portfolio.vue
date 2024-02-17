@@ -25,6 +25,7 @@ onMounted(() => {
     v-if="!portfolioStore.isSmallDevice"
     class="header"
     :config="portfolioStore.headerConfig"
+    @navigation-item-clicked="portfolioStore.scrollTo"
   />
   <StickyBottomNavigationBar
     v-else
@@ -45,7 +46,6 @@ onMounted(() => {
 #app {
   width: 100%;
   background-color: $background-color-1;
-  overflow: hidden;
 }
 // .contact-icon {
 //   position: fixed;
