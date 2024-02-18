@@ -13,12 +13,15 @@ import {
 import { HeaderConfig } from '@/modules/header/HeaderViewModel';
 import { BannerConfig } from '@/modules/banner';
 import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
-import { shouldShowTechnologyModule } from './PortfolioStoreLogic';
+import {
+  getButtonPosition,
+  shouldShowTechnologyModule,
+} from './PortfolioStoreLogic';
 import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
 import { elementIntersectionObserver } from '@/libraries/helpers/observers/intersectionObserver';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
-  const SMALL_DEVICE_THRESHOLD = 800;
+  const SMALL_DEVICE_THRESHOLD = 1000;
 
   // State
   const sections = ref<Section[]>(getPortfolioSections());
@@ -126,6 +129,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
 
   const projectsConfig = computed<ProjectsConfig>(() => ({
     projects: getProjects(),
+    buttonPosition: getButtonPosition(isSmallDevice.value),
   }));
 
   return {

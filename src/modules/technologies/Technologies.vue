@@ -13,15 +13,13 @@ const props = defineProps<TechnologiesProps>();
   <section class="section-technologies eight-column-grid">
     <div class="single-column section-content">
       <h2 class="section-heading heading-2">Technologies</h2>
-      <div class="technologies-modules">
-        <TechnologyModule
-          v-for="technologyModule in props.config.technologyModules"
-          :key="technologyModule.name"
-          :heading="technologyModule.name"
-          :figures="technologyModule.figures"
-          :start-collapsed="technologyModule.startCollapsed"
-        />
-      </div>
+      <TechnologyModule
+        v-for="technologyModule in props.config.technologyModules"
+        :key="technologyModule.name"
+        :heading="technologyModule.name"
+        :figures="technologyModule.figures"
+        :start-collapsed="technologyModule.startCollapsed"
+      />
     </div>
     <div class="technologies-background-square"></div>
   </section>

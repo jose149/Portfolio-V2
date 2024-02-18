@@ -1,5 +1,6 @@
 export interface ProjectsConfig {
   projects: Project[];
+  buttonPosition: Position;
 }
 
 export interface Project {
@@ -8,4 +9,9 @@ export interface Project {
   link: string;
   description?: string;
   organisationLogo?: string;
+}
+
+export enum Position {
+  Top = 'top',
+  Bottom = 'bottom',
 }

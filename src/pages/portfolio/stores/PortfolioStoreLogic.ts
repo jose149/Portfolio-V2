@@ -1,3 +1,4 @@
+import { Position } from '@/modules/projects/projectsViewModel';
 import { TechnologyModuleType } from '../models/data/technologies';
 
 export function shouldShowTechnologyModule(
@@ -13,5 +14,13 @@ export function shouldShowTechnologyModule(
 
     default:
       return false;
+  }
+}
+
+export function getButtonPosition(isSmallDevice: boolean): Position {
+  if (isSmallDevice) {
+    return Position.Bottom;
+  } else {
+    return Position.Top;
   }
 }

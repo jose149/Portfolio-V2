@@ -73,10 +73,13 @@ function setGroupHeight() {
   border-radius: 5px;
   background: $background-color-4;
 
+  // Overflow property required to make the animation
   &-description {
     height: 0;
     width: 100%;
+    overflow: hidden;
     transition: all 0.5s;
+
     &.open {
       height: v-bind(groupHeight);
     }
@@ -96,6 +99,10 @@ function setGroupHeight() {
         text-align: center;
         gap: 1rem;
         filter: saturate(0.7);
+        @media only screen and (max-width: $bp-small) {
+          width: 70px;
+        }
+
         &-caption {
           color: $color-white;
         }
