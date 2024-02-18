@@ -10,7 +10,7 @@ const props = defineProps<ProjectsProps>();
 </script>
 
 <template>
-  <section class="section-projects section-grid">
+  <section class="section-projects eight-column-grid">
     <div class="single-column section-content">
       <div class="section-heading projects-heading">
         <h2 class="heading-2">Projects</h2>

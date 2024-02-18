@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="banner-grid-layout">
+  <div class="banner-grid-layout eight-column-grid">
     <div class="left-3-column">
       <slot name="left3Column"></slot>
     </div>
@@ -14,13 +14,9 @@
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .banner-grid-layout {
+  position: relative;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr repeat(8, calc(13.75rem - 0.3rem)) 1fr;
   align-items: center;
-  @media only screen and (max-width: $bp-largest) {
-    grid-template-columns: repeat(8, 12.5vw);
-  }
   .left-3-column {
     position: absolute;
     height: 100%;
@@ -30,13 +26,12 @@
     display: flex;
     align-items: end;
     z-index: 0;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
       grid-row: 1;
       grid-column: 1/4;
-      justify-self: flex-end;
     }
-    @media only screen and (max-width: $bp-small) {
-      grid-column: 1/5;
+    @media only screen and (max-width: $bp-large) {
+      justify-self: flex-end;
     }
   }
 

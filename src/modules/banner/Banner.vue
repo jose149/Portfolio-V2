@@ -12,7 +12,7 @@ const props = defineProps<BannerProps>();
 
 <template>
   <section class="banner">
-    <BannerGridLayout class="section-grid">
+    <BannerGridLayout>
       <template #left3Column>
         <img
           class="banner-image"
@@ -47,7 +47,7 @@ const props = defineProps<BannerProps>();
     width: 100%;
     margin-bottom: 5vh;
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
       height: 60%;
       width: auto;
     }

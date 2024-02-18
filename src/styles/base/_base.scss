@@ -53,35 +53,39 @@ button {
   }
 }
 
-.section-grid {
+.eight-column-grid {
+  position: relative;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr repeat(8, calc(13.75rem - 0.3rem)) 1fr;
   @media only screen and (max-width: $bp-largest) {
-    grid-template-columns: repeat(8, 12.5vw);
+    grid-template-columns: repeat(8, calc(12.5vw - 0.3rem));
   }
 
   .single-column {
     width: 100%;
     grid-column: 2/-2;
-    z-index: 1;
+    @media only screen and (max-width: $bp-largest) {
+      grid-row: 1;
+      grid-column: 1/-1;
+    }
   }
 }
 
 .section-content {
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .heading-2 {
-  margin-left: 2rem;
   color: $color-white;
   font: $font-heading-2;
-  @media only screen and (max-width: $bp-large) {
-    margin: 0;
+  @media only screen and (max-width: $bp-medium) {
     align-self: center;
   }
 }
 
 .section-heading {
-  padding: 5rem 0 2rem;
+  padding: 5rem 2rem 2rem 2rem;
 }

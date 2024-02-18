@@ -4,7 +4,7 @@ import Description from './components/Description.vue';
 </script>
 
 <template>
-  <section class="section-about-me section-grid">
+  <section class="section-about-me eight-column-grid">
     <div class="section-heading about-me-heading">
       <h2 class="heading-2">About me</h2>
     </div>
