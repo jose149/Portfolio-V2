@@ -4,10 +4,13 @@ import Description from './components/Description.vue';
 </script>
 
 <template>
-  <section class="section-about-me eight-column-grid">
-    <h2 class="about-me-heading">About me</h2>
+  <section class="section-about-me section-grid">
+    <div class="section-heading about-me-heading">
+      <h2 class="heading-2">About me</h2>
+    </div>
     <Presentation />
     <Description />
+    <div class="about-me-backgorund-square"></div>
   </section>
 </template>
 
@@ -16,18 +19,16 @@ import Description from './components/Description.vue';
 .section-about-me {
   position: relative;
   background: $background-color-1;
-  padding: 5rem 0;
   .about-me-heading {
-    grid-column: 1/-1;
-    justify-self: center;
-    color: $color-white;
-    font-size: 4rem;
-    z-index: 1;
-  }
-
-  .experience {
     grid-column: 2/-2;
-    grid-row: 2;
   }
+}
+.about-me-backgorund-square {
+  position: absolute;
+  top: -35vh;
+  left: 0;
+  height: 40vh;
+  width: 100%;
+  background-color: $background-color-3;
 }
 </style>

@@ -87,7 +87,6 @@ function getEquivalentIndex(index: number): number {
 
 function getItemXTranslation(index: number): number {
   const factor = isSmallDevice.value ? 40 : 75;
-  console.log(factor);
   const relativeIndex = getEquivalentIndex(index);
   return -50 - factor * (currentIndex.value - relativeIndex);
 }

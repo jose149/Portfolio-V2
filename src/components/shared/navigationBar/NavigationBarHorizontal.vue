@@ -25,7 +25,7 @@ const emit = defineEmits<NavigationBarTextEmits>();
       :class="{
         active: item.active,
       }"
-      @click="emit('item-clicked', item.id)"
+      @click.prevent="emit('item-clicked', item.id)"
     >
       {{ item.name }}
     </a>

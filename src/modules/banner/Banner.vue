@@ -12,15 +12,15 @@ const props = defineProps<BannerProps>();
 
 <template>
   <section class="banner">
-    <BannerGridLayout>
-      <template #leftColumn>
+    <BannerGridLayout class="section-grid">
+      <template #left3Column>
         <img
           class="banner-image"
           :src="props.config.profileImage"
           alt="Profile photo"
         />
       </template>
-      <template #rightColumn>
+      <template #centerColumn>
         <BannerPresentation
           :heading="props.config.heading"
           :logos="props.config.logos"

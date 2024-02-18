@@ -62,7 +62,6 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
 
         entries.forEach((entry) => {
           const id = entry.target.id;
-          // console.log(id, entry.intersectionRatio, entry.isIntersecting);
           const sectionIndex = sections.value.findIndex(
             (section) => section.id === id
           );
@@ -94,7 +93,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     if (!element) {
       return;
     }
-    element.scrollIntoView();
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 
   // Getters

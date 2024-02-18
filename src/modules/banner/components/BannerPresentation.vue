@@ -23,7 +23,7 @@ const props = defineProps<BannerHeadingProps>();
       <span class="banner-heading-sub">Front end developer</span>
     </h1>
 
-    <button
+    <a
       ref="button"
       class="cta"
       href="mailto:crespi.valero.jose@gmail.com"
@@ -31,7 +31,7 @@ const props = defineProps<BannerHeadingProps>();
       rel="noreferrer"
     >
       Contact
-    </button>
+    </a>
   </div>
 </template>
 

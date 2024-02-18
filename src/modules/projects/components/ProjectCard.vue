@@ -55,7 +55,7 @@ const props = defineProps<ProjectCardProps>();
 
   .project-card {
     padding: 5rem 3rem;
-    background-color: $background-color-3;
+    background-color: $background-color-4;
     cursor: pointer;
 
     @media (hover: hover) {

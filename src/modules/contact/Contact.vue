@@ -2,7 +2,7 @@
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 </script>
 <template>
-  <section class="section section-contact">
+  <section class="section-grid section-contact">
     <main class="contact-content">
       <div class="contact-info">
         <p class="contact-info-heading">Contact info</p>
