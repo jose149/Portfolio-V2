@@ -4,13 +4,17 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
 <template>
   <div class="presentation">
-    <img
-      loading="lazy"
-      class="presentation-image"
-      rel="preload"
-      src="/assets/images/Profile/perfil2.webp"
-      alt="Profile photo"
-    />
+    <div class="presentation-image">
+      <img
+        loading="lazy"
+        class="image"
+        rel="preload"
+        src="/assets/images/Profile/perfil2.webp"
+        alt="Profile photo"
+      />
+      <div class="image-overlay"></div>
+    </div>
+
     <div class="presentation-profile">
       <p class="heading-3 profile-name">José Crespí Valero</p>
       <p class="heading-3 profile-job">Front end engineer</p>
@@ -65,15 +69,32 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
   &-image {
     width: 100%;
+    position: relative;
     padding: 2rem 20% 0 20%;
-    background: radial-gradient(
-      37.61% 45.84% at 50% 70.31%,
-      #8d0f20 0%,
-      #8a1121 97.99%,
-      rgba(174, 21, 41, 0.01) 100%
-    );
+    // background: radial-gradient(
+    //   37.61% 45.84% at 50% 70.31%,
+    //   #8d0f20 0%,
+    //   #8a1121 97.99%,
+    //   rgba(174, 21, 41, 0.01) 100%
+    // );
     @media only screen and (max-width: $bp-large) {
       padding: 0 20%;
+    }
+    .image {
+      width: 100%;
+    }
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        0deg,
+        $background-color-1 0%,
+        rgba($background-color-1, 0.3) 40%,
+        transparent 100%
+      );
     }
   }
   &-profile {

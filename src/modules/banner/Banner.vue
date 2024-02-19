@@ -45,7 +45,8 @@ const props = defineProps<BannerProps>();
   .banner-image {
     max-height: auto;
     width: 100%;
-    margin-bottom: 5vh;
+    margin-bottom: -20vh;
+    filter: brightness(0.8);
 
     @media only screen and (max-width: $bp-largest) {
       height: 60%;
