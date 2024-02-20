@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import AppLink from '@/components/shared/AppLink/AppLink.vue';
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 </script>
 <template>
@@ -19,14 +20,9 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
       </div>
       <div class="contact-cta">
         <p class="contact-heading">Let’s work together on our next project</p>
-        <a
-          class="cta"
-          href="mailto:crespi.valero.jose@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Contact
-        </a>
+        <AppLink type="primary" link="mailto:crespi.valero.jose@gmail.com">
+          <template #linkContent>Contact</template>
+        </AppLink>
       </div>
     </main>
   </section>
@@ -91,29 +87,6 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
       line-height: 1;
       @media only screen and (max-width: $bp-large) {
         font-size: 3rem;
-      }
-    }
-    .cta {
-      width: max-content;
-      position: relative;
-      padding: $button-padding;
-      font-size: $button-font-size;
-      font-weight: $button-font-weight;
-      cursor: pointer;
-      transition: all $transition-time;
-      border-radius: $border-radius;
-      background: linear-gradient(
-        135deg,
-        $color-primary-light 0%,
-        $color-primary-dark 100%
-      );
-      color: white;
-      @media (hover: hover) {
-        &:hover {
-          transform: translateY(-2px);
-          transform-origin: center;
-          filter: brightness(1.1);
-        }
       }
     }
   }

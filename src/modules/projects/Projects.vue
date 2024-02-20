@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import AppLink from '@/components/shared/AppLink/AppLink.vue';
 import { Position, ProjectsConfig } from './projectsViewModel';
 import ProjectCard from './components/ProjectCard.vue';
 
@@ -14,16 +15,14 @@ const props = defineProps<ProjectsProps>();
     <div class="single-column section-content">
       <div class="section-heading projects-heading">
         <h2 class="heading-2">Projects</h2>
-        <a
+        <AppLink
           v-if="props.config.buttonPosition === Position.Top"
-          class="cta"
-          href="https://github.com/jose149"
+          type="primary"
+          link="https://github.com/jose149"
           aria-label="Open Github to check my projects"
-          target="_blank"
-          rel="noreferrer"
         >
-          VIEW ALL
-        </a>
+          <template #linkContent>VIEW ALL</template>
+        </AppLink>
       </div>
       <div class="projects">
         <ProjectCard
@@ -32,16 +31,14 @@ const props = defineProps<ProjectsProps>();
           :project="project"
         />
       </div>
-      <a
+      <AppLink
         v-if="props.config.buttonPosition === Position.Bottom"
-        class="cta"
-        href="https://github.com/jose149"
+        type="primary"
+        link="https://github.com/jose149"
         aria-label="Open Github to check my projects"
-        target="_blank"
-        rel="noreferrer"
       >
-        VIEW ALL
-      </a>
+        <template #linkContent>VIEW ALL</template>
+      </AppLink>
     </div>
   </section>
 </template>
@@ -63,36 +60,10 @@ const props = defineProps<ProjectsProps>();
   grid-column: 2/-2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 5rem;
 
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-.cta,
-.cta:visited {
-  border-radius: $border-radius;
-  padding: $button-padding;
-  width: max-content;
-  background: $button-cta-background;
-  color: white;
-  font: $font-button;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all $transition-time;
-
-  @media only screen and (max-width: $bp-medium) {
-    justify-self: center;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      transform: translateY(-2px);
-      transform-origin: center;
-      filter: brightness(1.1);
-    }
   }
 }
 </style>

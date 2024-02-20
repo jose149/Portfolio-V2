@@ -16,7 +16,12 @@ const props = defineProps<ProjectCardProps>();
     target="_blank"
     rel="noreferrer"
   >
-    <a class="project-card">
+    <a
+      class="project-card"
+      :href="props.project.link"
+      target="_blank"
+      rel="noreferrer"
+    >
       <div class="project-content">
         <img
           loading="lazy"
@@ -33,16 +38,17 @@ const props = defineProps<ProjectCardProps>();
         />
       </div>
     </a>
-
-    <p class="project-header">
-      <span class="heading-3-link header-title">
-        {{ props.project.name }}
-      </span>
-      <span class="heading-3-link header-link">
-        More details
-        <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
-      </span>
-    </p>
+    <span class="project-title">
+      {{ props.project.name }}
+    </span>
+    <a
+      v-if="props.project.repositoryUrl"
+      class="project-link"
+      :href="props.project.repositoryUrl"
+    >
+      More details
+      <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
+    </a>
   </div>
 </template>
 
@@ -100,12 +106,13 @@ const props = defineProps<ProjectCardProps>();
     flex-direction: column;
   }
 }
-.header-title {
+.project-title {
   color: $color-white;
+  font-size: 2.2rem;
 }
-.header-link {
+.project-link {
   color: $color-primary;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   line-height: 1;
   display: flex;
   align-items: center;

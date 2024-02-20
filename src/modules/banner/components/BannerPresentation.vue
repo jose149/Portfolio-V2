@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import { Profile } from '../BannerViewModel';
-import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
-
-interface BannerHeadingProps {
-  logos: string[];
-  heading: Profile;
-}
-
-const props = defineProps<BannerHeadingProps>();
+import AppLink from '@/components/shared/AppLink/AppLink.vue';
 </script>
 
 <template>
   <div class="banner-presentation">
-    <FadingCarousel class="banner-carroussel" :logos="props.logos!" />
     <h1 class="banner-heading">
       <span class="banner-heading-main">
         <transition name="electric-shine" appear>
@@ -23,15 +14,9 @@ const props = defineProps<BannerHeadingProps>();
       <span class="banner-heading-sub">Front end developer</span>
     </h1>
 
-    <a
-      ref="button"
-      class="cta"
-      href="mailto:crespi.valero.jose@gmail.com"
-      target="_blank"
-      rel="noreferrer"
-    >
-      Contact
-    </a>
+    <AppLink link="mailto:crespi.valero.jose@gmail.com" type="primary">
+      <template #linkContent>Contact</template>
+    </AppLink>
   </div>
 </template>
 
@@ -44,13 +29,6 @@ const props = defineProps<BannerHeadingProps>();
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-
-  .banner-carroussel {
-    align-self: center;
-    width: 19.2rem;
-    height: 19.2rem;
-    margin-bottom: 3rem;
-  }
 
   .banner-heading {
     display: flex;
@@ -76,26 +54,6 @@ const props = defineProps<BannerHeadingProps>();
   .banner-phrase {
     color: rgba($color: #dadada, $alpha: 1);
     font: $font-link;
-  }
-
-  .cta {
-    border-radius: $border-radius;
-    padding: $button-padding;
-    width: max-content;
-    background: $button-cta-background;
-    color: white;
-    font: $font-button;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all $transition-time;
-
-    @media (hover: hover) {
-      &:hover {
-        transform: translateY(-2px);
-        transform-origin: center;
-        filter: brightness(1.1);
-      }
-    }
   }
 }
 </style>

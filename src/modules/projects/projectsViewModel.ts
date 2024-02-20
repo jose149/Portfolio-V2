@@ -7,6 +7,7 @@ export interface Project {
   name: string;
   image: string;
   link: string;
+  repositoryUrl?: string;
   description?: string;
   organisationLogo?: string;
 }

@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppLink from '@/components/shared/AppLink/AppLink.vue';
+</script>
 
 <template>
   <div class="description">
@@ -17,9 +19,13 @@
         design patterns, software quality techniques and best practices.
       </p>
     </div>
-    <a class="cta" href="/documents/JoseCrespiCV.pdf" download="CV_Jose_Crespi">
-      Download CV
-    </a>
+    <AppLink
+      type="primary"
+      link="/documents/JoseCrespiCV.pdf"
+      downloadName="CV_Jose_Crespi"
+    >
+      <template #linkContent>Download CV</template>
+    </AppLink>
   </div>
 </template>
 
@@ -57,30 +63,6 @@
     font-size: 1.8rem;
     font-weight: 300;
     text-align: start;
-  }
-
-  .cta {
-    width: max-content;
-    position: relative;
-    padding: $button-padding;
-    font-size: $button-font-size;
-    font-weight: $button-font-weight;
-    cursor: pointer;
-    transition: all $transition-time;
-    border-radius: $border-radius;
-    background: linear-gradient(
-      135deg,
-      $color-primary-light 0%,
-      $color-primary-dark 100%
-    );
-    color: white;
-    @media (hover: hover) {
-      &:hover {
-        transform: translateY(-2px);
-        transform-origin: center;
-        filter: brightness(1.1);
-      }
-    }
   }
 }
 </style>

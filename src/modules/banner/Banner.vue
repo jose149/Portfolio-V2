@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { BannerConfig } from '.';
 import BannerPresentation from './components/BannerPresentation.vue';
-import BannerGridLayout from './layouts/BannerGridLayout.vue';
+import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
 
 interface BannerProps {
   config: BannerConfig;
@@ -11,22 +11,20 @@ const props = defineProps<BannerProps>();
 </script>
 
 <template>
-  <section class="banner">
-    <BannerGridLayout>
-      <template #left3Column>
-        <img
-          class="banner-image"
-          :src="props.config.profileImage"
-          alt="Profile photo"
-        />
-      </template>
-      <template #centerColumn>
-        <BannerPresentation
-          :heading="props.config.heading"
-          :logos="props.config.logos"
-        />
-      </template>
-    </BannerGridLayout>
+  <section class="banner banner-grid-layout eight-column-grid">
+    <img
+      class="banner-image banner-left-column"
+      :src="props.config.profileImage"
+      alt="Profile photo"
+    />
+    <FadingCarousel
+      class="banner-carroussel banner-center-column row1"
+      :logos="props.config.logos"
+    />
+    <BannerPresentation
+      class="banner-center-column banner-presentation"
+      :heading="props.config.heading"
+    />
   </section>
 </template>
 
@@ -43,15 +41,21 @@ const props = defineProps<BannerProps>();
   );
 
   .banner-image {
-    max-height: auto;
-    width: 100%;
-    margin-bottom: -20vh;
+    max-height: 70%;
+    width: auto;
     filter: brightness(0.8);
+  }
 
-    @media only screen and (max-width: $bp-largest) {
-      height: 60%;
-      width: auto;
-    }
+  .banner-carroussel {
+    grid-row: 2;
+    align-self: flex-start;
+    width: 19.2rem;
+    height: 19.2rem;
+  }
+
+  .banner-presentation {
+    align-self: flex-start;
+    grid-row: 3;
   }
 
   .banner-backgorund-square {
@@ -62,7 +66,38 @@ const props = defineProps<BannerProps>();
     height: 5vh;
     width: 50%;
     background-color: $background-color-3;
-    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23050505' fill-opacity='0.34' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+.banner-grid-layout {
+  position: relative;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  .banner-left-column {
+    position: absolute;
+    height: 100%;
+    grid-column: 2/5;
+    align-self: end;
+    justify-self: start;
+    display: flex;
+    align-items: end;
+    z-index: 0;
+    // @media only screen and (max-width: $bp-largest) {
+    //   grid-row: 1;
+    //   grid-column: 1/4;
+    // }
+    @media only screen and (max-width: $bp-medium) {
+      justify-self: flex-end;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      grid-column: 2/6;
+    }
+  }
+
+  .banner-center-column {
+    grid-column: 1/-1;
+    justify-self: center;
+    z-index: 1;
   }
 }
 </style>

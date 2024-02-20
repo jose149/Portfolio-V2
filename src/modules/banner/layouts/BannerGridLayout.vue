@@ -16,6 +16,7 @@
 .banner-grid-layout {
   position: relative;
   height: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
   .left-3-column {
     position: absolute;

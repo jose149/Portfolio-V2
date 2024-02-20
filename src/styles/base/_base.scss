@@ -36,6 +36,10 @@ body {
   font-weight: 400;
 }
 
+section {
+  padding: 7rem 0;
+}
+
 ::selection {
   background-color: $color-primary;
   color: $color-white;
@@ -44,13 +48,6 @@ body {
 button {
   background: none;
   border: none;
-}
-
-.section {
-  padding: 10rem 0;
-  @media only screen and (max-width: $bp-medium) {
-    padding: 5rem 0;
-  }
 }
 
 .eight-column-grid {
@@ -97,7 +94,7 @@ button {
 }
 
 .section-heading {
-  padding: 10rem 2rem 2rem 2rem;
+  padding: 2rem;
   grid-column: 2/-2;
   @media only screen and (max-width: $bp-medium) {
     display: flex;

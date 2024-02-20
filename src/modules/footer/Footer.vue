@@ -5,7 +5,7 @@
     <p>
       ©
       <span class="primary">José Crespí</span>
-      Portfolio 2023
+      Portfolio 2024
     </p>
   </footer>
 </template>

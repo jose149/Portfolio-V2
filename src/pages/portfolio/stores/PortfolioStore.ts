@@ -15,7 +15,7 @@ import { BannerConfig } from '@/modules/banner';
 import { TechnologiesConfig } from '@/modules/technologies/technologiesViewModel';
 import {
   getButtonPosition,
-  shouldShowTechnologyModule,
+  shouldCollapseTechnologyModule,
 } from './PortfolioStoreLogic';
 import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
 import { elementIntersectionObserver } from '@/libraries/helpers/observers/intersectionObserver';
@@ -122,7 +122,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
             iconName: technology.iconName,
           };
         }),
-        startCollapsed: shouldShowTechnologyModule(technologyModule.type),
+        startCollapsed: shouldCollapseTechnologyModule(technologyModule.type),
       })),
     };
   });

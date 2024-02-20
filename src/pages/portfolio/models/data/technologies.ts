@@ -14,20 +14,18 @@ export interface ITechnology {
   name: string;
   module: TechnologyModule;
   iconName: SvgIconType;
-  isMostRelevant?: boolean;
 }
 
 export enum TechnologyModuleType {
-  FrontEnd = 'Front End',
-  BackEnd = 'Back End',
-  UxUi = 'UI/UX',
+  FrontEndDelivery = 'front-end-delivery',
+  FrontEndDiscovery = 'front-end-discovery',
+  BackEnd = 'back-end',
+  Others = 'others',
 }
 
 export interface ITechnologyModule {
   type: TechnologyModuleType;
-  iconName: SvgIconType;
   technologies: ITechnology[];
-  description: string;
 }
 
 export const frontEndDeliveryTechnologies: ITechnology[] = [
@@ -35,37 +33,31 @@ export const frontEndDeliveryTechnologies: ITechnology[] = [
     name: 'Vue 3',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Vue',
-    isMostRelevant: true,
   },
   {
     name: 'TypeScript 5',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'TypeScript',
-    isMostRelevant: true,
   },
   {
     name: 'Vite',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Vitest',
-    isMostRelevant: true,
   },
   {
     name: 'Cypress',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Cypress',
-    isMostRelevant: true,
   },
   {
     name: 'Sass',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Sass',
-    isMostRelevant: true,
   },
   {
     name: 'Jest',
     module: TechnologyModule.FrontEndDelivery,
     iconName: 'Jest',
-    isMostRelevant: true,
   },
   {
     name: 'StoryBook',
@@ -84,7 +76,6 @@ const frontEndDiscoveryTechnologies: ITechnology[] = [
     name: 'Figma',
     module: TechnologyModule.FrontEndDiscovery,
     iconName: 'Figma',
-    isMostRelevant: true,
   },
   {
     name: 'Google Analytics 4',
@@ -110,19 +101,16 @@ const frontEndDevOpsTechnologies: ITechnology[] = [
     name: 'Bitbucket',
     module: TechnologyModule.FrontEndOperations,
     iconName: 'Bitbucket',
-    isMostRelevant: true,
   },
   {
     name: 'Netlify',
     module: TechnologyModule.FrontEndOperations,
     iconName: 'Netlify',
-    isMostRelevant: true,
   },
   {
     name: 'Jenkins',
     module: TechnologyModule.FrontEndOperations,
     iconName: 'Jenkins',
-    isMostRelevant: true,
   },
 ];
 
@@ -137,7 +125,6 @@ const backEndDeliveryTechnologies: ITechnology[] = [
     name: 'GraphQL',
     module: TechnologyModule.BackEndDelivery,
     iconName: 'GraphQL',
-    isMostRelevant: true,
   },
 ];
 
@@ -146,7 +133,6 @@ const backEndDiscoveryTechnologies: ITechnology[] = [
     name: 'Grafana',
     module: TechnologyModule.BackEndDiscovery,
     iconName: 'Grafana',
-    isMostRelevant: true,
   },
   {
     name: 'Kibana',
@@ -165,7 +151,6 @@ const backEndDevOpsTechnologies: ITechnology[] = [
     name: 'Docker',
     module: TechnologyModule.BackEndOperations,
     iconName: 'Docker',
-    isMostRelevant: true,
   },
   {
     name: 'Kubernetes',
@@ -189,33 +174,28 @@ const allTechnologies = [
 ];
 
 export function getMainTechnologiesFromData(): ITechnology[] {
-  return allTechnologies.filter((technology) => technology.isMostRelevant);
+  return allTechnologies;
 }
 
 export const technologyModules: ITechnologyModule[] = [
   {
-    type: TechnologyModuleType.FrontEnd,
-    iconName: 'Screen',
-    technologies: [
-      ...frontEndDeliveryTechnologies,
-      ...frontEndDevOpsTechnologies,
-    ],
-    description: 'Technologies used for deliver the front end side',
+    type: TechnologyModuleType.FrontEndDelivery,
+    technologies: frontEndDeliveryTechnologies,
+  },
+  {
+    type: TechnologyModuleType.FrontEndDiscovery,
+    technologies: frontEndDiscoveryTechnologies,
   },
   {
     type: TechnologyModuleType.BackEnd,
-    iconName: 'Server',
     technologies: [
       ...backEndDeliveryTechnologies,
       ...backEndDiscoveryTechnologies,
       ...backEndDevOpsTechnologies,
     ],
-    description: 'Technologies used for deliver the back end side',
   },
   {
-    type: TechnologyModuleType.UxUi,
-    iconName: 'Design',
-    technologies: frontEndDiscoveryTechnologies,
-    description: 'Technologies used for discover the front end side',
+    type: TechnologyModuleType.Others,
+    technologies: frontEndDevOpsTechnologies,
   },
 ];
