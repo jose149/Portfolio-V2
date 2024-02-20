@@ -55,12 +55,13 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .presentation {
+  padding-right: 10%;
   grid-row: 2;
-  grid-column: 2/6;
+  grid-column: 3/6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
     grid-column: 2/-2;
@@ -70,13 +71,6 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
   &-image {
     width: 100%;
     position: relative;
-    padding: 2rem 20% 0 20%;
-    // background: radial-gradient(
-    //   37.61% 45.84% at 50% 70.31%,
-    //   #8d0f20 0%,
-    //   #8a1121 97.99%,
-    //   rgba(174, 21, 41, 0.01) 100%
-    // );
     @media only screen and (max-width: $bp-large) {
       padding: 0 20%;
     }

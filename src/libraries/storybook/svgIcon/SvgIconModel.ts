@@ -107,7 +107,7 @@ export type SvgIconColor = (typeof SVG_ICON_COLOR)[number];
 
 export const SVG_ICON_COLOR_MAP: Record<SvgIconColor, string> = {
   currentColor: 'currentColor',
-  primary: '#AB1326',
+  primary: '#db0d28',
   'primary-dark': '#921929',
   'primary-light': '#AB1326',
   transparent: 'transparent',

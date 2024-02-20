@@ -11,16 +11,15 @@ const props = defineProps<TechnologiesProps>();
 
 <template>
   <section class="section-technologies eight-column-grid">
-    <div class="single-column section-content">
-      <h2 class="section-heading heading-2">Technologies</h2>
-      <TechnologyModule
-        v-for="technologyModule in props.config.technologyModules"
-        :key="technologyModule.name"
-        :heading="technologyModule.name"
-        :figures="technologyModule.figures"
-        :start-collapsed="technologyModule.startCollapsed"
-      />
-    </div>
+    <h2 class="section-heading heading-2">Technologies</h2>
+    <TechnologyModule
+      v-for="technologyModule in props.config.technologyModules"
+      :key="technologyModule.name"
+      :heading="technologyModule.name"
+      :figures="technologyModule.figures"
+      :start-collapsed="technologyModule.startCollapsed"
+      class="technology-module"
+    />
     <div class="technologies-background-square"></div>
   </section>
 </template>
@@ -28,14 +27,11 @@ const props = defineProps<TechnologiesProps>();
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .section-technologies {
-  position: relative;
   background: $background-color-1;
 
-  .technologies-modules {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .technology-module {
+    grid-column: 2/-2;
+    z-index: 1;
   }
 }
 

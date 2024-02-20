@@ -32,13 +32,13 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .description {
-  padding-right: 2rem;
-  grid-column: 6/-2;
+  padding-right: 1.8rem;
+  grid-column: 6/-3;
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: end;
-  gap: 7rem;
+  justify-content: center;
+  gap: 3rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
     grid-row: 3;
@@ -46,7 +46,8 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
     align-items: center;
   }
   &-heading {
-    font-size: 4rem;
+    font-size: 2.4rem;
+    line-height: 1;
     .primary {
       color: $color-primary-light;
     }
@@ -55,12 +56,12 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
   &-text {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   &-paragraph {
     color: $color-white;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
     text-align: start;
   }

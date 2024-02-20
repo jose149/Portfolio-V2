@@ -30,6 +30,7 @@ onMounted(() => {
   <StickyBottomNavigationBar
     v-else
     :items="portfolioStore.headerConfig.sections"
+    @item-clicked="portfolioStore.scrollTo"
   />
   <main>
     <Banner id="section-1" :config="portfolioStore.bannerConfig" />

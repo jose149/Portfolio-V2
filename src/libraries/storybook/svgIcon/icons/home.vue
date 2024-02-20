@@ -1,8 +1,6 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg">
     <path
-      fill="#FFF"
-      fill-rule="evenodd"
       d="M60 25.43 30 3 0 25.43l1.429 4.273h2.38V57h52.382V29.703h2.38L60 25.431ZM8.571 52.254V24.956L30 8.934l21.429 16.022v27.297H39.524V38.275l-2.38-2.374H22.856l-2.38 2.374v13.978H8.57Zm16.667 0h9.524V40.648h-9.524v11.605Z"
       clip-rule="evenodd"
     />

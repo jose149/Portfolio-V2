@@ -11,7 +11,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
         </transition>
       </span>
 
-      <span class="banner-heading-sub">Front end developer</span>
+      <span class="banner-heading-sub">Front end engineer</span>
     </h1>
 
     <AppLink link="mailto:crespi.valero.jose@gmail.com" type="primary">
