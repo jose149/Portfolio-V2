@@ -25,11 +25,13 @@ onMounted(() => {
     v-if="!portfolioStore.isSmallDevice"
     class="header"
     :config="portfolioStore.headerConfig"
+    :active-section="portfolioStore.currentActiveSection"
     @navigation-item-clicked="portfolioStore.scrollTo"
   />
   <StickyBottomNavigationBar
     v-else
     :items="portfolioStore.headerConfig.sections"
+    :active-item="portfolioStore.currentActiveSection"
     @item-clicked="portfolioStore.scrollTo"
   />
   <main>

@@ -4,6 +4,7 @@ import { HeaderConfig } from './HeaderViewModel';
 
 interface HeaderProps {
   config: HeaderConfig;
+  activeSection: string;
 }
 interface HeaderEmits {
   (eventName: 'navigation-item-clicked', sectionId: string): void;
@@ -29,6 +30,7 @@ window.addEventListener('scroll', function () {
     <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
     <NavigationBarHorizontal
       :items="props.config.sections"
+      :active-item="props.activeSection"
       @item-clicked="emit('navigation-item-clicked', $event)"
     />
   </header>

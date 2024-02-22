@@ -19,6 +19,7 @@ import {
 } from './PortfolioStoreLogic';
 import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
 import { elementIntersectionObserver } from '@/libraries/helpers/observers/intersectionObserver';
+import { useWindowSize } from '@vueuse/core';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 1000;
@@ -30,6 +31,8 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const isSmallDevice = ref<boolean>(
     window.innerWidth < SMALL_DEVICE_THRESHOLD
   );
+
+  const { height: viewportHeight } = useWindowSize();
 
   // Actions
   function getOwnerLogoImageSource(): string {
@@ -64,27 +67,18 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
         }
 
         entries.forEach((entry) => {
-          const id = entry.target.id;
-          const sectionIndex = sections.value.findIndex(
-            (section) => section.id === id
+          const sectionId = entry.target.id;
+          const section: Section | undefined = sections.value.find(
+            (section) => section.id === sectionId
           );
 
-          if (entry.isIntersecting) {
-            sections.value[sectionIndex].visibilityRatio =
-              entry.intersectionRatio;
+          if (section) {
+            const sectionHeight = entry.boundingClientRect.height;
+            const sizeProportion = sectionHeight / viewportHeight.value;
+            const relativeTntersectionRatio =
+              entry.intersectionRatio * sizeProportion;
 
-            const isSectionMostVisible = !sections.value.some((section) => {
-              if (section.id === entry.target.id) {
-                return false;
-              } else {
-                return section.visibilityRatio >= entry.intersectionRatio;
-              }
-            });
-
-            if (isSectionMostVisible) {
-              sections.value.forEach((section) => (section.active = false));
-              sections.value[sectionIndex].active = true;
-            }
+            section.visibilityRatio = relativeTntersectionRatio;
           }
         });
       }
@@ -100,6 +94,15 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   }
 
   // Getters
+  const currentActiveSection = computed<string>(() => {
+    const copiedSections = [...sections.value];
+    const sortedSections = copiedSections.sort(
+      (sectionA, sectionB) =>
+        sectionB.visibilityRatio - sectionA.visibilityRatio
+    );
+
+    return sortedSections[0].id;
+  });
 
   const headerConfig = computed<HeaderConfig>(() => {
     return { logo: getOwnerLogoImageSource(), sections: sections.value };
@@ -142,6 +145,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
     scrollTo,
 
     // Getters
+    currentActiveSection,
     headerConfig,
     bannerConfig,
     technologiesConfig,

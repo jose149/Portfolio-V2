@@ -232,8 +232,8 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     colorProperty: 'fill',
   },
   Pinia: {
-    width: 319,
-    height: 477,
+    width: 60,
+    height: 60,
     color: 'currentColor',
     colorProperty: 'fill',
   },

@@ -41,6 +41,8 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
   gap: 3rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
+    padding: 0 5rem;
+    gap: 5rem;
     grid-row: 3;
     grid-column: 2/-2;
     align-items: center;

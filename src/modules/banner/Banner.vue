@@ -38,6 +38,9 @@ const props = defineProps<BannerProps>();
     $background-color-1 50%,
     $background-color-2 110%
   );
+  @media only screen and (max-width: $bp-medium) {
+    height: 90vh;
+  }
 
   .banner-image {
     max-height: 70%;

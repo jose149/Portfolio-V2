@@ -5,6 +5,7 @@ import { SvgIconSizeUnit } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
 interface NavigationBarProps {
   items: NavigationBarItem[];
+  activeItem: string;
 }
 
 interface NavigationBarTextEmits {
@@ -24,7 +25,7 @@ const emit = defineEmits<NavigationBarTextEmits>();
       :href="item.id"
       :aria-label="`Move to section ${item.name}`"
       class="navigation-bar-link"
-      :class="{ highlighted: item.active }"
+      :class="{ active: item.id === props.activeItem }"
       @click.prevent="emit('item-clicked', item.id)"
     >
       <SvgIcon
@@ -43,7 +44,7 @@ const emit = defineEmits<NavigationBarTextEmits>();
   padding: 0 10%;
   left: 0;
   bottom: 0;
-  height: 6vh;
+  height: 10rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -64,7 +65,7 @@ const emit = defineEmits<NavigationBarTextEmits>();
     justify-content: center;
   }
 
-  .highlighted {
+  .active {
     background-color: $color-primary;
   }
 }

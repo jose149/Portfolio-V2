@@ -3,6 +3,7 @@ import { NavigationBarItem } from '@/modules/header/HeaderViewModel';
 
 interface NavigationBarTextProps {
   items: NavigationBarItem[];
+  activeItem: string;
 }
 
 interface NavigationBarTextEmits {
@@ -23,7 +24,7 @@ const emit = defineEmits<NavigationBarTextEmits>();
       :aria-label="`Move to section ${item.name}`"
       class="nav-bar-link"
       :class="{
-        active: item.active,
+        active: item.id === props.activeItem,
       }"
       @click.prevent="emit('item-clicked', item.id)"
     >
