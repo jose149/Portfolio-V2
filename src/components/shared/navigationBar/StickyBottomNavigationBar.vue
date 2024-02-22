@@ -41,7 +41,6 @@ const emit = defineEmits<NavigationBarTextEmits>();
 @import '@/styles/main.scss';
 .navigation-bar-horizontal {
   position: fixed;
-  padding: 0 10%;
   left: 0;
   bottom: 0;
   height: 10rem;
