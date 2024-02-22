@@ -64,6 +64,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
   gap: 3rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
+    padding-right: 0;
     grid-column: 2/-2;
     padding-bottom: 5rem;
   }
