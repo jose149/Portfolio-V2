@@ -38,7 +38,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
     padding: 0 5rem;

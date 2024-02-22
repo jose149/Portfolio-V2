@@ -33,7 +33,7 @@ function handleClick(event: MouseEvent): void {
     :aria-label="props.ariaLabel"
     target="_blank"
     rel="noreferrer"
-    @click.prevent="handleClick"
+    @click="handleClick"
   >
     <slot name="linkContent"></slot>
   </a>

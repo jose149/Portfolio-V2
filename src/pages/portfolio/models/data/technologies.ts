@@ -17,10 +17,10 @@ export interface ITechnology {
 }
 
 export enum TechnologyModuleType {
-  FrontEndDelivery = 'front-end-delivery',
-  FrontEndDiscovery = 'front-end-discovery',
-  BackEnd = 'back-end',
-  Others = 'others',
+  FrontEndDelivery = 'Front end delivery',
+  FrontEndDiscovery = 'Front end discovery',
+  BackEnd = 'Back end',
+  Others = 'Others',
 }
 
 export interface ITechnologyModule {

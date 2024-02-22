@@ -15,7 +15,7 @@ export function getPortfolioSections(): Section[] {
 }
 
 export function getOwnerLogoPath(): string {
-  return '/assets/images/logos/logo.png';
+  return '/assets/images/logos/logo.webp';
 }
 
 export function getProfile(): Profile {
