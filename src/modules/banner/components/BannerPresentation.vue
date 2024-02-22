@@ -28,7 +28,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 5rem;
 
   .banner-heading {
     display: flex;

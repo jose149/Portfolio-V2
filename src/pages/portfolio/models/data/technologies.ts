@@ -167,10 +167,6 @@ const backEndDevOpsTechnologies: ITechnology[] = [
 const allTechnologies = [
   ...frontEndDeliveryTechnologies,
   ...frontEndDiscoveryTechnologies,
-  ...frontEndDevOpsTechnologies,
-  ...backEndDeliveryTechnologies,
-  ...backEndDiscoveryTechnologies,
-  ...backEndDevOpsTechnologies,
 ];
 
 export function getMainTechnologiesFromData(): ITechnology[] {
