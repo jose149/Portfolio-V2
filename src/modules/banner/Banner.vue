@@ -83,6 +83,7 @@ const props = defineProps<BannerProps>();
   position: relative;
   grid-template-rows: 4fr 20% 20% 5fr;
   align-items: center;
+
   .banner-left-column {
     position: absolute;
     height: 100%;
