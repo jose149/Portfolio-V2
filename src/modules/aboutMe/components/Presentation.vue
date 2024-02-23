@@ -33,7 +33,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
         />
       </a>
       <a
-        href="https://www.linkedin.com/in/jose-cresp%C3%AD-valero-349594190/"
+        href="https://www.linkedin.com/in/jose-crespi-valero-349594190/"
         aria-label="Open Linkedin to check my profesional profile"
         target="_blank"
         rel="noreferrer"
