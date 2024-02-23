@@ -18,7 +18,7 @@ const props = defineProps<BannerProps>();
       alt="Profile photo"
     />
     <FadingCarousel
-      class="banner-carroussel banner-center-column row1"
+      class="banner-carroussel banner-center-column"
       :logos="props.config.logos"
     />
     <BannerPresentation
@@ -59,8 +59,8 @@ const props = defineProps<BannerProps>();
   .banner-carroussel {
     grid-row: 2;
     align-self: flex-start;
-    width: 19.2rem;
-    height: 19.2rem;
+    height: 100%;
+    aspect-ratio: 1/1;
   }
 
   .banner-presentation {
@@ -81,7 +81,7 @@ const props = defineProps<BannerProps>();
 
 .banner-grid-layout {
   position: relative;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4fr 20% 20% 5fr;
   align-items: center;
   .banner-left-column {
     position: absolute;
@@ -111,6 +111,7 @@ const props = defineProps<BannerProps>();
     grid-column: 1/-1;
     justify-self: center;
     z-index: 1;
+    overflow: hidden;
   }
 }
 </style>
