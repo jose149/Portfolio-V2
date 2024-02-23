@@ -48,6 +48,7 @@ const props = defineProps<BannerProps>();
     filter: brightness(0.8);
     object-fit: cover;
     object-position: top;
+
     @media only screen and (max-width: $bp-largest) {
       max-height: 70%;
       width: auto;
