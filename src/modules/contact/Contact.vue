@@ -10,7 +10,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
         <ul class="contact-info-methods">
           <li class="contact-info-method">
             <SvgIcon name="Phone" :size="{ height: 20, width: 20 }" />
-            +34 67130094
+            +34 671300904
           </li>
           <li class="contact-info-method">
             <SvgIcon name="Mail" :size="{ height: 20, width: 20 }" />

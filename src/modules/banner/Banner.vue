@@ -44,8 +44,16 @@ const props = defineProps<BannerProps>();
 
   .banner-image {
     max-height: 70%;
-    width: auto;
+    width: 100%;
     filter: brightness(0.8);
+    object-fit: cover;
+    object-position: top;
+    @media only screen and (max-width: $bp-largest) {
+      max-height: 70%;
+      width: auto;
+      object-fit: cover;
+      object-position: top;
+    }
   }
 
   .banner-carroussel {
@@ -84,13 +92,16 @@ const props = defineProps<BannerProps>();
     display: flex;
     align-items: end;
     z-index: 0;
-    // @media only screen and (max-width: $bp-largest) {
-    //   grid-row: 1;
-    //   grid-column: 1/4;
-    // }
+
+    @media only screen and (max-width: $bp-large) {
+      justify-self: start;
+    }
+
     @media only screen and (max-width: $bp-medium) {
       justify-self: flex-end;
+      grid-column: 1/5;
     }
+
     @media only screen and (max-width: $bp-smallest) {
       grid-column: 2/6;
     }

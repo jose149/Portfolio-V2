@@ -10,7 +10,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
     </header>
     <div class="description-text">
       <p class="description-paragraph">
-        I'm a passionated Front end engineer, focused on developing the best
+        I'm a passionated front end engineer, focused on developing the best
         solutions, in the most atomic and profitable way, based on the customers
         needs.
       </p>
