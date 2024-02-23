@@ -12,10 +12,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-a,
-a:visited,
-a:active {
-  background-color: none;
+a {
+  background: none;
   color: currentColor;
   text-decoration: none;
 }

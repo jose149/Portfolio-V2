@@ -2,7 +2,7 @@ import { Project } from '@/modules/projects/projectsViewModel';
 
 export const projects: Project[] = [
   {
-    name: 'TripPlanner',
+    name: 'Trip Planner',
     image: '/assets/images/Projects/TripPlanner.webp',
     link: 'https://www.sembo.co.uk/travel/plan?pax=rpp',
     description:
@@ -10,7 +10,7 @@ export const projects: Project[] = [
     organisationLogo: '/assets/images/Projects/SemboLogo.webp',
   },
   {
-    name: 'TripOverview',
+    name: 'Trip Overview',
     image: '/assets/images/Projects/TripOverview.webp',
     link: 'https://www.sembo.co.uk/travel/plan?pax=rpp',
     description:

@@ -16,7 +16,7 @@ const props = defineProps<ProjectsProps>();
       <h2 class="heading-2">Projects</h2>
       <AppLink
         v-if="props.config.buttonPosition === Position.Top"
-        type="primary"
+        type="secondary"
         link="https://github.com/jose149"
         aria-label="Open Github to check my projects"
       >
@@ -33,7 +33,7 @@ const props = defineProps<ProjectsProps>();
     <AppLink
       v-if="props.config.buttonPosition === Position.Bottom"
       class="projects-link-bottom"
-      type="primary"
+      type="secondary"
       link="https://github.com/jose149"
       aria-label="Open Github to check my projects"
     >

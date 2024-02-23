@@ -20,7 +20,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
       </p>
     </div>
     <AppLink
-      type="primary"
+      :type="'primary'"
       link="/documents/JoseCrespiCV.pdf"
       downloadName="CV_Jose_Crespi"
     >

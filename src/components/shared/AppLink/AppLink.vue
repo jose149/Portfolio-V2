@@ -9,6 +9,7 @@ export interface AppButtonProps {
   ariaLabel?: string;
 }
 const props = withDefaults(defineProps<AppButtonProps>(), {
+  type: 'primary',
   state: 'enabled',
 });
 
@@ -42,11 +43,11 @@ function handleClick(event: MouseEvent): void {
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .app-link,
-.app-link:visited {
+.app-link:visited,
+.app-link:active {
   border-radius: $border-radius;
   padding: $link-padding;
   width: max-content;
-  color: white;
   font: $font-link;
   text-transform: uppercase;
   cursor: pointer;
@@ -62,6 +63,12 @@ function handleClick(event: MouseEvent): void {
 }
 
 .primary {
+  color: white;
   background: $link-background-primary;
+}
+
+.secondary {
+  color: black;
+  background: $color-white;
 }
 </style>
