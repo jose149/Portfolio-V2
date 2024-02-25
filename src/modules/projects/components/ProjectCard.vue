@@ -42,11 +42,7 @@ const props = defineProps<ProjectCardProps>();
     <span class="project-title">
       {{ props.project.name }}
     </span>
-    <a
-      v-if="props.project.repositoryUrl"
-      class="project-link"
-      :href="props.project.repositoryUrl"
-    >
+    <a class="project-link" :href="props.project.repositoryUrl">
       More details
       <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
     </a>
@@ -76,6 +72,7 @@ const props = defineProps<ProjectCardProps>();
   display: flex;
   align-items: center;
   gap: 1rem;
+
   @media only screen and (max-width: $bp-medium) {
     font-size: 1.5rem;
     gap: 1rem;
@@ -87,6 +84,7 @@ const props = defineProps<ProjectCardProps>();
   padding: 5rem 3rem;
   background-color: $background-color-4;
   cursor: pointer;
+  perspective: 100px;
 
   @media (hover: hover) {
     &:hover {
@@ -94,7 +92,7 @@ const props = defineProps<ProjectCardProps>();
     }
 
     &:hover .project-image {
-      filter: saturate(0) brightness(0.3) blur(1px);
+      filter: saturate(0) blur(3px);
     }
 
     &:hover .project-card-caption {

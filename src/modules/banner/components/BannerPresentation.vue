@@ -5,30 +5,31 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
 <template>
   <div class="banner-presentation">
     <h1 class="banner-heading">
-      <span class="banner-heading-main">
-        <transition name="electric-shine" appear>
-          <span>Jose Crespi Valero</span>
-        </transition>
-      </span>
-
-      <span class="banner-heading-sub">Front end engineer</span>
+      <transition name="heading-1-main" appear>
+        <span class="banner-heading-main">Jose Crespi Valero</span>
+      </transition>
+      <transition name="heading-1-sub" appear>
+        <span class="banner-heading-sub">Front end engineer</span>
+      </transition>
     </h1>
-
-    <AppLink link="mailto:crespi.valero.jose@gmail.com" type="primary">
-      <template #linkContent>Contact</template>
-    </AppLink>
+    <transition name="banner-link" appear>
+      <AppLink link="mailto:crespi.valero.jose@gmail.com" type="primary">
+        <template #linkContent>Contact</template>
+      </AppLink>
+    </transition>
   </div>
 </template>
 
 <style scoped lang="scss">
 @import '@/styles/main.scss';
 .banner-presentation {
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  perspective: 100px;
 
   .banner-heading {
     display: flex;
@@ -41,7 +42,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
     &-main {
       color: $color-primary;
       font: $font-heading-1-main;
-      line-height: 1;
+      line-height: 0.8;
     }
 
     &-sub {
@@ -49,11 +50,6 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
       font: $font-heading-1-sub;
       line-height: 1;
     }
-  }
-
-  .banner-phrase {
-    color: rgba($color: #dadada, $alpha: 1);
-    font: $font-link;
   }
 }
 </style>

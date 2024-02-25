@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { BannerConfig } from '.';
 import BannerPresentation from './components/BannerPresentation.vue';
 import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
@@ -8,6 +9,7 @@ interface BannerProps {
 }
 
 const props = defineProps<BannerProps>();
+const startCarroussel = ref<boolean>(false);
 </script>
 
 <template>
@@ -17,10 +19,17 @@ const props = defineProps<BannerProps>();
       :src="props.config.profileImage"
       alt="Profile photo"
     />
-    <FadingCarousel
-      class="banner-carroussel banner-center-column"
-      :logos="props.config.logos"
-    />
+    <transition
+      name="banner-carroussel"
+      appear
+      @after-enter="startCarroussel = true"
+    >
+      <FadingCarousel
+        class="banner-carroussel banner-center-column"
+        :start="startCarroussel"
+        :logos="props.config.logos"
+      />
+    </transition>
     <BannerPresentation
       class="banner-center-column banner-presentation"
       :heading="props.config.heading"
@@ -113,7 +122,6 @@ const props = defineProps<BannerProps>();
     grid-column: 1/-1;
     justify-self: center;
     z-index: 1;
-    overflow: hidden;
   }
 }
 </style>

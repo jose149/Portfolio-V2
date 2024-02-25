@@ -135,11 +135,6 @@ const backEndDiscoveryTechnologies: ITechnology[] = [
     iconName: 'Grafana',
   },
   {
-    name: 'Kibana',
-    module: TechnologyModule.BackEndDiscovery,
-    iconName: 'Kibana',
-  },
-  {
     name: 'Elastic Search',
     module: TechnologyModule.BackEndDiscovery,
     iconName: 'ElasticSearch',
@@ -187,7 +182,6 @@ export const technologyModules: ITechnologyModule[] = [
     technologies: [
       ...backEndDeliveryTechnologies,
       ...backEndDiscoveryTechnologies,
-      ...backEndDevOpsTechnologies,
     ],
   },
   {
