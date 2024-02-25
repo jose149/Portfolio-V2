@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+// import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import { Project } from '../projectsViewModel';
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
 
