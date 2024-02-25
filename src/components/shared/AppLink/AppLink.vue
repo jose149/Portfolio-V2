@@ -49,7 +49,6 @@ function handleClick(event: MouseEvent): void {
   padding: $link-padding;
   width: max-content;
   font: $font-link;
-  text-transform: uppercase;
   cursor: pointer;
   transition: all $transition-time;
 
@@ -65,6 +64,7 @@ function handleClick(event: MouseEvent): void {
 .primary {
   color: white;
   background: $link-background-primary;
+  text-transform: uppercase;
 }
 
 .secondary {

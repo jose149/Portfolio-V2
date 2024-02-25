@@ -19,6 +19,9 @@ watch(
 );
 
 function isItemVisible(index: number): boolean {
+  if (!props.start) {
+    return false;
+  }
   return index === itemToShow.value;
 }
 

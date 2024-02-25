@@ -8,9 +8,7 @@
 }
 
 .heading-1-main-enter-active {
-  animation:
-    fade-right 2s ease-out,
-    electric-shine 2.5s linear 6s;
+  animation: fade-right 2s ease-out;
 }
 
 .heading-1-sub-enter-active {
@@ -21,14 +19,14 @@
 }
 
 .banner-link-enter-active {
-  backface-visibility: hidden;
   animation:
     fade-delay 4s ease-out,
-    fade-up 1.5s ease-in 4s;
+    fade-up 1.5s ease-in 4s,
+    electric-shine 2.5s linear 6s infinite;
 }
 
 .banner-carroussel-enter-active {
-  animation: fade-delay 3s linear;
+  animation: fade-delay 3s 3;
 }
 
 @keyframes fade-delay {
@@ -47,7 +45,7 @@
   }
   80% {
     opacity: 1;
-    transform: translateX(2%);
+    // transform: translateX(2%);
   }
   100% {
     opacity: 1;
@@ -62,7 +60,7 @@
   }
   80% {
     opacity: 1;
-    transform: translateX(-2%);
+    // transform: translateX(-2%);
   }
   100% {
     opacity: 1;
@@ -73,11 +71,7 @@
 @keyframes fade-up {
   0% {
     opacity: 0;
-    transform: translateY(100%);
-  }
-
-  80% {
-    opacity: 1;
+    transform: translateY(50%);
   }
 
   100% {
@@ -87,8 +81,8 @@
 
 @keyframes electric-shine {
   50% {
-    color: white;
-    text-shadow: 0 0 1.5rem $color-primary-light;
+    filter: brightness(1.3);
+    box-shadow: 0 0 1.5rem $color-primary-light;
   }
 }
 

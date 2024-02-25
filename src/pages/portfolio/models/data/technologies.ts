@@ -141,24 +141,6 @@ const backEndDiscoveryTechnologies: ITechnology[] = [
   },
 ];
 
-const backEndDevOpsTechnologies: ITechnology[] = [
-  {
-    name: 'Docker',
-    module: TechnologyModule.BackEndOperations,
-    iconName: 'Docker',
-  },
-  {
-    name: 'Kubernetes',
-    module: TechnologyModule.BackEndOperations,
-    iconName: 'Kubernetes',
-  },
-  {
-    name: 'Octopus',
-    module: TechnologyModule.BackEndOperations,
-    iconName: 'Octopus',
-  },
-];
-
 const allTechnologies = [
   ...frontEndDeliveryTechnologies,
   ...frontEndDiscoveryTechnologies,

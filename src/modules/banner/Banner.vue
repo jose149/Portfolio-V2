@@ -10,6 +10,10 @@ interface BannerProps {
 
 const props = defineProps<BannerProps>();
 const startCarroussel = ref<boolean>(false);
+
+function initCarroussel(): void {
+  startCarroussel.value = true;
+}
 </script>
 
 <template>
@@ -19,11 +23,7 @@ const startCarroussel = ref<boolean>(false);
       :src="props.config.profileImage"
       alt="Profile photo"
     />
-    <transition
-      name="banner-carroussel"
-      appear
-      @after-enter="startCarroussel = true"
-    >
+    <transition name="banner-carroussel" appear @after-enter="initCarroussel">
       <FadingCarousel
         class="banner-carroussel banner-center-column"
         :start="startCarroussel"

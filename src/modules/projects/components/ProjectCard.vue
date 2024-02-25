@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import { Project } from '../projectsViewModel';
+import AppLink from '@/components/shared/AppLink/AppLink.vue';
 
 interface ProjectCardProps {
   project: Project;
@@ -16,6 +17,9 @@ const props = defineProps<ProjectCardProps>();
     target="_blank"
     rel="noreferrer"
   >
+    <span class="project-title">
+      {{ props.project.name }}
+    </span>
     <a
       class="project-card"
       :href="props.project.link"
@@ -39,13 +43,20 @@ const props = defineProps<ProjectCardProps>();
         :alt="props.project.organisationLogo"
       />
     </a>
-    <span class="project-title">
-      {{ props.project.name }}
-    </span>
-    <a class="project-link" :href="props.project.repositoryUrl">
-      More details
-      <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
-    </a>
+
+    <div class="project-buttons">
+      <AppLink
+        v-if="props.project.link"
+        type="secondary"
+        :link="props.project.link"
+      >
+        <template #linkContent>Run</template>
+      </AppLink>
+      <!-- <button class="project-button" :href="props.project.repositoryUrl">
+        Open details
+        <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
+      </button> -->
+    </div>
   </div>
 </template>
 
@@ -65,18 +76,37 @@ const props = defineProps<ProjectCardProps>();
   color: $color-white;
   font-size: 2.2rem;
 }
-.project-link {
+.project-button {
+  border-radius: $border-radius;
+  padding: 1rem 3.5rem;
   color: $color-primary;
   font-size: 2.2rem;
   line-height: 1;
+  font: $font-link;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 0 5px black;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px);
+      transform-origin: center;
+      filter: brightness(1.1);
+      box-shadow: 0 3px 5px black;
+    }
+  }
 
   @media only screen and (max-width: $bp-medium) {
     font-size: 1.5rem;
     gap: 1rem;
   }
+}
+
+.project-buttons {
+  display: flex;
+  gap: 2rem;
 }
 
 .project-card {
