@@ -23,12 +23,12 @@
 .banner-link-enter-active {
   backface-visibility: hidden;
   animation:
-    fade-delay 3s ease-out,
-    fade-up 1.5s ease-in 3s;
+    fade-delay 4s ease-out,
+    fade-up 1.5s ease-in 4s;
 }
 
 .banner-carroussel-enter-active {
-  animation: fade-delay 4.5s linear;
+  animation: fade-delay 3s linear;
 }
 
 @keyframes fade-delay {
