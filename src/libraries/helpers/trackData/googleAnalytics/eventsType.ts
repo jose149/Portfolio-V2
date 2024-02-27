@@ -1,3 +1,3 @@
 export enum GoogleAnalyticsEvent {
-  contactButton = 'portfolio_button_contact_click',
+  contactButtonClick = 'portfolio_contact_click',
 }

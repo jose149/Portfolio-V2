@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
+import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackingEvents';
 </script>
 
 <template>
@@ -13,7 +14,11 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
       </transition>
     </h1>
     <transition name="banner-link" appear>
-      <AppLink link="mailto:crespi.valero.jose@gmail.com" type="primary">
+      <AppLink
+        link="mailto:crespi.valero.jose@gmail.com"
+        type="primary"
+        @click="trackContactButtonClicked"
+      >
         <template #linkContent>Contact</template>
       </AppLink>
     </transition>
