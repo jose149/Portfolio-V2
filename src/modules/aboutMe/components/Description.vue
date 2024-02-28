@@ -21,8 +21,8 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
     </div>
     <AppLink
       :type="'primary'"
-      link="/documents/JoseCrespiCV.pdf"
-      downloadName="CV_Jose_Crespi"
+      link="/documents/CV Jose Crespi UK.pdf"
+      downloadName="CV Jose Crespi"
     >
       <template #linkContent>Download CV</template>
     </AppLink>
