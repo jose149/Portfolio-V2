@@ -4,7 +4,7 @@ import { createPinia } from 'pinia';
 import { getDomain } from './libraries';
 import { setDefaultOptions } from 'date-fns';
 import { getLocale } from './libraries/helpers/dates/Dates';
-import { loadLanguageAsync } from './libraries/helpers/languages/languagesLocalizator';
+// import { loadLanguageAsync } from './libraries/helpers/languages/languagesLocalizator';
 
 const pinia = createPinia();
 
@@ -17,4 +17,5 @@ export const languageLocale = getDomain.getLanguageLocale();
 
 setDefaultOptions({ locale: getLocale(languageLocale), weekStartsOn: 0 });
 
-loadLanguageAsync(languageLocale);
+// TODO uncomment it when implement translations
+// loadLanguageAsync(languageLocale);
