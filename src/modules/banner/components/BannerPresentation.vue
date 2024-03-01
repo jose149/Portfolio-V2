@@ -51,7 +51,7 @@ function initCarroussel(): void {
 
 <style scoped lang="scss">
 .banner-presentation {
-  height: 40%;
+  height: 50%;
   display: grid;
   grid-template-rows: 30% max-content 1fr;
   justify-items: center;
