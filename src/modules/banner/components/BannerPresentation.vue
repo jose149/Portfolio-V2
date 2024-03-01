@@ -38,6 +38,7 @@ function initCarroussel(): void {
     </h1>
     <transition name="banner-link" appear>
       <AppLink
+        class="banner-link"
         link="mailto:crespi.valero.jose@gmail.com"
         type="primary"
         @click="trackContactButtonClicked"
@@ -50,16 +51,16 @@ function initCarroussel(): void {
 
 <style scoped lang="scss">
 .banner-presentation {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
+  height: 40%;
+  display: grid;
+  grid-template-rows: 30% max-content 1fr;
+  justify-items: center;
   align-items: center;
   gap: 5rem;
   z-index: 1;
 
   .banner-carroussel {
-    max-width: 45%;
-    max-height: 45%;
+    height: 100%;
     aspect-ratio: 1/1;
   }
 
@@ -80,6 +81,10 @@ function initCarroussel(): void {
       font: $font-heading-1-sub;
       line-height: 1;
     }
+  }
+
+  .banner-link {
+    align-self: flex-start;
   }
 }
 </style>
