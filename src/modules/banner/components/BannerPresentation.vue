@@ -58,7 +58,8 @@ function initCarroussel(): void {
   z-index: 1;
 
   .banner-carroussel {
-    width: 45%;
+    max-width: 45%;
+    max-height: 45%;
     aspect-ratio: 1/1;
   }
 

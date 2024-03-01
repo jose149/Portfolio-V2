@@ -33,8 +33,8 @@ import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackin
 
 <style scoped lang="scss">
 .contact-content {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   background-color: $background-color-2;
   padding: 5rem;
   grid-column: 2/-2;

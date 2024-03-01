@@ -46,7 +46,8 @@ const props = defineProps<BannerProps>();
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 70%;
+      max-height: 70%;
+      min-width: 40vh;
       width: auto;
       filter: brightness(0.8);
       object-fit: cover;
@@ -55,7 +56,6 @@ const props = defineProps<BannerProps>();
       @media only screen and (max-width: $bp-largest) {
         left: auto;
         right: 50vw;
-        height: 60%;
       }
     }
   }
