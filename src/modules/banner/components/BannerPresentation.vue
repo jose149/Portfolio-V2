@@ -1,10 +1,33 @@
 <script setup lang="ts">
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
 import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackingEvents';
+import FadingCarousel from '@/components/shared/fadingCarroussel/FadingCarousel.vue';
+import { ref } from 'vue';
+import { Profile } from '../BannerViewModel';
+
+interface BannerProps {
+  logos: string[];
+  heading: Profile;
+}
+
+const props = defineProps<BannerProps>();
+
+const startCarroussel = ref<boolean>(false);
+
+function initCarroussel(): void {
+  startCarroussel.value = true;
+}
 </script>
 
 <template>
   <div class="banner-presentation">
+    <transition name="banner-carroussel" appear @after-enter="initCarroussel">
+      <FadingCarousel
+        class="banner-carroussel banner-center-column"
+        :start="startCarroussel"
+        :logos="props.logos"
+      />
+    </transition>
     <h1 class="banner-heading">
       <transition name="heading-1-main" appear>
         <span class="banner-heading-main">Jose Crespi Valero</span>
@@ -26,23 +49,24 @@ import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackin
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .banner-presentation {
-  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 5rem;
-  perspective: 100px;
+  z-index: 1;
+
+  .banner-carroussel {
+    width: 45%;
+    aspect-ratio: 1/1;
+  }
 
   .banner-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    // -webkit-box-reflect: below -0.8rem linear-gradient(transparent 0%, transparent
-    //       30%, rgba($color-primary-light, 0.1) 100%);
 
     &-main {
       color: $color-primary;

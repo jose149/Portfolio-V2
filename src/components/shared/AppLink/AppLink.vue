@@ -41,7 +41,6 @@ function handleClick(event: MouseEvent): void {
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .app-link,
 .app-link:visited,
 .app-link:active {
@@ -59,16 +58,16 @@ function handleClick(event: MouseEvent): void {
       filter: brightness(1.1);
     }
   }
-}
 
-.primary {
-  color: white;
-  background: $link-background-primary;
-  text-transform: uppercase;
-}
+  &.primary {
+    color: white;
+    background: $link-background-primary;
+    text-transform: uppercase;
+  }
 
-.secondary {
-  color: black;
-  background: $color-white;
+  &.secondary {
+    color: black;
+    background: $color-white;
+  }
 }
 </style>

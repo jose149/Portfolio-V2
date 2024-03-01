@@ -4,26 +4,42 @@ import Description from './components/Description.vue';
 </script>
 
 <template>
-  <section class="section-about-me eight-column-grid">
+  <section class="section-content">
     <h2 class="section-heading heading-2">About me</h2>
-    <Presentation />
-    <Description />
-    <div class="about-me-backgorund-square"></div>
+    <div class="about-me-content container-small">
+      <Presentation class="about-me-profile" />
+      <Description class="about-me-description" />
+    </div>
+    <!-- <div class="about-me-backgorund-square"></div> -->
   </section>
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
-.section-about-me {
-  position: relative;
-  background: $background-color-1;
+.about-me-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem 5%;
+
+  .about-me-profile {
+    flex: 0 0 45%;
+    @media only screen and (max-width: $bp-medium) {
+      flex: 0 0 80%;
+    }
+  }
+
+  .about-me-description {
+    flex: 0 0 50%;
+    @media only screen and (max-width: $bp-medium) {
+      flex: 0 0 100%;
+    }
+  }
 }
 .about-me-backgorund-square {
-  position: absolute;
-  top: -37vh;
-  left: 0;
+  position: relative;
   height: 40vh;
   width: 100%;
   background-color: $background-color-3;
+  z-index: 2;
 }
 </style>

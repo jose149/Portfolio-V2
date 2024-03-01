@@ -64,7 +64,6 @@ function setGroupHeight() {
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .technology-module {
   position: relative;
   width: 100%;

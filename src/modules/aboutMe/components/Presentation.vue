@@ -16,8 +16,8 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
     </div>
 
     <div class="presentation-profile">
-      <p class="heading-3 profile-name">José Crespí Valero</p>
-      <p class="heading-3 profile-job">Front end engineer</p>
+      <p class="profile-heading-main">José Crespí Valero</p>
+      <p class="profile-heading-sub">Front end engineer</p>
     </div>
     <div class="presentation-media">
       <a
@@ -53,31 +53,21 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .presentation {
-  padding-right: 10%;
-  grid-row: 2;
-  grid-column: 3/6;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  z-index: 1;
-  @media only screen and (max-width: $bp-large) {
-    padding-right: 0;
-    grid-column: 2/-2;
-    padding-bottom: 5rem;
-  }
 
   &-image {
+    padding-top: 3rem;
     width: 100%;
     position: relative;
-    @media only screen and (max-width: $bp-large) {
-      padding: 0 20%;
-    }
+
     .image {
       width: 100%;
     }
+
     .image-overlay {
       position: absolute;
       top: 0;
@@ -93,6 +83,23 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
     }
   }
   &-profile {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1;
+    color: $color-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .profile-heading {
+      &-main {
+        margin-bottom: 1rem;
+      }
+      &-sub {
+      }
+    }
     .profile-name {
       color: $color-white;
       margin-bottom: 1rem;
@@ -103,8 +110,6 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
   }
 
   &-media {
-    grid-column: 2/5;
-    grid-row: 1/-1;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -117,6 +122,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
       fill: $color-primary;
       transition: all 0.3s;
       background-color: $color-white;
+
       @media (hover: hover) {
         &:hover {
           background-color: $color-primary;

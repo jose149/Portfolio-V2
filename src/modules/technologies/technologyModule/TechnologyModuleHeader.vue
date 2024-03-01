@@ -30,7 +30,6 @@ const props = defineProps<TechnologyModuleHeaderProps>();
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .technology-module-header {
   padding: 2rem 2rem;
   border-bottom: 0.5rem solid $color-primary;

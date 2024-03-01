@@ -35,31 +35,30 @@ onMounted(() => {
     @item-clicked="portfolioStore.scrollTo"
   />
   <main>
-    <Banner id="section-1" :config="portfolioStore.bannerConfig" />
-    <Technologies id="section-2" :config="portfolioStore.technologiesConfig" />
-    <Projects id="section-3" :config="portfolioStore.projectsConfig" />
-    <AboutMe id="section-4" />
-    <Contact id="section-5" />
+    <Banner
+      id="section-1"
+      class="container-full-screen"
+      :config="portfolioStore.bannerConfig"
+    />
+    <Technologies
+      id="section-2"
+      class="container-medium"
+      :config="portfolioStore.technologiesConfig"
+    />
+    <Projects
+      id="section-3"
+      class="container-medium"
+      :config="portfolioStore.projectsConfig"
+    />
+    <AboutMe id="section-4" class="container-medium" />
+    <Contact id="section-5" class="container-medium" />
   </main>
   <Footer />
 </template>
 
 <style lang="scss">
-@import '@/styles/main.scss';
 #app {
   width: 100%;
   background-color: $background-color-1;
 }
-// .contact-icon {
-//   position: fixed;
-//   bottom: 10rem;
-//   right: 5rem;
-//   background-color: $color-primary;
-//   padding: 1.5rem;
-//   border-radius: 50%;
-//   transition: all 0.5s;
-//   z-index: 2;
-//   box-shadow: 0 0 0.5rem black;
-//   filter: drop-shadow(0 0 0.5rem black);
-// }
 </style>

@@ -37,7 +37,6 @@ window.addEventListener('scroll', function () {
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .portfolio-header {
   position: fixed;
   left: 0px;

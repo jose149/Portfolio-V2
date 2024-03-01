@@ -34,7 +34,6 @@ const emit = defineEmits<NavigationBarTextEmits>();
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .navigation-bar-horizontal {
   height: 100%;
   display: flex;

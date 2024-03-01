@@ -1,46 +1,18 @@
+// Remove predefined browser styles
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
-a {
+a,
+a:active,
+a:visited {
   background: none;
   color: currentColor;
   text-decoration: none;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-  @media only screen and (max-width: $bp-large) {
-    font-size: 50%;
-  }
-  @media only screen and (max-width: $bp-small) {
-    font-size: 40%;
-  }
-}
-body {
-  font-family: $font-primary;
-  font-weight: 400;
-}
-
-section {
-  padding: 7rem 0;
-}
-
-::selection {
-  background-color: $color-primary;
-  color: $color-white;
 }
 
 button {
@@ -48,56 +20,23 @@ button {
   border: none;
 }
 
-.eight-column-grid {
-  position: relative;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr repeat(8, calc(15rem - 0.3rem)) 1fr;
-  row-gap: 5rem;
-  @media only screen and (max-width: $bp-largest) {
-    grid-template-columns: 1fr repeat(8, calc(12.5rem - 0.3rem)) 1fr;
-  }
-  @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: 1fr repeat(8, 9rem) 1fr;
+// Set Rem absolute size to 10px instead 16px ->
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
   }
   @media only screen and (max-width: $bp-small) {
-    grid-template-columns: 1fr repeat(8, 9rem) 1fr;
-  }
-
-  @media only screen and (max-width: $bp-smallest) {
-    grid-template-columns: 1fr repeat(8, 6rem) 1fr;
-  }
-
-  .single-column {
-    width: 100%;
-    grid-column: 2/-2;
-    @media only screen and (max-width: $bp-large) {
-      grid-column: 2/-2;
-    }
+    font-size: 40%;
   }
 }
 
-.section-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  z-index: 1;
-  @media only screen and (max-width: $bp-large) {
-    align-items: center;
-  }
+body {
+  font-family: $font-primary;
 }
 
-.heading-2 {
+// Define the styles when users select a range of text
+::selection {
+  background-color: $color-primary;
   color: $color-white;
-  font: $font-heading-2;
-}
-
-.section-heading {
-  padding: 2rem;
-  grid-column: 2/-2;
-  z-index: 1;
-  @media only screen and (max-width: $bp-medium) {
-    display: flex;
-    justify-content: center;
-  }
 }

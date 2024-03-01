@@ -4,7 +4,7 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
 
 <template>
   <div class="description">
-    <header class="heading-3 description-heading">
+    <header class="description-heading">
       <span class="primary">Hi,</span>
       I'm Jose
     </header>
@@ -30,26 +30,23 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .description {
-  padding-right: 1.8rem;
-  grid-column: 6/-3;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 5rem;
+  gap: 2rem;
   z-index: 1;
   @media only screen and (max-width: $bp-large) {
-    padding: 0 7rem;
-    gap: 5rem;
-    grid-row: 3;
-    grid-column: 2/-2;
     align-items: center;
   }
   &-heading {
     font-size: 2.4rem;
     line-height: 1;
+    font-family: $font-primary;
+    font-weight: 400;
+    line-height: 1;
+    color: $color-white;
     .primary {
       color: $color-primary-light;
     }

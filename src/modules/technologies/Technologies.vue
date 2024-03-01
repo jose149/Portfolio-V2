@@ -10,24 +10,27 @@ const props = defineProps<TechnologiesProps>();
 </script>
 
 <template>
-  <section class="section-technologies eight-column-grid">
-    <h2 class="section-heading heading-2">Technologies</h2>
-    <TechnologyModule
-      v-for="technologyModule in props.config.technologyModules"
-      :key="technologyModule.name"
-      :heading="technologyModule.name"
-      :figures="technologyModule.figures"
-      :start-collapsed="technologyModule.startCollapsed"
-      class="technology-module"
-    />
+  <section class="section-content">
+    <h2 class="heading-2">Technologies</h2>
+    <div class="technology-modules">
+      <TechnologyModule
+        class="technology-module"
+        v-for="technologyModule in props.config.technologyModules"
+        :key="technologyModule.name"
+        :heading="technologyModule.name"
+        :figures="technologyModule.figures"
+        :start-collapsed="technologyModule.startCollapsed"
+      />
+    </div>
     <div class="technologies-background-square"></div>
   </section>
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
-.section-technologies {
-  background: $background-color-1;
+.technology-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 
   .technology-module {
     grid-column: 2/-2;
@@ -37,7 +40,7 @@ const props = defineProps<TechnologiesProps>();
 
 .technologies-background-square {
   position: absolute;
-  top: -5vh;
+  top: 95vh;
   left: 0;
   height: 100vh;
   width: 50%;

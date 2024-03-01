@@ -11,7 +11,6 @@
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
 .footer {
   padding: 3rem;
   background-color: $background-color-2;

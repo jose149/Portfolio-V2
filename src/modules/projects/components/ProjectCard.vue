@@ -61,11 +61,10 @@ const props = defineProps<ProjectCardProps>();
 </template>
 
 <style lang="scss">
-@import '@/styles/main.scss';
 .project {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 
   &-header {
     display: flex;

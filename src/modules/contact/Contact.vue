@@ -4,41 +4,37 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackingEvents';
 </script>
 <template>
-  <section class="eight-column-grid section-contact">
-    <main class="contact-content">
-      <div class="contact-info">
-        <p class="contact-info-heading">Contact info</p>
-        <ul class="contact-info-methods">
-          <li class="contact-info-method">
-            <SvgIcon name="Phone" :size="{ height: 20, width: 20 }" />
-            +34 671300904
-          </li>
-          <li class="contact-info-method">
-            <SvgIcon name="Mail" :size="{ height: 20, width: 20 }" />
-            crespi.valero.jose@gmail.com
-          </li>
-        </ul>
-      </div>
-      <div class="contact-cta">
-        <p class="contact-heading">Let’s work together on our next project</p>
-        <AppLink
-          type="primary"
-          link="mailto:crespi.valero.jose@gmail.com"
-          @click="trackContactButtonClicked"
-        >
-          <template #linkContent>Contact</template>
-        </AppLink>
-      </div>
-    </main>
+  <section class="contact-content">
+    <div class="contact-info">
+      <p class="contact-info-heading">Contact info</p>
+      <ul class="contact-info-methods">
+        <li class="contact-info-method">
+          <SvgIcon name="Phone" :size="{ height: 20, width: 20 }" />
+          +34 671300904
+        </li>
+        <li class="contact-info-method">
+          <SvgIcon name="Mail" :size="{ height: 20, width: 20 }" />
+          crespi.valero.jose@gmail.com
+        </li>
+      </ul>
+    </div>
+    <div class="contact-cta">
+      <p class="contact-heading">Let’s work together on our next project</p>
+      <AppLink
+        type="primary"
+        link="mailto:crespi.valero.jose@gmail.com"
+        @click="trackContactButtonClicked"
+      >
+        <template #linkContent>Contact</template>
+      </AppLink>
+    </div>
   </section>
 </template>
 
 <style scoped lang="scss">
-@import '@/styles/main.scss';
-.section-contact {
-  padding: 10rem 0;
-}
 .contact-content {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   background-color: $background-color-2;
   padding: 5rem;
   grid-column: 2/-2;
