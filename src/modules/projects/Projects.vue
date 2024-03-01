@@ -56,9 +56,12 @@ const props = defineProps<ProjectsProps>();
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
   z-index: 1;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+  }
 }
 .projects-link-bottom {
-  grid-column: 2/-2;
   justify-self: center;
   z-index: 1;
 }
