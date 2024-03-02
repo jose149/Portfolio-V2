@@ -1,5 +1,6 @@
 export interface ProjectsConfig {
-  projects: Project[];
+  mainProjects: Project[];
+  subProjects: Project[];
   buttonPosition: Position;
 }
 

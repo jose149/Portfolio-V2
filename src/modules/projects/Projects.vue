@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
 import { Position, ProjectsConfig } from './projectsViewModel';
-import ProjectCard from './components/ProjectCard.vue';
+import SubProject from './components/SubProject.vue';
+import MainProject from './components/MainProject.vue';
 
 interface ProjectsProps {
   config: ProjectsConfig;
@@ -24,11 +25,19 @@ const props = defineProps<ProjectsProps>();
       </AppLink>
     </div>
 
-    <div class="projects">
-      <ProjectCard
-        v-for="project in props.config.projects"
+    <div class="main-projects">
+      <MainProject
+        v-for="project in props.config.mainProjects"
         :key="project.name"
-        :project="project"
+        :main-project="project"
+      />
+    </div>
+
+    <div class="sub-projects">
+      <SubProject
+        v-for="subPproject in props.config.subProjects"
+        :key="subPproject.name"
+        :sub-project="subPproject"
       />
     </div>
 

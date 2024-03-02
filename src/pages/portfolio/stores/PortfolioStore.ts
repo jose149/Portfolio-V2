@@ -131,7 +131,8 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   });
 
   const projectsConfig = computed<ProjectsConfig>(() => ({
-    projects: getProjects(),
+    mainProjects: getProjects(),
+    subProjects: [],
     buttonPosition: getButtonPosition(isSmallDevice.value),
   }));
 

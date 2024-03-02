@@ -100,13 +100,6 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
       &-sub {
       }
     }
-    .profile-name {
-      color: $color-white;
-      margin-bottom: 1rem;
-    }
-    .profile-job {
-      color: $color-white;
-    }
   }
 
   &-media {
