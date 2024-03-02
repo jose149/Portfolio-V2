@@ -28,6 +28,7 @@ export const SVG_ICON_TYPE = [
   'GoogleAnalytics',
   'GoogleTagManager',
   'Hotjar',
+  'OpenWindow',
   'DotNet',
   'CSharp',
   'Vitest',

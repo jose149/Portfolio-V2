@@ -1,4 +1,11 @@
 import { Project } from '@/modules/projects/projectsViewModel';
+import {
+  backEndDeliveryTechnologies,
+  backEndDiscoveryTechnologies,
+  frontEndDeliveryTechnologies,
+  frontEndDevOpsTechnologies,
+  frontEndDiscoveryTechnologies,
+} from './technologies';
 
 export const projects: Project[] = [
   {
@@ -8,5 +15,12 @@ export const projects: Project[] = [
     description:
       'As a Sembo Trip Planner key member, I contributed to develop an innovative travel tool that allows users to effortlessly crate full travel experiences integrating accommodation, transportation, and activities. Enhancing the travel experience, making it more enjoyable and accessible for everyone.',
     organisationLogo: '/assets/images/Projects/SemboLogo.webp',
+    technologies: [
+      ...frontEndDeliveryTechnologies,
+      ...frontEndDiscoveryTechnologies,
+      ...frontEndDevOpsTechnologies,
+      ...backEndDeliveryTechnologies,
+      ...backEndDiscoveryTechnologies,
+    ],
   },
 ];

@@ -1,18 +1,40 @@
 import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
-
 /* eslint-disable */
-enum TechnologyModule {
-  FrontEndDelivery = 'Front End Delivery',
-  FrontEndDiscovery = 'Front End Discovery',
-  FrontEndOperations = 'Front End Operations',
-  BackEndDelivery = 'Back End Delivery',
-  BackEndDiscovery = 'Back End Discovery',
-  BackEndOperations = 'Back End Operations',
-}
 
-export interface ITechnology {
-  name: string;
-  module: TechnologyModule;
+export type FrontEndDeliveryTechnologiesType =
+  | 'Vue 3'
+  | 'TypeScript 5'
+  | 'Vite'
+  | 'Cypress'
+  | 'Sass'
+  | 'Jest'
+  | 'StoryBook'
+  | 'Pinia';
+export type FrontEndDiscoveryTechnologiesType =
+  | 'Figma'
+  | 'Google Analytics 4'
+  | 'Google Tag Manager'
+  | 'Hotjar';
+export type FrontEndOpsTechnologyType = 'Bitbucket' | 'Netlify' | 'Jenkins';
+export type BackEndDeliveryTechnologyType =
+  | '.Net'
+  | 'C#'
+  | 'Python'
+  | 'GraphQL';
+export type BackEndDiscoveryTechnologyType = 'Grafana' | 'Elastic Search';
+
+export type FronEndTechnologyType =
+  | FrontEndDeliveryTechnologiesType
+  | FrontEndDiscoveryTechnologiesType
+  | FrontEndOpsTechnologyType;
+export type BackEndTechnologyType =
+  | BackEndDeliveryTechnologyType
+  | BackEndDiscoveryTechnologyType;
+
+export type TechnologyType = FronEndTechnologyType | BackEndTechnologyType;
+
+export interface Technology {
+  name: TechnologyType;
   iconName: SvgIconType;
 }
 
@@ -25,129 +47,112 @@ export enum TechnologyModuleType {
 
 export interface ITechnologyModule {
   type: TechnologyModuleType;
-  technologies: ITechnology[];
+  technologies: Technology[];
 }
 
-export const frontEndDeliveryTechnologies: ITechnology[] = [
+export const frontEndDeliveryTechnologies: Technology[] = [
   {
     name: 'Vue 3',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Vue',
   },
   {
     name: 'TypeScript 5',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'TypeScript',
   },
   {
     name: 'Vite',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Vitest',
   },
   {
     name: 'Cypress',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Cypress',
   },
   {
     name: 'Sass',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Sass',
   },
   {
     name: 'Jest',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Jest',
   },
   {
     name: 'StoryBook',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'StoryBook',
   },
   {
     name: 'Pinia',
-    module: TechnologyModule.FrontEndDelivery,
     iconName: 'Pinia',
   },
 ];
 
-const frontEndDiscoveryTechnologies: ITechnology[] = [
+export const frontEndDiscoveryTechnologies: Technology[] = [
   {
     name: 'Figma',
-    module: TechnologyModule.FrontEndDiscovery,
     iconName: 'Figma',
   },
   {
     name: 'Google Analytics 4',
-    module: TechnologyModule.FrontEndDiscovery,
     iconName: 'GoogleAnalytics',
   },
   {
     name: 'Google Tag Manager',
-    module: TechnologyModule.FrontEndDiscovery,
     iconName: 'GoogleTagManager',
   },
-  // {name:'LucidChart', module: TechnologyModule.FrontEndDiscovery, iconName:'LC'},
-  // {name:'Miro', module: TechnologyModule.FrontEndDiscovery, iconName:'Miro'},
   {
     name: 'Hotjar',
-    module: TechnologyModule.FrontEndDiscovery,
     iconName: 'Hotjar',
   },
 ];
 
-const frontEndDevOpsTechnologies: ITechnology[] = [
+export const frontEndDevOpsTechnologies: Technology[] = [
   {
     name: 'Bitbucket',
-    module: TechnologyModule.FrontEndOperations,
     iconName: 'Bitbucket',
   },
   {
     name: 'Netlify',
-    module: TechnologyModule.FrontEndOperations,
     iconName: 'Netlify',
   },
   {
     name: 'Jenkins',
-    module: TechnologyModule.FrontEndOperations,
     iconName: 'Jenkins',
   },
 ];
 
-const backEndDeliveryTechnologies: ITechnology[] = [
+export const backEndDeliveryTechnologies: Technology[] = [
   {
     name: '.Net',
-    module: TechnologyModule.BackEndDelivery,
     iconName: 'DotNet',
   },
-  { name: 'C#', module: TechnologyModule.BackEndDelivery, iconName: 'CSharp' },
+  {
+    name: 'C#',
+    iconName: 'CSharp',
+  },
   {
     name: 'GraphQL',
-    module: TechnologyModule.BackEndDelivery,
     iconName: 'GraphQL',
   },
 ];
 
-const backEndDiscoveryTechnologies: ITechnology[] = [
+export const backEndDiscoveryTechnologies: Technology[] = [
   {
     name: 'Grafana',
-    module: TechnologyModule.BackEndDiscovery,
     iconName: 'Grafana',
   },
   {
     name: 'Elastic Search',
-    module: TechnologyModule.BackEndDiscovery,
     iconName: 'ElasticSearch',
   },
 ];
 
-const allTechnologies = [
-  ...frontEndDeliveryTechnologies,
-  ...frontEndDiscoveryTechnologies,
-];
-
-export function getMainTechnologiesFromData(): ITechnology[] {
-  return allTechnologies;
+export function getTechnologies(): Technology[] {
+  return [
+    ...frontEndDeliveryTechnologies,
+    ...frontEndDiscoveryTechnologies,
+    ...frontEndDevOpsTechnologies,
+    ...backEndDeliveryTechnologies,
+    ...backEndDiscoveryTechnologies,
+  ];
 }
 
 export const technologyModules: ITechnologyModule[] = [

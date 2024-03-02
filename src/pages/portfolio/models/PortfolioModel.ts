@@ -2,10 +2,11 @@ import { Profile } from '@/modules/banner/BannerViewModel';
 import { type Section } from './PortfolioViewModel';
 import { PROFILE, sections } from './data/data';
 import {
-  ITechnology,
+  Technology,
   ITechnologyModule,
-  getMainTechnologiesFromData,
   technologyModules,
+  getTechnologies,
+  TechnologyType,
 } from './data/technologies';
 import { projects } from './data/projects';
 import { Project } from '@/modules/projects/projectsViewModel';
@@ -22,8 +23,21 @@ export function getProfile(): Profile {
   return PROFILE;
 }
 
-export function getMainTechnologies(): ITechnology[] {
-  return getMainTechnologiesFromData();
+export function setUpPortfolioModel(): void {
+  const technologies = getTechnologies();
+  getTechnologiesDictionary(technologies);
+}
+
+function getTechnologiesDictionary(
+  technologies: Technology[]
+): Record<TechnologyType, Technology> {
+  const technologiesDicctionary: Record<string, Technology> = {};
+
+  technologies.forEach((technology) => {
+    technologiesDicctionary[technology.name] = technology;
+  });
+
+  return technologiesDicctionary;
 }
 
 export function getBannerImageSrc(): string {

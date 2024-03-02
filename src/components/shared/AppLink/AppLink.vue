@@ -50,6 +50,10 @@ function handleClick(event: MouseEvent): void {
   font: $font-link;
   cursor: pointer;
   transition: all $transition-time;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 
   @media (hover: hover) {
     &:hover {

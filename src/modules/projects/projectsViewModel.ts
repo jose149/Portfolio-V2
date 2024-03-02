@@ -1,3 +1,5 @@
+import { Technology } from '@/pages/portfolio/models/data/technologies';
+
 export interface ProjectsConfig {
   mainProjects: Project[];
   subProjects: Project[];
@@ -8,6 +10,7 @@ export interface Project {
   name: string;
   image: string;
   link: string;
+  technologies: Technology[];
   repositoryUrl?: string;
   description?: string;
   organisationLogo?: string;

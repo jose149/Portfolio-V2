@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Project } from '../projectsViewModel';
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 
 interface MainProjectProps {
   mainProject: Project;
@@ -13,7 +14,18 @@ const props = defineProps<MainProjectProps>();
   <article class="main-project">
     <header class="main-project-header">
       <h3 class="main-project-heading">{{ props.mainProject.name }}</h3>
-      <aside class="main-project-technologies"></aside>
+      <aside class="main-project-technologies">
+        <div
+          v-for="technology in props.mainProject.technologies"
+          class="pill-container"
+        >
+          <SvgIcon
+            :name="technology.iconName"
+            :size="{ height: 16, width: 16 }"
+          />
+          <p>{{ technology.name }}</p>
+        </div>
+      </aside>
     </header>
     <div class="main-project-content">
       <div class="main-project-left-side">
@@ -41,7 +53,10 @@ const props = defineProps<MainProjectProps>();
             type="secondary"
             :link="props.mainProject.link"
           >
-            <template #linkContent>Run</template>
+            <template #linkContent>
+              <SvgIcon name="OpenWindow" :size="{ height: 16, width: 16 }" />
+              Run
+            </template>
           </AppLink>
         </div>
       </div>
@@ -73,6 +88,7 @@ const props = defineProps<MainProjectProps>();
       line-height: 1;
       color: $color-white;
     }
+
     .main-project-technologies {
       overflow: auto;
       display: flex;
@@ -90,22 +106,58 @@ const props = defineProps<MainProjectProps>();
         #fff 95%,
         rgba(255, 255, 255, 0) 100%
       );
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color-secundary-2;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: $color-secundary-3;
+      }
+
+      .pill-container {
+        background-color: $background-color-5;
+        color: $color-white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: fit-content;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
     }
   }
 
   .main-project-content {
     display: flex;
+    gap: 5rem 3rem;
+    @media only screen and (max-width: $bp-largest) {
+      flex-direction: column;
+    }
+
     .main-project-left-side {
+      flex-basis: 60%;
+      height: auto;
       position: relative;
-      width: 60%;
       border-radius: 10px;
       overflow: hidden;
       color: #fff;
-      aspect-ratio: auto;
 
       .main-project-image {
         width: 100%;
-        height: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: top;
       }
 
       .main-project-organisation-logo {
@@ -119,16 +171,15 @@ const props = defineProps<MainProjectProps>();
     }
 
     .main-project-right-side {
-      width: 40%;
+      flex-basis: 40%;
       gap: 20px;
-      padding-left: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       .main-project-description {
         color: #fff;
         color: $color-white;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 300;
         text-align: start;
       }

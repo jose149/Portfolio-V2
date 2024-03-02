@@ -4,7 +4,6 @@ import { type Section } from '../models/PortfolioViewModel';
 import {
   getBannerImageSrc,
   getProjects,
-  getMainTechnologies,
   getOwnerLogoPath,
   getPortfolioSections,
   getProfile,
@@ -20,6 +19,7 @@ import {
 import { ProjectsConfig } from '@/modules/projects/projectsViewModel';
 import { elementIntersectionObserver } from '@/libraries/helpers/observers/intersectionObserver';
 import { useWindowSize } from '@vueuse/core';
+import { getTechnologies } from '../models/data/technologies';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {
   const SMALL_DEVICE_THRESHOLD = 1000;
@@ -40,7 +40,7 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   }
 
   function getBannerCarrousselLogos(): string[] {
-    return getMainTechnologies()
+    return getTechnologies()
       .map((technology) => technology.iconName)
       .filter((icon) => !!icon);
   }
