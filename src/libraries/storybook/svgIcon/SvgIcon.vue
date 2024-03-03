@@ -30,7 +30,9 @@ const dynamicComponent = computed(() => {
   // We are using this Vite plugin to make those dynamic imports work:
   // https://www.npmjs.com/package/vite-plugin-dynamic-import
   const name = SVG_ICON_FILE_NAME_MAP[props.name];
-  return defineAsyncComponent(async () => await import(`./icons/${name}.vue`));
+  return defineAsyncComponent(
+    async () => await import('./index.ts').then((module) => module[name])
+  );
 });
 </script>
 

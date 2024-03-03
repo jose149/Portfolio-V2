@@ -1,18 +1,26 @@
 export const SVG_ICON_TYPE = [
+  'Initials',
+  'CSS',
+  'Html',
+  'Javascript',
+  'React',
+  'RxJs',
+  'Statsig',
   'Bitbucket',
   'Chevron',
   'Cypress',
   'Docker',
   'ElasticSearch',
   'Git',
-  'GitHub3',
+  'GitHubNavigation',
   'Home',
   'Jenkins',
   'Kibana',
-  'Javascript2',
+  'JavascriptNavigation',
   'Kubernetes',
   'Menu',
   'Netlify',
+  'Python',
   'Octopus',
   'Pinia',
   'Phone',
@@ -28,65 +36,91 @@ export const SVG_ICON_TYPE = [
   'GoogleAnalytics',
   'GoogleTagManager',
   'Hotjar',
-  'OpenWindow',
+  'OpenTab',
   'DotNet',
   'CSharp',
   'Vitest',
   'Vue',
-  'Mail',
+  'MailMedia',
   'Linkedin',
-  'GitHub2',
+  'GitHubMedia',
 ];
 
 export type SvgIconType = (typeof SVG_ICON_TYPE)[number];
 
 export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
-  Bitbucket: 'bitbucket',
-  Chevron: 'chevron',
-  Cypress: 'cypress',
-  Design: 'design',
-  Docker: 'docker',
-  ElasticSearch: 'elasticSearch',
-  Git: 'git',
-  GitHub: 'gitHub',
-  GitHub3: 'gitHub3',
-  Jenkins: 'jenkins',
-  Kibana: 'kibana',
-  Kubernetes: 'kubernetes',
-  Menu: 'hamburgerMenu',
-  Netlify: 'netlify',
-  Octopus: 'octopusDeploy',
-  TypeScript: 'typeScript',
-  GraphQL: 'graphQL',
-  Home: 'home',
-  Jest: 'jest',
-  Javascript2: 'javascript2',
-  Grafana: 'grafana',
-  Sass: 'sass',
-  Screen: 'screen',
-  Server: 'server',
-  StoryBook: 'storyBook',
-  Figma: 'figma',
-  GoogleAnalytics: 'googleAnalytics',
-  GoogleTagManager: 'googleTagManager',
-  Hotjar: 'hotjar',
-  OpenWindow: 'openWindow',
-  Pinia: 'pinia',
-  Profile: 'profile',
-  Phone: 'phone',
-  DotNet: 'dotNet',
-  CSharp: 'cSharp',
-  Arrow: 'arrow',
-  RightArrow: 'rightArrow',
-  Timer: 'timer',
-  EyePlus: 'eyePlus',
-  Mobile: 'mobile',
-  Rocket: 'rocket',
-  Vue: 'vue',
-  Vitest: 'vite',
-  Mail: 'mail',
-  Linkedin: 'linkedin',
-  GitHub2: 'gitHub2',
+  // Design: 'Design',
+  // Screen: 'screen',
+  // Server: 'server',
+  // Menu: 'hamburgerMenu',
+  // Timer: 'timer',
+  // EyePlus: 'eyePlus',
+  // Mobile: 'mobile',
+  // Rocket: 'rocket',
+
+  // Actions
+  Arrow: 'Arrow',
+  Chevron: 'Chevron',
+  OpenTab: 'OpenTab',
+  RightArrow: 'RightArrow',
+
+  // Brand
+  Initials: 'Initials',
+
+  // Media
+  Phone: 'Phone',
+  MailMedia: 'MailMedia',
+  Linkedin: 'Linkedin',
+  GitHubMedia: 'GitHubMedia',
+
+  // Navigation
+  Home: 'Home',
+  GitHubNavigation: 'GitHubNavigation',
+  JavascriptNavigation: 'JavascriptNavigation',
+  Profile: 'Profile',
+
+  // Front end delivery
+  CSS: 'CSS',
+  Cypress: 'Cypress',
+  Html: 'Html',
+  Javascript: 'Javascript',
+  Jest: 'Jest',
+  Pinia: 'Pinia',
+  React: 'React',
+  RxJs: 'RxJs',
+  Sass: 'Sass',
+  StoryBook: 'StoryBook',
+  TypeScript: 'TypeScript',
+  Vitest: 'Vite',
+  Vue: 'Vue',
+
+  // Front end discovery
+  Figma: 'Figma',
+  GoogleAnalytics: 'GoogleAnalytics',
+  GoogleTagManager: 'GoogleTagManager',
+  Hotjar: 'Hotjar',
+  Statsig: 'Statsig',
+
+  // Front end operations
+  Bitbucket: 'Bitbucket',
+  Git: 'Git',
+  GitHub: 'GitHub',
+  Jenkins: 'Jenkins',
+  Netlify: 'Netlify',
+
+  // Back end delivery
+  CSharp: 'CSharp',
+  DotNet: 'DotNet',
+  GraphQL: 'GraphQL',
+  Python: 'Python',
+
+  // Back end operations
+  Docker: 'Docker',
+  ElasticSearch: 'ElasticSearch',
+  Grafana: 'Grafana',
+  Kibana: 'Kibana',
+  Kubernetes: 'Kubernetes',
+  Octopus: 'OctopusDeploy',
 };
 
 // NOTE:
@@ -130,6 +164,48 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
   SvgIconType,
   Required<SvgIconDefaultSettings>
 > = {
+  Initials: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  CSS: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  Html: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  Javascript: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  React: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  RxJs: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  Statsig: {
+    width: 60,
+    height: 60,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
   Bitbucket: {
     width: 60,
     height: 60,
@@ -145,6 +221,12 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
   Cypress: {
     width: 120,
     height: 120,
+    color: 'currentColor',
+    colorProperty: 'fill',
+  },
+  Python: {
+    width: 60,
+    height: 60,
     color: 'currentColor',
     colorProperty: 'fill',
   },
@@ -178,7 +260,7 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     color: 'currentColor',
     colorProperty: 'fill',
   },
-  GitHub3: {
+  GitHubNavigation: {
     width: 60,
     height: 60,
     color: 'currentColor',
@@ -190,7 +272,7 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     color: 'currentColor',
     colorProperty: 'fill',
   },
-  Javascript2: {
+  JavascriptNavigation: {
     width: 60,
     height: 60,
     color: 'currentColor',
@@ -299,8 +381,8 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     colorProperty: 'fill',
   },
   GoogleAnalytics: {
-    width: 128,
-    height: 128,
+    width: 60,
+    height: 60,
     color: 'currentColor',
     colorProperty: 'fill',
   },
@@ -311,8 +393,8 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     colorProperty: 'fill',
   },
   Hotjar: {
-    width: 128,
-    height: 128,
+    width: 60,
+    height: 60,
     color: 'currentColor',
     colorProperty: 'fill',
   },
@@ -358,7 +440,7 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     color: 'currentColor',
     colorProperty: 'fill',
   },
-  OpenWindow: {
+  OpenTab: {
     width: 60,
     height: 60,
     color: 'currentColor',
@@ -388,7 +470,7 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     color: 'currentColor',
     colorProperty: 'fill',
   },
-  Mail: {
+  MailMedia: {
     width: 30,
     height: 30,
     color: 'currentColor',
@@ -400,7 +482,7 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
     color: 'currentColor',
     colorProperty: 'fill',
   },
-  GitHub2: {
+  GitHubMedia: {
     width: 60,
     height: 60,
     color: 'currentColor',

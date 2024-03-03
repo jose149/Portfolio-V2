@@ -104,6 +104,7 @@ function setGroupHeight() {
 
         &-caption {
           color: $color-white;
+          font-size: 1.8rem;
         }
       }
     }

@@ -2,7 +2,12 @@ import type { SvgIconType } from '@/libraries/storybook/svgIcon/SvgIconModel';
 /* eslint-disable */
 
 export type FrontEndDeliveryTechnologiesType =
+  | 'CSS 3'
+  | 'Html 5'
+  | 'JavaScript'
   | 'Vue 3'
+  | 'React'
+  | 'RxJs'
   | 'TypeScript 5'
   | 'Vite'
   | 'Cypress'
@@ -14,7 +19,8 @@ export type FrontEndDiscoveryTechnologiesType =
   | 'Figma'
   | 'Google Analytics 4'
   | 'Google Tag Manager'
-  | 'Hotjar';
+  | 'Hotjar'
+  | 'Statsig';
 export type FrontEndOpsTechnologyType = 'Bitbucket' | 'Netlify' | 'Jenkins';
 export type BackEndDeliveryTechnologyType =
   | '.Net'
@@ -52,8 +58,24 @@ export interface ITechnologyModule {
 
 export const frontEndDeliveryTechnologies: Technology[] = [
   {
+    name: 'CSS 3',
+    iconName: 'CSS',
+  },
+  {
+    name: 'Html 5',
+    iconName: 'Html',
+  },
+  {
+    name: 'JavaScript',
+    iconName: 'Javascript',
+  },
+  {
     name: 'Vue 3',
     iconName: 'Vue',
+  },
+  {
+    name: 'React',
+    iconName: 'React',
   },
   {
     name: 'TypeScript 5',
@@ -64,8 +86,8 @@ export const frontEndDeliveryTechnologies: Technology[] = [
     iconName: 'Vitest',
   },
   {
-    name: 'Cypress',
-    iconName: 'Cypress',
+    name: 'Pinia',
+    iconName: 'Pinia',
   },
   {
     name: 'Sass',
@@ -76,12 +98,20 @@ export const frontEndDeliveryTechnologies: Technology[] = [
     iconName: 'Jest',
   },
   {
+    name: 'Cypress',
+    iconName: 'Cypress',
+  },
+  {
     name: 'StoryBook',
     iconName: 'StoryBook',
   },
   {
-    name: 'Pinia',
-    iconName: 'Pinia',
+    name: 'RxJs',
+    iconName: 'RxJs',
+  },
+  {
+    name: 'GraphQL',
+    iconName: 'GraphQL',
   },
 ];
 
@@ -101,6 +131,10 @@ export const frontEndDiscoveryTechnologies: Technology[] = [
   {
     name: 'Hotjar',
     iconName: 'Hotjar',
+  },
+  {
+    name: 'Statsig',
+    iconName: 'Statsig',
   },
 ];
 
@@ -131,6 +165,10 @@ export const backEndDeliveryTechnologies: Technology[] = [
   {
     name: 'GraphQL',
     iconName: 'GraphQL',
+  },
+  {
+    name: 'Python',
+    iconName: 'Python',
   },
 ];
 

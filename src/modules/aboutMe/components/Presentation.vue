@@ -22,12 +22,12 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
     <div class="presentation-media">
       <a
         href="mailto:crespi.valero.jose@gmail.com"
-        aria-label="Open mail app to write me an email"
+        aria-label="Open MailMedia app to write me an email"
         target="_blank"
         rel="noreferrer"
       >
         <SvgIcon
-          :name="'Mail'"
+          :name="'MailMedia'"
           :color="'black'"
           :size="{ height: 20, width: 20 }"
         />
@@ -46,7 +46,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
         target="_blank"
         rel="noreferrer"
       >
-        <SvgIcon :name="'GitHub2'" :size="{ height: 20, width: 20 }" />
+        <SvgIcon :name="'GitHubMedia'" :size="{ height: 20, width: 20 }" />
       </a>
     </div>
   </div>

@@ -13,7 +13,7 @@ import { trackContactButtonClicked } from '@/libraries/helpers/trackData/trackin
           +34 671300904
         </li>
         <li class="contact-info-method">
-          <SvgIcon name="Mail" :size="{ height: 20, width: 20 }" />
+          <SvgIcon name="MailMedia" :size="{ height: 20, width: 20 }" />
           crespi.valero.jose@gmail.com
         </li>
       </ul>

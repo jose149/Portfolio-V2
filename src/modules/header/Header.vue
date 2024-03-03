@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import NavigationBarHorizontal from '@/components/shared/navigationBar/NavigationBarHorizontal.vue';
 import { HeaderConfig } from './HeaderViewModel';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
+import { SvgIconSizeUnit } from '@/libraries/storybook/svgIcon/SvgIconModel';
 
 interface HeaderProps {
   config: HeaderConfig;
@@ -27,7 +29,11 @@ window.addEventListener('scroll', function () {
 
 <template>
   <header class="portfolio-header transparent">
-    <img class="header-logo" :src="props.config.logo" alt="Jose Logo" />
+    <SvgIcon
+      class="header-logo"
+      name="Initials"
+      :size="{ height: 80, width: 80, unit: SvgIconSizeUnit['%'] }"
+    />
     <NavigationBarHorizontal
       :items="props.config.sections"
       :active-item="props.activeSection"
@@ -52,8 +58,8 @@ window.addEventListener('scroll', function () {
   z-index: 2;
   transition: 0.5s;
   .header-logo {
-    max-height: 70%;
-    width: auto;
+    position: relative;
+    height: 100%;
   }
 }
 
