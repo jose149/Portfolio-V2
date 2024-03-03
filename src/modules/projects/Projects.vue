@@ -66,6 +66,16 @@ const props = defineProps<ProjectsProps>();
   gap: 5rem;
   z-index: 1;
 }
+
+.sub-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .projects-link-bottom {
   justify-self: center;
   z-index: 1;

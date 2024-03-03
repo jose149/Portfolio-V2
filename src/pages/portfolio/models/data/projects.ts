@@ -7,7 +7,7 @@ import {
   frontEndDiscoveryTechnologies,
 } from './technologies';
 
-export const projects: Project[] = [
+export const mainProjects: Project[] = [
   {
     name: 'Trip Planner',
     image: '/assets/images/Projects/TripOverview.webp',
@@ -22,5 +22,22 @@ export const projects: Project[] = [
       ...backEndDeliveryTechnologies,
       ...backEndDiscoveryTechnologies,
     ],
+  },
+];
+
+export const subProjects: Project[] = [
+  {
+    name: 'Users List',
+    image: '/assets/images/Projects/UsersList.webp',
+    repositoryUrl: 'https://github.com/jose149/OrganizationTable',
+    description: 'Users List',
+    technologies: [...frontEndDeliveryTechnologies],
+  },
+  {
+    name: 'Todo List',
+    image: '/assets/images/Projects/TodoList.webp',
+    repositoryUrl: 'https://github.com/jose149/ToDoList',
+    description: 'Todo list',
+    technologies: [...frontEndDeliveryTechnologies],
   },
 ];

@@ -3,11 +3,12 @@ import { defineStore } from 'pinia';
 import { type Section } from '../models/PortfolioViewModel';
 import {
   getBannerImageSrc,
-  getProjects,
   getOwnerLogoPath,
   getPortfolioSections,
   getProfile,
   getTechnologyModules,
+  getSubProjects,
+  getMainProjects,
 } from '../models/PortfolioModel';
 import { HeaderConfig } from '@/modules/header/HeaderViewModel';
 import { BannerConfig } from '@/modules/banner';
@@ -134,8 +135,8 @@ export const usePortfolioStore = defineStore('PortfolioStore', () => {
   });
 
   const projectsConfig = computed<ProjectsConfig>(() => ({
-    mainProjects: getProjects(),
-    subProjects: [],
+    mainProjects: getMainProjects(),
+    subProjects: getSubProjects(),
     buttonPosition: getButtonPosition(isSmallDevice.value),
   }));
 

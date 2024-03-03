@@ -8,7 +8,7 @@ import {
   getTechnologies,
   TechnologyType,
 } from './data/technologies';
-import { projects } from './data/projects';
+import { mainProjects, subProjects } from './data/projects';
 import { Project } from '@/modules/projects/projectsViewModel';
 
 export function getPortfolioSections(): Section[] {
@@ -48,6 +48,10 @@ export function getTechnologyModules(): ITechnologyModule[] {
   return technologyModules;
 }
 
-export function getProjects(): Project[] {
-  return projects;
+export function getMainProjects(): Project[] {
+  return mainProjects;
+}
+
+export function getSubProjects(): Project[] {
+  return subProjects;
 }

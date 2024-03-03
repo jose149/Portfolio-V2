@@ -9,7 +9,7 @@ export interface ProjectsConfig {
 export interface Project {
   name: string;
   image: string;
-  link: string;
+  link?: string;
   technologies: Technology[];
   repositoryUrl?: string;
   description?: string;

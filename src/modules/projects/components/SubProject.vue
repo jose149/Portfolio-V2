@@ -11,9 +11,9 @@ const props = defineProps<SubProjectProps>();
 </script>
 
 <template>
-  <div
+  <a
     class="sub-project"
-    :href="props.subProject.link"
+    :href="props.subProject.repositoryUrl"
     target="_blank"
     rel="noreferrer"
   >
@@ -52,7 +52,7 @@ const props = defineProps<SubProjectProps>();
         <SvgIcon name="RightArrow" :size="{ height: 15, width: 15 }" />
       </button> -->
     </div>
-  </div>
+  </a>
 </template>
 
 <style lang="scss">
@@ -68,7 +68,7 @@ const props = defineProps<SubProjectProps>();
 
   .sub-project-container {
     position: relative;
-    padding: 5rem 3rem;
+    padding: 10%;
     background-color: $background-color-4;
     cursor: pointer;
     perspective: 100px;
