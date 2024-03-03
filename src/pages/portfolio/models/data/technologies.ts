@@ -58,13 +58,14 @@ export interface ITechnologyModule {
 
 export const frontEndDeliveryTechnologies: Technology[] = [
   {
-    name: 'CSS 3',
-    iconName: 'CSS',
-  },
-  {
     name: 'Html 5',
     iconName: 'Html',
   },
+  {
+    name: 'CSS 3',
+    iconName: 'CSS',
+  },
+
   {
     name: 'JavaScript',
     iconName: 'Javascript',
