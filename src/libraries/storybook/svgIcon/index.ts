@@ -1,11 +1,9 @@
-import {
-  Arrow,
-  Chevron,
-  OpenTab,
-  RightArrow,
-  Mobile,
-  Phone,
-} from './icons/index';
+import Arrow from './icons/actions/Arrow.vue';
+import Chevron from './icons/actions/Chevron.vue';
+import OpenTab from './icons/actions/OpenTab.vue';
+import RightArrow from './icons/actions/RightArrow.vue';
+import Mobile from './icons/contact/Mobile.vue';
+import Phone from './icons/contact/Phone.vue';
 
 // Brand Logos
 import Initials from './logos/brand/Initials.vue';

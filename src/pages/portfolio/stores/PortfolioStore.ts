@@ -22,7 +22,6 @@ import { useWindowSize } from '@vueuse/core';
 import {
   frontEndDeliveryTechnologies,
   frontEndDiscoveryTechnologies,
-  getTechnologies,
 } from '../models/data/technologies';
 
 export const usePortfolioStore = defineStore('PortfolioStore', () => {

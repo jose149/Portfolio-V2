@@ -18,6 +18,10 @@ export interface SvgIconProps {
   color?: SvgIconColor;
 }
 
+interface Components {
+  [key: string]: any;
+}
+
 const props = defineProps<SvgIconProps>();
 
 const settings = computed<SvgIconTransformedProps>(() =>
@@ -30,9 +34,13 @@ const dynamicComponent = computed(() => {
   // We are using this Vite plugin to make those dynamic imports work:
   // https://www.npmjs.com/package/vite-plugin-dynamic-import
   const name = SVG_ICON_FILE_NAME_MAP[props.name];
-  return defineAsyncComponent(
-    async () => await import('./index.ts').then((module) => module[name])
-  );
+
+  const getComponent = async (name: string) => {
+    const module = await import('./index.ts');
+    return (module as Components)[name];
+  };
+
+  return defineAsyncComponent(async () => await getComponent(name));
 });
 </script>
 
