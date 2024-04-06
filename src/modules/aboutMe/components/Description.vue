@@ -17,7 +17,7 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
       </p>
       <p class="description-paragraph">
         Recently I have been centered on improving my development performance,
-        software architecture, and learning new technologies.
+        software architecture and learning new technologies.
       </p>
     </div>
     <AppLink
