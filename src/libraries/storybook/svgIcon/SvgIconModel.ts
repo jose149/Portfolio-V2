@@ -8,6 +8,7 @@ export const SVG_ICON_TYPE = [
   'Statsig',
   'Bitbucket',
   'Chevron',
+  'Download',
   'Cypress',
   'Docker',
   'ElasticSearch',
@@ -61,6 +62,7 @@ export const SVG_ICON_FILE_NAME_MAP: Record<SvgIconType, string> = {
   // Actions
   Arrow: 'Arrow',
   Chevron: 'Chevron',
+  Download: 'Download',
   OpenTab: 'OpenTab',
   RightArrow: 'RightArrow',
 
@@ -215,6 +217,12 @@ export const SVG_ICON_DEFAULT_SETTINGS_MAP: Record<
   Chevron: {
     width: 30,
     height: 30,
+    color: 'currentColor',
+    colorProperty: 'stroke',
+  },
+  Download: {
+    width: 60,
+    height: 60,
     color: 'currentColor',
     colorProperty: 'stroke',
   },

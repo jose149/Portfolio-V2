@@ -1,5 +1,6 @@
 import Arrow from './icons/actions/Arrow.vue';
 import Chevron from './icons/actions/Chevron.vue';
+import Download from './icons/actions/Download.vue';
 import OpenTab from './icons/actions/OpenTab.vue';
 import RightArrow from './icons/actions/RightArrow.vue';
 import Mobile from './icons/contact/Mobile.vue';
@@ -61,6 +62,7 @@ export {
   // Actions Icons
   Arrow,
   Chevron,
+  Download,
   OpenTab,
   RightArrow,
   Mobile,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppLink from '@/components/shared/AppLink/AppLink.vue';
+import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
 </script>
 
 <template>
@@ -24,7 +25,14 @@ import AppLink from '@/components/shared/AppLink/AppLink.vue';
       link="/documents/CV Jose Crespi UK.pdf"
       downloadName="CV Jose Crespi"
     >
-      <template #linkContent>Download CV</template>
+      <template #linkContent>
+        <SvgIcon
+          class="icon"
+          name="Download"
+          :size="{ height: 12, width: 12 }"
+        />
+        Download CV
+      </template>
     </AppLink>
   </div>
 </template>

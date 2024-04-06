@@ -57,7 +57,11 @@ const props = defineProps<MainProjectProps>();
             :link="props.mainProject.link"
           >
             <template #linkContent>
-              <SvgIcon name="OpenTab" :size="{ height: 16, width: 16 }" />
+              <SvgIcon
+                class="icon"
+                name="OpenTab"
+                :size="{ height: 12, width: 12 }"
+              />
               RUN
             </template>
           </AppLink>
