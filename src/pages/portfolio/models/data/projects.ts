@@ -39,18 +39,10 @@ export const mainProjects: Project[] = [
 
 export const subProjects: Project[] = [
   {
-    name: 'Users List',
-    image: '/assets/images/Projects/UsersList.webp',
-    repositoryUrl: 'https://github.com/jose149/OrganizationTable',
-    description: 'Users List',
-    features: [],
-    technologies: [...frontEndDeliveryTechnologies],
-  },
-  {
     name: 'Vue Component Extractor',
-    image: '/assets/images/Projects/TodoList.webp',
-    repositoryUrl: 'https://github.com/jose149/ToDoList',
-    description: 'Todo list',
+    image: '/assets/images/Projects/Vue-Component-Extractor.webp',
+    repositoryUrl: 'https://github.com/jose149/vue-component-extractor',
+    description: 'Vue Component Extractor',
     features: [],
     technologies: [...frontEndDeliveryTechnologies],
   },

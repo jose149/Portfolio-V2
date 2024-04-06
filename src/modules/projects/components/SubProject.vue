@@ -63,7 +63,7 @@ const props = defineProps<SubProjectProps>();
 
   .sub-project-heading {
     color: $color-white;
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .sub-project-container {
