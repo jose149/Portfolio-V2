@@ -16,8 +16,8 @@ import SvgIcon from '@/libraries/storybook/svgIcon/SvgIcon.vue';
         needs.
       </p>
       <p class="description-paragraph">
-        Recently I have been centered on continuous delivery and integration,
-        design patterns, software quality techniques and best practices.
+        Recently I have been centered on improving my development performance,
+        software architecture, and learning new technologies.
       </p>
     </div>
     <AppLink
