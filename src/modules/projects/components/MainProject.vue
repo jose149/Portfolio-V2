@@ -44,9 +44,12 @@ const props = defineProps<MainProjectProps>();
         />
       </div>
       <div class="main-project-right-side">
-        <p class="main-project-description">
+        <div class="main-project-description">
           {{ props.mainProject.description }}
-        </p>
+          <ul class="main-project-description-list">
+            <li v-for="feature in props.mainProject.features">{{ feature }}</li>
+          </ul>
+        </div>
         <div class="main-project-buttons">
           <AppLink
             v-if="props.mainProject.link"
@@ -55,7 +58,7 @@ const props = defineProps<MainProjectProps>();
           >
             <template #linkContent>
               <SvgIcon name="OpenTab" :size="{ height: 16, width: 16 }" />
-              Run
+              RUN
             </template>
           </AppLink>
         </div>
@@ -146,7 +149,7 @@ const props = defineProps<MainProjectProps>();
     }
 
     .main-project-left-side {
-      flex-basis: 60%;
+      flex-basis: 50%;
       height: auto;
       position: relative;
       border-radius: 10px;
@@ -155,9 +158,9 @@ const props = defineProps<MainProjectProps>();
 
       .main-project-image {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
-        object-position: top;
+        object-position: top left;
       }
 
       .main-project-organisation-logo {
@@ -171,23 +174,33 @@ const props = defineProps<MainProjectProps>();
     }
 
     .main-project-right-side {
-      flex-basis: 40%;
-      gap: 20px;
+      flex-basis: 50%;
+      gap: 3rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .main-project-description {
         color: #fff;
         color: $color-white;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 300;
         text-align: start;
+
+        &-list {
+          margin: 2rem 0 0 2rem;
+          color: #fff;
+          color: $color-white;
+          font-size: 1.6rem;
+          font-weight: 300;
+          text-align: start;
+        }
       }
 
       .main-project-buttons {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
       }
     }
   }

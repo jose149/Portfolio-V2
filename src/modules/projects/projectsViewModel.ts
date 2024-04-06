@@ -13,6 +13,7 @@ export interface Project {
   technologies: Technology[];
   repositoryUrl?: string;
   description?: string;
+  features: string[];
   organisationLogo?: string;
 }
 
